@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+    /* 
+       Enquire Now Button - Figma Exact Implementation 
+       - Dimensions: 105px x 35px
+       - Radius: 10px
+       - Fill: Linear Gradient #B455F3 (86%) -> #3937F3 (100%)
+       - Stroke: NONE (Fill only)
+    */
+    .btn-enquire {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 105px;
+        height: 35px;
+        padding: 0;
+        /* Padding must not change visual size */
+
+        /* Typography */
+        font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+        font-weight: 500;
+        font-size: 14px;
+        color: #FFFFFF;
+        letter-spacing: normal;
+        text-decoration: none;
+
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        background: transparent;
+        cursor: pointer;
+
+        /* Fill Gradient Logic: 
+           We use a 200% width gradient to allow for a smooth 'flow' animation.
+           0-50% matches the Figma spec (Left-Right).
+           50-100% mirrors it back or loops.
+           Figma: #B455F3 (86%) -> #3937F3 (100%)
+        */
+        background-image: linear-gradient(90deg,
+                rgba(180, 85, 243, 0.86) 0%,
+                #3937F3 50%,
+                rgba(180, 85, 243, 0.86) 100%);
+        background-size: 200% 100%;
+        background-position: 0% 0%;
+        /* Shows the first half (Purple->Blue) */
+
+        transition: background-position 0.4s ease-in-out, transform 0.2s;
+    }
+
+    /* Hover Effect */
+    .btn-enquire:hover {
+        /* Shifts to the second half of the gradient (Blue->Purple) for a subtle flow */
+        background-position: 100% 0%;
+    }
+
+    /* Focus Interaction (Accessible) */
+    .btn-enquire:focus-visible {
+        box-shadow: 0 0 0 2px rgba(57, 55, 243, 0.5);
+    }
+}
+
+@layer utilities {
+
+    /* Animation Utilities */
+    [data-animate] {
+        opacity: 0;
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        will-change: opacity, transform;
+    }
+
+    [data-animate="fade-up"] {
+        transform: translateY(30px);
+    }
+
+    [data-animate="fade-left"] {
+        transform: translateX(30px);
+    }
+
+    [data-animate="fade-right"] {
+        transform: translateX(-30px);
+    }
+
+    [data-animate="card-pop"] {
+        transform: scale(0.92);
+    }
+
+    [data-animate].in-view {
+        opacity: 1;
+        transform: none;
+    }
+
+    /* Stagger delays if needed - generic implementation */
+    .delay-100 {
+        transition-delay: 100ms;
+    }
+
+    .delay-200 {
+        transition-delay: 200ms;
+    }
+
+    .delay-300 {
+        transition-delay: 300ms;
+    }
+}
