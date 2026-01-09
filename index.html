@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 
 <head>
@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>EvolveX AI — Transforming Ideas into Intelligent Digital Solutions</title>
   <link rel="stylesheet" href="css/tailwind.css" />
+  <link rel="stylesheet" href="css/custom.css" />
 
 </head>
 <script type="importmap">
@@ -76,53 +77,19 @@
     <div class="w-full px-5 flex items-center justify-between py-[18px]">
       <a class="font-bold text-[17.6px]" href="index.html">EvolveX AI</a>
       <nav
-        class="hidden md:flex items-center gap-[28px] [&.open]:flex [&.open]:flex-col [&.open]:absolute [&.open]:top-full [&.open]:left-0 [&.open]:w-full [&.open]:bg-white [&.open]:p-6 [&.open]:shadow-xl [&.open]:border-t [&.open]:border-gray-100 [&.open]:z-50"
+        class="relative hidden md:flex items-center gap-[28px] [&.open]:flex [&.open]:flex-col [&.open]:absolute [&.open]:top-full [&.open]:left-0 [&.open]:w-full [&.open]:bg-white [&.open]:p-6 [&.open]:shadow-xl [&.open]:border-t [&.open]:border-gray-100 [&.open]:z-50"
         id="mainNav" role="navigation" aria-label="Main">
-        <!-- 
-           Tailwind Note: 
-           - Using 'group' to manage the pseudo-element states more easily if needed, but direct hover:after works too.
-           - Replicating the distinct dot (before) and pill (after) animation.
-        -->
-        <a href="index.html"
-          class="group relative text-[14px] font-medium text-[#5f6368] p-[6px] transition-colors duration-200 hover:text-[#651FFF] [&.active]:text-[#651FFF] active">
-          Home
-          <span
-            class="pointer-events-none absolute left-[calc(50%-14px)] -bottom-2 h-[6px] w-[6px] scale-75 rounded-full bg-[#651FFF] opacity-0 transition-all duration-200 group-hover:scale-100 group-hover:opacity-100 group-[.active]:scale-100 group-[.active]:opacity-100"></span>
-          <span
-            class="pointer-events-none absolute left-1/2 -bottom-2 h-[6px] w-[23px] -translate-x-1/2 scale-75 rounded-[4px] bg-[#651FFF] opacity-0 transition-all duration-200 group-hover:scale-100 group-hover:opacity-100 group-[.active]:scale-100 group-[.active]:opacity-100"></span>
-        </a>
-        <a href="services.html"
-          class="group relative text-[14px] font-medium text-[#5f6368] p-[6px] transition-colors duration-200 hover:text-[#651FFF] [&.active]:text-[#651FFF]">
-          Services
-          <span
-            class="pointer-events-none absolute left-[calc(50%-14px)] -bottom-2 h-[6px] w-[6px] scale-75 rounded-full bg-[#651FFF] opacity-0 transition-all duration-200 group-hover:scale-100 group-hover:opacity-100 group-[.active]:scale-100 group-[.active]:opacity-100"></span>
-          <span
-            class="pointer-events-none absolute left-1/2 -bottom-2 h-[6px] w-[23px] -translate-x-1/2 scale-75 rounded-[4px] bg-[#651FFF] opacity-0 transition-all duration-200 group-hover:scale-100 group-hover:opacity-100 group-[.active]:scale-100 group-[.active]:opacity-100"></span>
-        </a>
-        <a href="about.html"
-          class="group relative text-[14px] font-medium text-[#5f6368] p-[6px] transition-colors duration-200 hover:text-[#651FFF] [&.active]:text-[#651FFF]">
-          About Us
-          <span
-            class="pointer-events-none absolute left-[calc(50%-14px)] -bottom-2 h-[6px] w-[6px] scale-75 rounded-full bg-[#651FFF] opacity-0 transition-all duration-200 group-hover:scale-100 group-hover:opacity-100 group-[.active]:scale-100 group-[.active]:opacity-100"></span>
-          <span
-            class="pointer-events-none absolute left-1/2 -bottom-2 h-[6px] w-[23px] -translate-x-1/2 scale-75 rounded-[4px] bg-[#651FFF] opacity-0 transition-all duration-200 group-hover:scale-100 group-hover:opacity-100 group-[.active]:scale-100 group-[.active]:opacity-100"></span>
-        </a>
-        <a href="careers.html"
-          class="group relative text-[14px] font-medium text-[#5f6368] p-[6px] transition-colors duration-200 hover:text-[#651FFF] [&.active]:text-[#651FFF]">
-          Careers
-          <span
-            class="pointer-events-none absolute left-[calc(50%-14px)] -bottom-2 h-[6px] w-[6px] scale-75 rounded-full bg-[#651FFF] opacity-0 transition-all duration-200 group-hover:scale-100 group-hover:opacity-100 group-[.active]:scale-100 group-[.active]:opacity-100"></span>
-          <span
-            class="pointer-events-none absolute left-1/2 -bottom-2 h-[6px] w-[23px] -translate-x-1/2 scale-75 rounded-[4px] bg-[#651FFF] opacity-0 transition-all duration-200 group-hover:scale-100 group-hover:opacity-100 group-[.active]:scale-100 group-[.active]:opacity-100"></span>
-        </a>
-        <a href="contact.html"
-          class="group relative text-[14px] font-medium text-[#5f6368] p-[6px] transition-colors duration-200 hover:text-[#651FFF] [&.active]:text-[#651FFF]">
-          Contact
-          <span
-            class="pointer-events-none absolute left-[calc(50%-14px)] -bottom-2 h-[6px] w-[6px] scale-75 rounded-full bg-[#651FFF] opacity-0 transition-all duration-200 group-hover:scale-100 group-hover:opacity-100 group-[.active]:scale-100 group-[.active]:opacity-100"></span>
-          <span
-            class="pointer-events-none absolute left-1/2 -bottom-2 h-[6px] w-[23px] -translate-x-1/2 scale-75 rounded-[4px] bg-[#651FFF] opacity-0 transition-all duration-200 group-hover:scale-100 group-hover:opacity-100 group-[.active]:scale-100 group-[.active]:opacity-100"></span>
-        </a>
+
+        <div class="nav-indicator" id="navIndicator">
+          <div class="nav-indicator-dot"></div>
+          <div class="nav-indicator-bar"></div>
+        </div>
+
+        <a href="index.html" class="nav-link font-medium nav-link-active">Home</a>
+        <a href="services.html" class="nav-link font-medium">Services</a>
+        <a href="about.html" class="nav-link font-medium">About Us</a>
+        <a href="careers.html" class="nav-link font-medium">Careers</a>
+        <a href="contact.html" class="nav-link font-medium">Contact</a>
       </nav>
       <a href="#" class="hidden md:inline-flex btn-enquire" id="openEnquire">Enquire Now</a>
 
@@ -223,34 +190,38 @@
 
         <div class="relative grid grid-cols-1 lg:grid-cols-2 gap-[48px]">
 
-          <div class="flex flex-col pb-[40vh]">
+          <div class="flex flex-col">
 
-            <div class="service-text" data-target="img-1">
-              <h3 class="text-[28px] font-bold mb-4 text-[#1a1a1a]">Product Engineering</h3>
-              <p class="text-[18px] leading-[1.6] text-gray-600">
+            <div class="service-text flex flex-col justify-center min-h-[80vh] lg:ml-auto lg:mr-12 max-w-[340px]"
+              data-target="img-1">
+              <h3 class="text-[24px] font-bold mb-4 text-[#1a1a1a]">Product Engineering</h3>
+              <p class="text-[16px] leading-[1.6] text-gray-600">
                 End-to-end development of scalable and robust digital products: architecture, development, testing, and
                 deployment.
               </p>
             </div>
 
-            <div class="service-text" data-target="img-2">
-              <h3 class="text-[28px] font-bold mb-4 text-[#1a1a1a]">Custom Software Development</h3>
-              <p class="text-[18px] leading-[1.6] text-gray-600">
+            <div class="service-text flex flex-col justify-center min-h-[80vh] lg:ml-auto lg:mr-12 max-w-[340px]"
+              data-target="img-2">
+              <h3 class="text-[24px] font-bold mb-4 text-[#1a1a1a]">Custom Software Development</h3>
+              <p class="text-[16px] leading-[1.6] text-gray-600">
                 Tailored software solutions built to solve specific business challenges with long-term scalability and
                 maintainability.
               </p>
             </div>
 
-            <div class="service-text" data-target="img-3">
-              <h3 class="text-[28px] font-bold mb-4 text-[#1a1a1a]">Mobile App Development</h3>
-              <p class="text-[18px] leading-[1.6] text-gray-600">
+            <div class="service-text flex flex-col justify-center min-h-[80vh] lg:ml-auto lg:mr-12 max-w-[340px]"
+              data-target="img-3">
+              <h3 class="text-[24px] font-bold mb-4 text-[#1a1a1a]">Mobile App Development</h3>
+              <p class="text-[16px] leading-[1.6] text-gray-600">
                 Design and development of secure, fast, and intuitive native and cross-platform mobile applications.
               </p>
             </div>
 
-            <div class="service-text" data-target="img-4">
-              <h3 class="text-[28px] font-bold mb-4 text-[#1a1a1a]">Artificial Intelligence & Automation</h3>
-              <p class="text-[18px] leading-[1.6] text-gray-600">
+            <div class="service-text flex flex-col justify-center min-h-[80vh] lg:ml-auto lg:mr-12 max-w-[340px]"
+              data-target="img-4">
+              <h3 class="text-[24px] font-bold mb-4 text-[#1a1a1a]">Artificial Intelligence & Automation</h3>
+              <p class="text-[16px] leading-[1.6] text-gray-600">
                 AI-driven solutions including ML models, computer vision, predictive analytics, and automation
                 frameworks.
               </p>
@@ -258,7 +229,7 @@
 
           </div>
 
-          <div class="hidden lg:flex sticky top-0 h-screen items-center justify-center overflow-hidden">
+          <div class="hidden lg:flex sticky top-0 h-screen items-center justify-start overflow-hidden pl-10">
 
             <div class="relative w-full max-w-[520px]" style="height: 450px;">
 
@@ -308,209 +279,250 @@
         </div>
 
         <!-- COMPANY SECTION -->
-        <div class="grid lg:grid-cols-2 items-start gap-20 mb-28 relative">
+        <div class="relative py-20">
 
-          <!-- Background Text -->
-          <span class="absolute -top-10 left-0 text-[96px] font-extrabold tracking-[0.12em]
+
+
+          <!-- Header: Centered on Page -->
+
+          <div class="relative inline-block">
+            <span class="absolute -top-10 left-0 text-[96px] font-extrabold tracking-[0.12em]
                bg-gradient-to-r from-[#B2EBF2] via-[#D1C4E9] to-[#F8BBD0]
                bg-clip-text text-transparent opacity-60 pointer-events-none">
-            COMPANY
-          </span>
-
-          <!-- TEXT -->
-          <div>
-            <h3 class="text-[28px] font-semibold text-[#1A1A1A] mb-5">
+              COMPANY
+            </span>
+            <h2 class="relative z-10 text-[32px] md:text-[38px] text-center font-bold text-[#1a1a1a] mt-12 left-[50%]">
               Who We Are
-            </h3>
-
-            <div class="bg-[#D1C4E9] rounded-[20px] p-6 max-w-[460px]">
-              <p class="text-[15px] text-[#1A1A1A] leading-[150%]">
-                We are Evolvex AI Solutions, a digital engineering company focused on building modern,
-                scalable, and intelligent products. Our core strength lies in combining innovation,
-                design, and deep technology to deliver impactful solutions for businesses.
-              </p>
-            </div>
+            </h2>
           </div>
 
-          <!-- IMAGE -->
-          <div class="flex justify-center lg:justify-end pt-4">
-            <img src="assets/images/abstract.jpg" alt="Abstract 3D Shape"
-              class="w-[320px] h-[320px] object-contain drop-shadow-xl">
-          </div>
-        </div>
 
-        <!-- MISSION & VISION -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-20 justify-center max-w-[820px] mx-auto">
+          <!-- Content Grid: Text Left, Image Right -->
+          <div class="relative z-10 grid lg:grid-cols-2 items-center -mt-[100px]">
 
-          <div class="w-[380px] min-h-[205px] bg-[#F5F5F5] border border-[#E5E7EB]
-                  rounded-[20px] p-6 flex flex-col">
-            <h4 class="text-[16px] font-semibold text-[#1A1A1A] mb-2">
-              Our Mission
-            </h4>
-            <p class="text-[14px] text-[#6B7280] leading-[150%]">
-              Our mission is to help brands innovate faster through intelligent product engineering
-              and AI-driven solutions.
-            </p>
-          </div>
-
-          <div class="w-[380px] min-h-[205px] bg-[#F5F5F5] border border-[#E5E7EB]
-                  rounded-[20px] p-6 flex flex-col">
-            <h4 class="text-[16px] font-semibold text-[#1A1A1A] mb-2">
-              Our Vision
-            </h4>
-            <p class="text-[14px] text-[#6B7280] leading-[150%]">
-              To build world-class digital experiences that empower companies to scale confidently.
-            </p>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-
-
-    <!-- =========================
-     "Why Brands Choose Evolvex" + CTA section
-     Drop this inside <main> where you want the section to appear.
-     Uses classes: .section, .container, .section-title, .grid-3, .card, .cta-banner
-     Uses data-animate hooks for reveal (js/ui.js).
-     Replace asset paths with your exported images.
-     ========================= -->
-    <!-- Why Brands Choose Evolvex Section -->
-    <section class="section py-[64px]" id="why-brands" aria-labelledby="why-brands-title">
-      <div class="w-full px-5">
-
-        <!-- Section heading -->
-        <div class="text-center" data-animate="fade-up">
-          <h2 id="why-brands-title" class="text-[1.6rem] font-extrabold text-[#0b1220] mb-2">Why Brands Choose Evolvex
-          </h2>
-        </div>
-
-        <!-- 3 feature cards -->
-        <div class="grid gap-[28px] mt-[28px] grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          <!-- Card 1 -->
-          <article
-            class="bg-white border border-[#f0f0f0] p-[28px] rounded-[18px] shadow-[0_10px_30px_rgba(12,12,12,0.04)] relative overflow-visible group flex flex-col justify-start hover:-translate-y-2 transition-transform duration-300"
-            data-animate="card-pop" aria-labelledby="feat-1-title" role="article">
-            <h3 id="feat-1-title" class="mb-3 font-extrabold text-[1.02rem] leading-[1.15] text-[#0b1220]">
-              Engineering-Driven Execution</h3>
-            <p class="m-0 text-muted text-[0.92rem] leading-[1.6]">Our processes are built on strong engineering
-              foundations, ensuring every product is structured, optimized, and technically sound.</p>
-            <div
-              class="absolute right-[16px] bottom-[12px] w-[120px] h-[120px] rounded-full overflow-hidden flex items-center justify-center pointer-events-none z-10"
-              aria-hidden="true">
-              <img src="assets/images/deco-purple-1.png" alt="" />
-            </div>
-          </article>
-
-          <!-- Card 2 -->
-          <article
-            class="bg-white border border-[#f0f0f0] p-[28px] rounded-[18px] shadow-[0_10px_30px_rgba(12,12,12,0.04)] relative overflow-visible group flex flex-col justify-start hover:-translate-y-2 transition-transform duration-300"
-            data-animate="card-pop" aria-labelledby="feat-2-title" role="article">
-            <h3 id="feat-2-title" class="mb-3 font-extrabold text-[1.02rem] leading-[1.15] text-[#0b1220]">AI-Focused
-              Development</h3>
-            <p class="m-0 text-muted text-[0.92rem] leading-[1.6]">We integrate intelligence across the entire product
-              lifecycle, from data-driven insights to automation and predictive capabilities.</p>
-            <div
-              class="absolute right-[16px] bottom-[12px] w-[120px] h-[120px] rounded-full overflow-hidden flex items-center justify-center pointer-events-none z-10"
-              aria-hidden="true">
-              <img src="assets/images/deco-purple-2.png" alt="" />
-            </div>
-          </article>
-
-          <!-- Card 3 -->
-          <article
-            class="bg-white border border-[#f0f0f0] p-[28px] rounded-[18px] shadow-[0_10px_30px_rgba(12,12,12,0.04)] relative overflow-visible group flex flex-col justify-start hover:-translate-y-2 transition-transform duration-300"
-            data-animate="card-pop" aria-labelledby="feat-3-title" role="article">
-            <h3 id="feat-3-title" class="mb-3 font-extrabold text-[1.02rem] leading-[1.15] text-[#0b1220]">Transparent
-              Collaboration</h3>
-            <p class="m-0 text-muted text-[0.92rem] leading-[1.6]">We believe in clarity, open communication, and a
-              smooth development workflow that keeps clients informed and empowered.</p>
-            <div
-              class="absolute right-[16px] bottom-[12px] w-[120px] h-[120px] rounded-full overflow-hidden flex items-center justify-center pointer-events-none z-10"
-              aria-hidden="true">
-              <img src="assets/images/deco-purple-3.png" alt="" />
-            </div>
-          </article>
-        </div>
-
-        <!-- CTA banner -->
-        <div class="mt-[36px]" data-animate="fade-up">
-          <div class="bg-white border border-[#f0f0f0] p-[18px] rounded-[12px] shadow-[0_1px_4px_rgba(12,12,12,0.04)]"
-            role="region" aria-label="Call to action">
-            <div class="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-5 items-center">
-              <div class="cta-text">
-                <h3 class="mb-2 text-[2rem] font-extrabold text-[#0b1220]">Let’s Build Something Meaningful Together
-                </h3>
-                <p class="m-0 max-w-[72ch] text-muted">Our team is ready to help you shape products that are innovative,
-                  scalable, and intelligently engineered.</p>
+            <!-- Left: Text Box -->
+            <div class="w-full flex justify-center lg:justify-start">
+              <div class="bg-[#D1C4E9] rounded-[20px] p-8 w-fit shadow-sm">
+                <p class="text-[16px] md:text-[17px] text-[#1a1a1a] leading-[1.6] font-normal">
+                  We are Evolvex AI Solutions, a digital engineering company <br class="hidden md:block">
+                  focused on building modern, scalable, and intelligent products. <br class="hidden md:block">
+                  Our core strength lies in combining innovation, design, and<br class="hidden md:block">
+                  deep technology to deliver impactful solutions for businesses.
+                </p>
               </div>
             </div>
-          </div>
-        </div>
 
+            <!-- Right: Image -->
+            <div class="w-full flex justify-center lg:justify-end mb-24">
+              <img src="assets/images/abstract.png" alt="Abstract 3D Shape"
+                class="w-[280px] md:w-[320px] object-contain drop-shadow-2xl">
+            </div>
+
+          </div>
+
+
+          <!-- MISSION & VISION -->
+          <div class="flex flex-col md:flex-row items-center justify-center gap-6 max-w-[920px] mx-auto relative">
+
+            <div class="w-[300px] min-h-[200px] bg-[#FFFFFF] border border-[#EAEAEA]
+                  rounded-[20px] p-6 flex flex-col z-10">
+              <h4 class="text-[16px] font-semibold text-[#1A1A1A] mb-2">
+                Our Mission
+              </h4>
+              <p class="text-[14px] text-[#6B7280] leading-[150%] top-2">
+                Our mission is to help brands innovate faster through intelligent product engineering
+                and AI-driven solutions.
+              </p>
+            </div>
+
+            <!-- Spring Connector -->
+            <div class="hidden md:flex flex-shrink-0 -mx-4 z-0">
+              <img src="components/spring.svg" alt="" class="w-[160px] h-auto object-contain opacity-90"
+                style="filter: sepia(100%) saturate(300%) hue-rotate(230deg);">
+            </div>
+
+            <div class="w-[300px] min-h-[200px] bg-[#FFFFFF] border border-[#EAEAEA]
+                  rounded-[20px] p-6 flex flex-col z-10">
+              <h4 class="text-[16px] font-semibold text-[#1A1A1A] mb-2">
+                Our Vision
+              </h4>
+              <p class="text-[14px] text-[#6B7280] leading-[150%]">
+                To build world-class digital experiences that empower companies to scale confidently.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
       </div>
+
     </section>
 
-    <!-- Careers Intro / Hero Section -->
-    <section class="relative py-[90px] pb-[60px] overflow-hidden bg-white" id="careers-hero"
-      aria-labelledby="careers-heading">
-      <div class="w-full px-6 text-center relative z-[2]">
-        <!-- Decorative left media -->
-        <div
-          class="hidden sm:block absolute -bottom-[40px] -left-[40px] w-[180px] lg:w-[260px] z-0 opacity-95 pointer-events-none"
-          aria-hidden="true">
-          <img src="assets/images/careers-deco-left.png" alt=""
-            class="w-full h-auto drop-shadow-[0_8px_20px_rgba(76,59,240,0.15)]" />
-        </div>
+    <!-- Why Brands Choose Evolvex Section -->
+    <section class="section py-[96px] flex flex-col items-center" id="why-brands" aria-labelledby="why-brands-title">
 
-        <!-- Decorative right media -->
-        <div
-          class="absolute top-[40px] right-[20px] w-[60px] lg:right-[60px] lg:w-[80px] z-0 opacity-70 pointer-events-none"
-          aria-hidden="true">
-          <img src="assets/images/careers-deco-right.png" alt="" class="w-full h-auto blur-[6px]" />
-        </div>
+      <!-- Heading -->
+      <div class="text-center mb-[56px]" data-animate="fade-up">
+        <h2 id="why-brands-title"
+          class="text-[35.2px] md:text-[41.6px] font-extrabold text-[#0b1220] mb-2 leading-tight">
+          Why Brands Choose Evolvex
+        </h2>
+      </div>
 
-        <!-- Large decorative bleed background word -->
-        <div
-          class="hidden sm:block absolute top-[70px] left-1/2 -translate-x-1/2 text-[180px] lg:text-[220px] font-black tracking-[-4px] opacity-10 pointer-events-none select-none bg-gradient-to-r from-[#dff4ff] to-[#f0d7ff] bg-clip-text text-transparent z-[1]"
-          aria-hidden="true">CAREERS</div>
+      <!-- Grid Container -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[60px] justify-center mx-auto mb-[30px]">
 
-        <!-- Centered heading + intro -->
-        <div class="text-center relative z-[5]" data-animate="fade-up">
-          <h1 id="careers-heading"
-            class="text-[2.4rem] lg:text-[3rem] font-extrabold text-[#0b1220] mt-[80px] mb-[12px]">Be a Part of Our
-            Journey</h1>
+        <!-- Card 1 -->
+        <article
+          class="w-[320px] h-[400px] rounded-[16px] p-[32px] relative overflow-hidden group flex flex-col items-center text-center justify-start pt-[64px] hover:-translate-y-2 transition-transform duration-300"
+          style="background-color: #E6DEFF;" data-animate="card-pop">
 
-          <!-- small decorative divider -->
-          <div class="mx-auto my-[6px] mb-[14px] w-fit flex justify-center opacity-90" aria-hidden="true">
-            <svg width="72" height="12" viewBox="0 0 72 12" fill="none" xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true" focusable="false">
-              <circle cx="14" cy="6" r="4" fill="url(#grad-dot)" />
-              <rect x="30" y="3" width="36" height="6" rx="3" fill="url(#grad-pill)" />
-              <defs>
-                <linearGradient id="grad-dot" x1="0" x2="1">
-                  <stop offset="0" stop-color="#6C4CF0" />
-                  <stop offset="1" stop-color="#4B3BD6" />
-                </linearGradient>
-                <linearGradient id="grad-pill" x1="0" x2="1">
-                  <stop offset="0" stop-color="#9BEAFF" />
-                  <stop offset="1" stop-color="#B88BFF" />
-                </linearGradient>
-              </defs>
-            </svg>
+          <div class="relative z-20 flex flex-col gap-4 items-center">
+            <h3 class="font-bold text-[22.4px] leading-[1.2] text-[#0b1220]">
+              Engineering-Driven Execution
+            </h3>
+            <p class="m-0 text-[#0b1220] opacity-75 text-[15.2px] leading-[1.5]">
+              Our processes are built on strong engineering foundations, ensuring every product is structured,
+              optimized, and technically sound.
+            </p>
           </div>
 
-          <!-- Intro paragraph -->
-          <p class="text-[1.05rem] max-w-[780px] mx-auto mt-[22px] text-muted leading-[1.6]">
-            We are committed to creating an environment where talent flourishes and ideas shape future innovations.
-            Our organisation values creativity, integrity, and excellence, and we encourage individuals to explore
-            impactful opportunities with us.
+          <!-- Image: Bottom-Left (Solid, No Blend) -->
+          <div class="absolute left-0 bottom-[-20px] w-[200px] h-[200px] pointer-events-none z-10">
+            <img src="assets/images/deco-purple-1.png" alt="" class="w-full h-full object-contain object-left-bottom" />
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article
+          class="w-[320px] h-[400px] rounded-[16px] p-[32px] relative overflow-hidden group flex flex-col items-center text-center justify-start pt-[64px] hover:-translate-y-2 transition-transform duration-300"
+          style="background-color: #E6DEFF;" data-animate="card-pop">
+
+          <div class="relative z-20 flex flex-col gap-4 items-center">
+            <h3 class="font-bold text-[22.4px] leading-[1.2] text-[#0b1220]">
+              AI-Focused Development
+            </h3>
+            <p class="m-0 text-[#0b1220] opacity-75 text-[15.2px] leading-[1.5]">
+              We integrate intelligence across the entire product lifecycle, from data-driven insights to automation
+              and predictive capabilities.
+            </p>
+          </div>
+
+          <!-- Image: Bottom-Center (Solid, No Blend) -->
+          <div class="absolute left-1/2 -translate-x-1/2 bottom-[-20px] w-[200px] h-[200px] pointer-events-none z-10">
+            <img src="assets/images/deco-purple-2.png" alt="" class="w-full h-full object-contain object-bottom" />
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article
+          class="w-[320px] h-[400px] rounded-[16px] p-[32px] relative overflow-hidden group flex flex-col items-center text-center justify-start pt-[64px] hover:-translate-y-2 transition-transform duration-300"
+          style="background-color: #E6DEFF;" data-animate="card-pop">
+
+          <div class="relative z-20 flex flex-col gap-4 items-center">
+            <h3 class="font-bold text-[22.4px] leading-[1.2] text-[#0b1220]">
+              Transparent Collaboration
+            </h3>
+            <p class="m-0 text-[#0b1220] opacity-75 text-[15.2px] leading-[1.5]">
+              We believe in clarity, open communication, and a smooth development workflow that keeps clients informed
+              and empowered.
+            </p>
+          </div>
+
+          <!-- Image: Bottom-Right (Solid, No Blend) -->
+          <div class="absolute right-0 bottom-[-20px] w-[200px] h-[200px] pointer-events-none z-10">
+            <img src="assets/images/deco-purple-3.png" alt=""
+              class="w-full h-full object-contain object-right-bottom" />
+          </div>
+        </article>
+
+      </div>
+
+      <!-- CTA Banner -->
+      <div
+        class="w-full max-w-[1100px] h-[220px] rounded-[20px] top-8 relative overflow-hidden flex items-center justify-center text-center mx-auto"
+        style="background: linear-gradient(90deg, #E6DEFF 0%, #FFFFFF 50%, #E6DEFF 100%);" data-animate="fade-up">
+
+
+
+        <!-- Image: Top-left (deco-purple-4) -->
+        <div class="absolute left-0 top-0 w-[180px] h-[180px] pointer-events-none z-0">
+          <img src="assets/images/deco-purple-4.png" alt="" class="w-full h-full object-contain object-left-top" />
+        </div>
+
+        <div class="relative z-10 flex flex-col items-center justify-center h-full px-6">
+          <h3 class="text-[17.6px] font-semibold text-[#0b1220] leading-tight mb-3">
+            Let’s Build Something Meaningful Together
+          </h3>
+          <p class="m-0 text-[#0b1220] opacity-70 text-[17.6px]">
+            Our team is ready to help you shape products that are innovative, scalable, and intelligently engineered.
           </p>
         </div>
       </div>
     </section>
+
+
+    <!-- Careers Intro / Hero Section -->
+    <section class="relative w-screen ml-[calc(50%-50vw)] pt-[90px] pb-[250px] overflow-hidden bg-white">
+
+      <!-- FULL-WIDTH BACKGROUND TEXT -->
+      <span class="absolute left-1/2 top-[48%] -translate-x-1/2 -translate-y-1/2
+           font-black tracking-widest
+           bg-gradient-to-r from-[#B2EBF2] via-[#D1C4E9] to-[#F8BBD0]
+           bg-clip-text text-transparent
+           opacity-50
+           whitespace-nowrap select-none pointer-events-none z-0"
+        style="font-size: clamp(80px, 22vw, 260px); line-height: 1;">
+        CAREERS
+      </span>
+
+      <!-- LEFT DECORATIVE IMAGE -->
+      <div
+        class="hidden lg:block absolute left-[-15%] top-[75%] -translate-y-1/2 z-10 w-[300px] pointer-events-none animate-float-bob">
+        <img src="assets/images/decorative-cone.png" alt="" class="w-full h-auto " />
+      </div>
+
+      <!-- CENTER CONTENT -->
+      <div class="relative z-20 top-[180px] flex flex-col items-center text-center px-4">
+
+        <h1 class="text-[38.4px] md:text-[48px] lg:text-[64px]
+             font-extrabold text-[#1a1a1a]
+             leading-[1.15] tracking-tight mb-6">
+          Be a Part of Our Journey
+        </h1>
+
+        <!-- DIVIDER -->
+        <div class="flex justify-center top-8 mb-8">
+          <svg width="72" height="12" viewBox="0 0 72 12" fill="none">
+            <circle cx="14" cy="6" r="4" fill="url(#grad-dot)" />
+            <rect x="30" y="3" width="36" height="6" rx="3" fill="url(#grad-pill)" />
+            <defs>
+              <linearGradient id="grad-dot" x1="0" x2="1">
+                <stop offset="0" stop-color="#6C4CF0" />
+                <stop offset="1" stop-color="#4B3BD6" />
+              </linearGradient>
+              <linearGradient id="grad-pill" x1="0" x2="1">
+                <stop offset="0" stop-color="#9BEAFF" />
+                <stop offset="1" stop-color="#B88BFF" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+
+        <div class="relative z-20  top-8 flex-col items-center text-center px-4">
+          <!-- DESCRIPTION -->
+          <p class="text-[19.2px] md:text-[20px]
+             text-muted top-8 max-w-[820px]
+             leading-[1.75]">
+            We are committed to creating an environment where talent flourishes and ideas <br>
+            shape future innovations. Our organisation values creativity, integrity, and excellence,<br>
+            and we encourage individuals to explore impactful opportunities with us.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
     <!-- =========================
      Why Work With Us Section
      Semantic, accessible, animation-ready
@@ -520,151 +532,232 @@
     <section class="py-[80px]" id="why-work" aria-labelledby="why-work-title">
       <div class="w-full px-5">
         <header class="text-center mb-[32px]" data-animate="fade-up">
-          <h2 id="why-work-title" class="text-[1.6rem] font-extrabold text-[#0b1220] mb-2">Why Work With Us</h2>
-          <p class="text-muted max-w-[820px] mx-auto mt-[14px] text-[1rem]">Join a workplace that values innovation,
-            collaboration, and continuous growth. We provide a supportive environment where ideas are welcomed, talents
-            are nurtured, and every individual contributes to creating meaningful solutions.</p>
+          <h2 id="why-work-title" class="text-[32px] font-extrabold text-[#0b1220] mb-2">Why Work With Us</h2>
+          <p class="text-muted max-w-[820px] mx-auto mt-[14px] text-[19.2px] md:text-[20px]">Join a workplace that
+            values innovation,
+            collaboration, and continuous growth.<br>
+            We provide a supportive environment where ideas are welcomed, talents are nurtured,<br>
+            and every individual contributes to creating meaningful solutions.</p>
         </header>
 
-        <div class="grid gap-[28px] grid-cols-1 md:grid-cols-2">
-          <!-- Card 1 -->
-          <article
-            class="group relative flex flex-col justify-start overflow-hidden rounded-[22px] border border-black/5 bg-[#6838CD] p-[28px] shadow-[0_18px_48px_rgba(15,12,40,0.08)] transition-all duration-600 ease-out h-[400px] hover:h-[600px]"
-            data-animate="card-pop" aria-labelledby="fw-1-title" role="article">
+        <div class="flex flex-col md:flex-row gap-[28px] w-full max-w-[1200px] mx-auto md:h-[880px] p-4">
 
-            <div class="relative z-20 transition-all duration-600">
-              <h3 id="fw-1-title" class="mb-3 font-extrabold text-[1.1rem] text-white">Growth Opportunities</h3>
-              <p class="m-0 text-[#ffffffd9] text-[0.95rem] leading-[1.6]">We foster continuous learning through
-                mentorship, training programmes, and exposure to real-world industry challenges.</p>
+          <div class="flex flex-col flex-1 gap-[28px] h-full" id="card-left-container">
+            <!-- Card 1: Growth Opportunities -->
+            <div id="card-growth"
+              class="transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] w-full flex-1 flex flex-col items-start px-8 py-[29px] relative rounded-3xl gap-2.5 bg-[#6838cc] self-stretch overflow-hidden group border border-transparent">
+
+              <div class="w-full flex self-stretch flex-col items-start gap-[22px] flex-[0_0_auto] relative">
+                <div class="w-full flex self-stretch flex-col items-start gap-3.5 flex-[0_0_auto] px-0 py-2 relative">
+                  <div
+                    class="font-sans self-stretch mt-[-1.00px] tracking-[0] text-2xl text-white relative h-[29px] font-bold leading-[normal]">
+                    Growth Opportunities
+                  </div>
+
+                  <!-- Text Container -->
+                  <div
+                    class="font-sans self-stretch tracking-[0] text-sm text-[#ffffffcc] relative font-medium leading-[normal] h-[60px] transition-all duration-500 group-[.expanded]:h-[207px]">
+                    <!-- Short Text -->
+                    <p
+                      class="absolute inset-0 transition-opacity duration-500 opacity-100 group-[.expanded]:opacity-0 pointer-events-none group-[.expanded]:pointer-events-none">
+                      We foster continuous learning and professional growth through mentorship and real-world
+                      challenges.
+                    </p>
+                    <!-- Long Text -->
+                    <p
+                      class="absolute inset-0 transition-opacity duration-500 opacity-0 group-[.expanded]:opacity-100 pointer-events-none group-[.expanded]:pointer-events-auto">
+
+                      We provide a structured environment that supports continuous professional development. <br><br>
+                      Employees gain access to mentorship, training programmes, and hands-on project exposure. <br><br>
+                      Our organisation ensures that every individual is equipped to advance confidently in their career.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Image -->
+                <img
+                  class="object-cover absolute transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] bottom-[-249px] w-[230px] right-[-46px] h-[230px] group-[.expanded]:bottom-[-264px] group-[.expanded]:w-80 group-[.expanded]:right-2 group-[.expanded]:h-[300px]"
+                  alt="Growth Opportunities" src="assets/images/growth-opportunities.png">
+              </div>
             </div>
 
-            <div
-              class="absolute z-10 flex items-center justify-center transition-all duration-600 ease-out w-[244px] h-[230px] right-[-20px] bottom-[-20px] rounded-full overflow-hidden group-hover:w-[320px] group-hover:h-[300px] group-hover:right-1/2 group-hover:translate-x-1/2 group-hover:bottom-[20px] group-hover:rounded-none"
-              aria-hidden="true">
-              <img src="assets/images/growth-opportunities.png" alt=""
-                class="w-full h-full object-contain transition-all duration-600" />
+            <!-- Card 2: Innovation-Driven -->
+            <div id="card-innovation"
+              class="transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] w-full flex-1 flex flex-col items-start px-8 py-[29px] relative rounded-3xl gap-2.5 bg-[#6838cc] self-stretch overflow-hidden group border border-transparent">
+
+              <div class="w-full flex self-stretch flex-col items-start gap-[22px] flex-[0_0_auto] relative">
+                <div class="w-full flex self-stretch flex-col items-start gap-3.5 flex-[0_0_auto] px-0 py-2 relative">
+                  <div
+                    class="font-sans self-stretch mt-[-1.00px] tracking-[0] text-2xl text-white relative h-[29px] font-bold leading-[normal]">
+                    Innovation-Driven
+                  </div>
+
+                  <!-- Text Container -->
+                  <div
+                    class="font-sans self-stretch tracking-[0] text-sm text-[#ffffffcc] relative font-medium leading-[normal] h-[60px] transition-all duration-500 group-[.expanded]:h-[187px]">
+                    <!-- Short Text -->
+                    <p
+                      class="absolute inset-0 transition-opacity duration-500 opacity-100 group-[.expanded]:opacity-0 pointer-events-none group-[.expanded]:pointer-events-none">
+                      We empower individuals to experiment with bold ideas using modern tools to drive meaningful
+                      impact.
+                    </p>
+                    <!-- Long Text -->
+                    <p
+                      class="absolute inset-0 transition-opacity duration-500 opacity-0 group-[.expanded]:opacity-100 pointer-events-none group-[.expanded]:pointer-events-auto">
+                      Our workplace empowers individuals to explore creative ideas and experiment freely. <br><br>
+                      Teams are encouraged to adopt modern technologies and innovative thinking in problem-solving.
+                      <br><br>
+                      We support a mindset that embraces change and drives breakthrough solutions.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Image -->
+                <img
+                  class="object-cover absolute transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] bottom-[-255px] w-[228px] -right-12 h-[227px] group-[.expanded]:bottom-[-298px] group-[.expanded]:w-80 group-[.expanded]:right-0 group-[.expanded]:h-[300px]"
+                  alt="Innovation Driven" src="assets/images/innovation-environment.png">
+              </div>
             </div>
-          </article>
+          </div>
 
-          <!-- Card 2 -->
-          <article
-            class="group relative flex flex-col justify-start overflow-hidden rounded-[22px] border border-black/5 bg-[#6838CD] p-[28px] shadow-[0_18px_48px_rgba(15,12,40,0.08)] transition-all duration-600 ease-out h-[400px] hover:h-[600px]"
-            data-animate="card-pop" aria-labelledby="fw-2-title" role="article">
+          <div class="flex flex-col flex-1 gap-[28px] h-full" id="card-right-container">
+            <!-- Card 1: Collaborative Culture -->
+            <div id="card-collab"
+              class="transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] w-full flex-1 flex flex-col items-start px-8 py-[29px] relative rounded-3xl gap-2.5 bg-[#6838cc] self-stretch overflow-hidden group border border-transparent">
 
-            <div class="relative z-20 transition-all duration-600">
-              <h3 id="fw-2-title" class="mb-3 font-extrabold text-[1.1rem] text-white">Collaborative Culture</h3>
-              <p class="m-0 text-[#ffffffd9] text-[0.95rem] leading-[1.6]">Work in an environment where teamwork,
-                transparency, and open communication drive exceptional outcomes.</p>
+              <div class="w-full flex self-stretch flex-col items-start gap-[22px] flex-[0_0_auto] relative">
+                <div class="w-full flex self-stretch flex-col items-start gap-3.5 flex-[0_0_auto] px-0 py-2 relative">
+                  <div
+                    class="font-sans self-stretch mt-[-1.00px] tracking-[0] text-2xl text-white relative h-[29px] font-bold leading-[normal]">
+                    Collaborative Culture
+                  </div>
+
+                  <!-- Text Container -->
+                  <div
+                    class="font-sans self-stretch tracking-[0] text-sm text-[#ffffffcc] relative font-medium leading-[normal] h-[60px] transition-all duration-500 group-[.expanded]:h-[207px]">
+                    <!-- Short Text -->
+                    <p
+                      class="absolute inset-0 transition-opacity duration-500 opacity-100 group-[.expanded]:opacity-0 pointer-events-none group-[.expanded]:pointer-events-none">
+                      Work in an environment where teamwork, transparency, and open communication drive exceptional
+                      outcomes.
+                    </p>
+                    <!-- Long Text -->
+                    <p
+                      class="absolute inset-0 transition-opacity duration-500 opacity-0 group-[.expanded]:opacity-100 pointer-events-none group-[.expanded]:pointer-events-auto">
+                      We encourage transparent communication and teamwork across all departments.<br><br>
+                      Every voice is valued, allowing individuals to contribute effectively to shared goals.<br><br>
+                      Our culture promotes respect, inclusivity, and strong professional relationships.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Image -->
+                <img
+                  class="object-cover absolute transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] bottom-[-249px] w-[230px] right-[-46px] h-[230px] group-[.expanded]:bottom-[-264px] group-[.expanded]:w-80 group-[.expanded]:right-2 group-[.expanded]:h-[300px]"
+                  alt="People working open" src="assets/images/collaborative-culture.png">
+              </div>
             </div>
 
-            <div
-              class="absolute z-10 flex items-center justify-center transition-all duration-600 ease-out w-[244px] h-[230px] right-[-20px] bottom-[-20px] rounded-full overflow-hidden group-hover:w-[320px] group-hover:h-[300px] group-hover:right-1/2 group-hover:translate-x-1/2 group-hover:bottom-[20px] group-hover:rounded-none"
-              aria-hidden="true">
-              <img src="assets/images/collaborative-culture.png" alt=""
-                class="w-full h-full object-contain transition-all duration-600" />
+            <!-- Card 2: Work-Life Balance -->
+            <div id="card-balance"
+              class="transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] w-full flex-1 flex flex-col items-start px-8 py-[29px] relative rounded-3xl gap-2.5 bg-[#6838cc] self-stretch overflow-hidden group border border-transparent">
+
+              <div class="w-full flex self-stretch flex-col items-start gap-[22px] flex-[0_0_auto] relative">
+                <div class="w-full flex self-stretch flex-col items-start gap-3.5 flex-[0_0_auto] px-0 py-2 relative">
+                  <div
+                    class="font-sans self-stretch mt-[-1.00px] tracking-[0] text-2xl text-white relative h-[29px] font-bold leading-[normal]">
+                    Work–Life Balance
+                  </div>
+
+                  <!-- Text Container -->
+                  <div
+                    class="font-sans self-stretch tracking-[0] text-sm text-[#ffffffcc] relative font-medium leading-[normal] h-[60px] transition-all duration-500 group-[.expanded]:h-[187px]">
+                    <!-- Short Text -->
+                    <p
+                      class="absolute inset-0 transition-opacity duration-500 opacity-100 group-[.expanded]:opacity-0 pointer-events-none group-[.expanded]:pointer-events-none">
+                      Our flexible work culture ensures a balanced lifestyle, supporting personal well-being and
+                      professional excellence.
+                    </p>
+                    <!-- Long Text -->
+                    <p
+                      class="absolute inset-0 transition-opacity duration-500 opacity-0 group-[.expanded]:opacity-100 pointer-events-none group-[.expanded]:pointer-events-auto">
+                      We prioritise employee well-being by providing a flexible and supportive work environment.<br><br>
+                      Our policies are designed to help individuals maintain a healthy balance between work and personal
+                      life.<br><br>
+                      This approach ensures long-term productivity, satisfaction, and overall happiness.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Image -->
+                <img
+                  class="object-cover absolute transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] bottom-[-255px] w-[228px] -right-12 h-[227px] group-[.expanded]:bottom-[-298px] group-[.expanded]:w-80 group-[.expanded]:right-0 group-[.expanded]:h-[300px]"
+                  alt="Element life style" src="assets/images/work-life-balance.png">
+              </div>
             </div>
-          </article>
-
-          <!-- Card 3 -->
-          <article
-            class="group relative flex flex-col justify-start overflow-hidden rounded-[22px] border border-black/5 bg-[#6838CD] p-[28px] shadow-[0_18px_48px_rgba(15,12,40,0.08)] transition-all duration-600 ease-out h-[400px] hover:h-[600px]"
-            data-animate="card-pop" aria-labelledby="fw-3-title" role="article">
-
-            <div class="relative z-20 transition-all duration-600">
-              <h3 id="fw-3-title" class="mb-3 font-extrabold text-[1.1rem] text-white">Innovation-Driven Environment
-              </h3>
-              <p class="m-0 text-[#ffffffd9] text-[0.95rem] leading-[1.6]">We encourage creativity and empower
-                individuals
-                to experiment with bold ideas and cutting-edge technologies.</p>
-            </div>
-
-            <div
-              class="absolute z-10 flex items-center justify-center transition-all duration-600 ease-out w-[244px] h-[230px] right-[-20px] bottom-[-20px] rounded-full overflow-hidden group-hover:w-[320px] group-hover:h-[300px] group-hover:right-1/2 group-hover:translate-x-1/2 group-hover:bottom-[20px] group-hover:rounded-none"
-              aria-hidden="true">
-              <img src="assets/images/innovation-environment.png" alt=""
-                class="w-full h-full object-contain transition-all duration-600" />
-            </div>
-          </article>
-
-          <!-- Card 4 -->
-          <article
-            class="group relative flex flex-col justify-start overflow-hidden rounded-[22px] border border-black/5 bg-[#6838CD] p-[28px] shadow-[0_18px_48px_rgba(15,12,40,0.08)] transition-all duration-600 ease-out h-[400px] hover:h-[600px]"
-            data-animate="card-pop" aria-labelledby="fw-4-title" role="article">
-
-            <div class="relative z-20 transition-all duration-600">
-              <h3 id="fw-4-title" class="mb-3 font-extrabold text-[1.1rem] text-white">Work-Life Balance</h3>
-              <p class="m-0 text-[#ffffffd9] text-[0.95rem] leading-[1.6]">Our flexible work culture ensures a balanced
-                lifestyle, supporting personal well-being and professional excellence.</p>
-            </div>
-
-            <div
-              class="absolute z-10 flex items-center justify-center transition-all duration-600 ease-out w-[244px] h-[230px] right-[-20px] bottom-[-20px] rounded-full overflow-hidden group-hover:w-[320px] group-hover:h-[300px] group-hover:right-1/2 group-hover:translate-x-1/2 group-hover:bottom-[20px] group-hover:rounded-none"
-              aria-hidden="true">
-              <img src="assets/images/work-life-balance.png" alt=""
-                class="w-full h-full object-contain transition-all duration-600" />
-            </div>
-          </article>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Life at Our Company Section -->
     <section class="py-[96px] bg-white relative overflow-hidden" id="life" aria-labelledby="life-heading">
-      <div class="w-full px-5 relative z-10">
-        <div
-          class="absolute top-[80px] left-1/2 -translate-x-1/2 text-[200px] font-black tracking-[-4px] text-transparent bg-clip-text bg-gradient-to-r from-blue-50 to-purple-50 opacity-40 pointer-events-none select-none z-0 hidden lg:block"
-          aria-hidden="true">CULTURE</div>
+      <div class="w-full max-w-[1200px] mx-auto px-5 relative z-10">
+        <div class="absolute left-1/2 -translate-x-1/2 -translate-y-1/2
+           font-black tracking-widest
+           bg-gradient-to-r from-[#B2EBF2] via-[#D1C4E9] to-[#F8BBD0]
+           bg-clip-text text-transparent
+           opacity-50
+           whitespace-nowrap select-none pointer-events-none z-0"
+          style="font-size: clamp(80px, 22vw, 260px); line-height: 1;">CULTURE</div>
 
         <div class="text-center relative z-10" data-animate="fade-up">
-          <h2 id="life-heading" class="text-[2.4rem] font-extrabold text-[#0b1220]">Life at Our Company</h2>
+          <h2 id="life-heading" class="text-[38.4px] md:text-[48px] lg:text-[64px]
+             font-extrabold text-[#1a1a1a]
+             leading-[1.15] tracking-tight mb-12">Life at Our Company</h2>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-[48px] items-center mt-[48px]">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-[48px] items-start mt-[110px]">
           <!-- Collage -->
-          <div class="relative w-full h-[450px]" data-animate="fade-up">
-            <div
-              class="absolute left-0 top-[30px] w-[120px] h-[100px] rounded-[14px] overflow-hidden shadow-lg z-10 hidden sm:block">
-              <img src="assets/images/life-office-1.jpg" alt="" class="w-full h-full object-cover">
-            </div>
-            <div
-              class="absolute left-0 top-[150px] w-[140px] h-[110px] rounded-[14px] overflow-hidden shadow-lg z-10 hidden sm:block">
-              <img src="assets/images/life-game-room.jpg" alt="" class="w-full h-full object-cover">
-            </div>
-            <div
-              class="absolute left-[12px] bottom-[8px] w-[120px] h-[100px] rounded-[14px] overflow-hidden shadow-lg z-10 hidden sm:block">
-              <img src="assets/images/life-outdoor.jpg" alt="" class="w-full h-full object-cover">
+          <div class="relative w-full h-[450px] flex items-center justify-center lg:justify-start mt-[80px]"
+            data-animate="fade-up">
+
+            <!-- Col 1: Lounge + Outdoor -->
+            <div class="absolute left-0 lg:-left-[60px] top-[100px] w-[150px] flex flex-col gap-4 z-10">
+              <img src="assets/images/life-office-1.png"
+                class="w-full h-[120px] object-cover rounded-[16px] shadow-md hover:scale-105 transition-transform duration-300">
+              <img src="assets/images/life-outdoor.png"
+                class="w-full h-[120px] object-cover rounded-[16px] shadow-md hover:scale-105 transition-transform duration-300">
             </div>
 
-            <div
-              class="absolute left-[50%] -translate-x-1/2 sm:left-[160px] sm:translate-x-0 top-0 w-[220px] h-[320px] rounded-[20px] overflow-hidden shadow-xl z-20">
-              <img src="assets/images/life-hero-person.jpg" alt="" class="w-full h-full object-cover">
+            <!-- Col 2: Foosball + Building -->
+            <div class="absolute left-[165px] lg:left-[110px] top-[30px] w-[180px] flex flex-col gap-4 z-20">
+              <img src="assets/images/life-game-room.png"
+                class="w-full h-[300px] object-cover rounded-[20px] shadow-lg hover:scale-105 transition-transform duration-300">
+              <img src="assets/images/life-building.png"
+                class="w-full h-[130px] object-cover rounded-[16px] shadow-md hover:scale-105 transition-transform duration-300">
             </div>
 
-            <div
-              class="absolute left-[190px] bottom-[16px] w-[120px] h-[100px] rounded-[14px] overflow-hidden shadow-lg z-10 hidden sm:block">
-              <img src="assets/images/life-office-2.jpg" alt="" class="w-full h-full object-cover">
+            <!-- Col 3: Hero + Post-its -->
+            <div class="absolute left-[360px] lg:left-[310px] top-0 w-[280px] flex flex-col gap-4 z-30">
+              <img src="assets/images/life-hero-person.png"
+                class="w-full h-[360px] object-cover rounded-[28px] shadow-xl hover:scale-105 transition-transform duration-300">
+              <img src="assets/images/life-office-2.png"
+                class="w-full h-[160px] object-cover rounded-[20px] shadow-lg hover:scale-105 transition-transform duration-300">
             </div>
-            <div
-              class="absolute right-0 bottom-[40px] w-[120px] h-[120px] rounded-[14px] overflow-hidden shadow-lg z-10 hidden sm:block">
-              <img src="assets/images/life-building.jpg" alt="" class="w-full h-full object-cover">
-            </div>
+
           </div>
 
           <!-- Content -->
-          <div class="space-y-4" data-animate="fade-left">
-            <h3 class="text-[1.25rem] font-bold text-[#0b1220]">People and Environment</h3>
-            <p class="text-muted leading-[1.7]">Our culture is built on collaboration, integrity, and mutual respect. We
+          <div class="space-y-4 mt-[200px] lg:pl-[60px]" data-animate="fade-left">
+            <h3 class="text-[25.6px] font-bold text-[#0b1220]">People and Environment</h3>
+            <p class="text-[19.2px] md:text-[20px]
+             text-muted top-12 max-w-[820px]
+             leading-[1.70]">Our culture is built on collaboration, integrity, and mutual respect. We
               celebrate achievements, encourage open communication, and provide opportunities for personal and
               professional growth. With a balanced work environment and supportive teams, we ensure a fulfilling
               experience for everyone.</p>
-            <ul class="list-disc pl-5 space-y-2 text-muted mt-4">
-              <li><strong class="text-[#0b1220]">Collaborative teams:</strong> cross-functional squads and open
-                knowledge sharing.</li>
-              <li><strong class="text-[#0b1220]">Learning culture:</strong> mentorship, workshops and sponsored
-                learning.</li>
-              <li><strong class="text-[#0b1220]">Flexible workplace:</strong> supportive policies for work-life balance.
-              </li>
-            </ul>
+
           </div>
         </div>
       </div>
@@ -680,9 +773,9 @@
           <div class="absolute inset-0 bg-white/90 z-0"></div>
 
           <div class="relative z-10">
-            <h2 id="cta-join-heading" class="text-[2rem] font-extrabold text-[#0b1220] mb-4">Ready to Build the Future
+            <h2 id="cta-join-heading" class="text-[32px] font-extrabold text-[#0b1220] mb-4">Ready to Build the Future
               With Us?</h2>
-            <p class="text-[1.1rem] text-[#0b1220] max-w-[600px] mx-auto mb-8">We are always looking for passionate
+            <p class="text-[17.6px] text-[#0b1220] max-w-[600px] mx-auto mb-8">We are always looking for passionate
               individuals who are eager to learn, innovate, and make a meaningful impact.</p>
             <a href="open-roles.html"
               class="inline-flex px-[28px] py-[14px] bg-[#6C4CF0] text-white font-bold rounded-[12px] shadow-lg hover:bg-[#5b3ddb] transition-colors">Join
@@ -702,151 +795,196 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-[96px] bg-[#fafbff]" aria-labelledby="contact-heading">
-      <div class="w-full px-5">
-        <header class="text-center mb-[56px]" data-animate="fade-up">
-          <h2 id="contact-heading" class="text-[2.2rem] font-extrabold text-[#0b1220] mb-2">Contact Us</h2>
-          <p class="text-muted">We are here to assist you with services, collaborations, or general inquiries.</p>
-        </header>
+    <section id="contact" class="py-[96px] bg-white relative overflow-hidden" aria-labelledby="contact-heading">
+      <div class="w-full max-w-[1200px] mx-auto px-5 relative z-10">
 
-        <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-[64px]">
-          <!-- Info -->
-          <div data-animate="fade-up">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+          <!-- Left Column: Info -->
+          <div data-animate="fade-right">
+            <header class="mb-[40px]">
+              <h2 id="contact-heading" class="text-[40px] lg:text-[48px] font-medium text-[#6C4CF0] mb-6 leading-tight">
+                Contact Us</h2>
+              <p class="text-[#494949] text-[20px] leading-[1.6]">We are here to assist you with services, <br>
+                collaborations, or general inquiries.Our team <br> responds within 24 hours.</p>
+            </header>
+
             <ul class="space-y-8">
-              <li class="flex items-start gap-4">
-                <div
-                  class="w-10 h-10 rounded-full bg-[#6C4CF010] flex items-center justify-center text-[#6C4CF0] shrink-0">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path
-                      d="M3 6.75A2.25 2.25 0 0 1 5.25 4.5h13.5A2.25 2.25 0 0 1 21 6.75v10.5A2.25 2.25 0 0 1 18.75 19.5H5.25A2.25 2.25 0 0 1 3 17.25V6.75z" />
-                    <path d="M21 6.75L12 13.5 3 6.75" />
-                  </svg>
+              <li class="flex items-start" style="gap: 45px;">
+                <!-- Icon: Email -->
+                <div class="w-6 h-6 flex items-center justify-center text-[#6C4CF0] shrink-0 mt-1">
+                  <img src="components/Mail.svg" alt="Email" class="w-6 h-6 object-contain">
                 </div>
                 <div>
-                  <div class="font-bold text-[#0b1220]">Email Us</div>
-                  <div class="text-muted">contact@evolvex.ai</div>
+                  <span class="block text-[#000000] text-[20px] font-regular">contact@evolvex.ai</span>
                 </div>
               </li>
-              <li class="flex items-start gap-4">
-                <div
-                  class="w-10 h-10 rounded-full bg-[#6C4CF010] flex items-center justify-center text-[#6C4CF0] shrink-0">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M12 21s7-4.5 7-10.5A7 7 0 0 0 5 10.5C5 16.5 12 21 12 21z" />
-                    <circle cx="12" cy="10.5" r="2.25" />
-                  </svg>
+
+              <li class="flex items-start" style="gap: 45px;">
+                <!-- Icon: Location -->
+                <div class="w-6 h-6 flex items-center justify-center text-[#6C4CF0] shrink-0 mt-1">
+                  <img src="components/Location.svg" alt="Location" class="w-6 h-6 object-contain">
                 </div>
                 <div>
-                  <div class="font-bold text-[#0b1220]">Visit Us</div>
-                  <div class="text-muted">venketasa colony, Pollachi<br />Coimbatore - 642000</div>
+                  <span class="block text-[#000000] text-[20px] font-regular">venketasa colony, Pollachi<br>Coimbatore
+                    - 642000</span>
                 </div>
               </li>
-              <li class="flex items-start gap-4">
-                <div
-                  class="w-10 h-10 rounded-full bg-[#6C4CF010] flex items-center justify-center text-[#6C4CF0] shrink-0">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path
-                      d="M22 16.92v3a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72c.12 1.07.39 2.11.81 3.06a2 2 0 0 1-.45 2.11L9.91 11.09a16 16 0 0 0 6.99 6.99l1.2-1.2a2 2 0 0 1 2.11-.45c.95.42 1.99.69 3.06.81A2 2 0 0 1 22 16.92z" />
-                  </svg>
+
+              <li class="flex items-start" style="gap: 45px;">
+                <!-- Icon: Phone -->
+                <div class="w-6 h-6 flex items-center justify-center text-[#6C4CF0] shrink-0 mt-1">
+                  <img src="components/Mobile.svg" alt="Phone" class="w-6 h-6 object-contain">
                 </div>
                 <div>
-                  <div class="font-bold text-[#0b1220]">Call Us</div>
-                  <div class="text-muted">+91 123 654 7890</div>
+                  <span class="block text-[#000000] text-[20px] font-regular">+91 123 654 7890</span>
                 </div>
               </li>
             </ul>
           </div>
 
-          <!-- Form -->
-          <div class="bg-white p-[32px] rounded-[22px] shadow-[0_18px_60px_rgba(12,12,12,0.06)]" data-animate="fade-up">
-            <form action="#" method="post" class="space-y-4 relative">
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <input type="text" placeholder="Name"
-                  class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#6C4CF0] focus:ring-2 focus:ring-[#6C4CF0]/20 outline-none transition-all placeholder:text-gray-400"
-                  required>
-                <input type="email" placeholder="Email"
-                  class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#6C4CF0] focus:ring-2 focus:ring-[#6C4CF0]/20 outline-none transition-all placeholder:text-gray-400"
-                  required>
-              </div>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <input type="tel" placeholder="Phone"
-                  class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#6C4CF0] focus:ring-2 focus:ring-[#6C4CF0]/20 outline-none transition-all placeholder:text-gray-400">
-                <input type="text" placeholder="Service"
-                  class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#6C4CF0] focus:ring-2 focus:ring-[#6C4CF0]/20 outline-none transition-all placeholder:text-gray-400">
-              </div>
-              <textarea rows="4" placeholder="Send Us a Message"
-                class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#6C4CF0] focus:ring-2 focus:ring-[#6C4CF0]/20 outline-none transition-all placeholder:text-gray-400"></textarea>
-              <button type="submit"
-                class="w-full py-3 rounded-lg bg-gradient-to-r from-[#6C4CF0] to-[#4B3BD6] text-white font-bold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all">Submit</button>
+          <!-- Right Column: Form (Stacked) -->
+          <div class="relative mt-8 lg:mt-0 lg:h-[600px] flex items-center" data-animate="fade-left">
 
-              <div class="absolute -right-16 -bottom-16 w-32 h-32 opacity-5 pointer-events-none hidden md:block">
-                <img src="assets/images/Contact Us.png" alt="" class="w-full h-full object-contain">
+            <!-- Form Container -->
+            <form action="#" method="post" class="space-y-5 w-full max-w-[480px] relative z-20">
+
+              <!-- Name -->
+              <div>
+                <input type="text" placeholder="Name"
+                  class="w-full h-[56px] px-6 py-4 rounded-[8px] border border-[#D8D8D8] bg-transparent hover:border-[#6C4CF4] focus:border-[#6C4CF0] focus:ring-4 focus:ring-[#6C4CF0]/10 outline-none transition-all placeholder:text-gray-400 text-[#494949] text-[16px] mt-6"
+                  required>
               </div>
+
+              <!-- Email -->
+              <div>
+                <input type="email" placeholder="Email"
+                  class="w-full h-[56px] px-6 py-4 rounded-[8px] border border-[#D8D8D8] bg-transparent hover:border-[#6C4CF4] focus:border-[#6C4CF0] focus:ring-4 focus:ring-[#6C4CF0]/10 outline-none transition-all placeholder:text-gray-400 text-[#494949] text-[16px] mt-6"
+                  required>
+              </div>
+
+              <!-- Phone -->
+              <div>
+                <input type="tel" placeholder="Phone"
+                  class="w-full h-[56px] px-6 py-4 rounded-[8px] border border-[#D8D8D8] bg-transparent hover:border-[#6C4CF4] focus:border-[#6C4CF0] focus:ring-4 focus:ring-[#6C4CF0]/10 outline-none transition-all placeholder:text-gray-400 text-[#494949] text-[16px] mt-6">
+              </div>
+
+              <!-- Message -->
+              <div>
+                <textarea rows="4" placeholder="Send Us a Message"
+                  class="w-full px-6 py-4 rounded-[8px] border border-[#D8D8D8] bg-transparent hover:border-[#6C4CF4] focus:border-[#6C4CF0] focus:ring-4 focus:ring-[#6C4CF0]/10 outline-none transition-all placeholder:text-gray-400 text-[#494949] resize-none text-[16px] mt-6"></textarea>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="relative">
+                <button type="submit"
+                  class="w-full h-[64px] px-6 py-4 rounded-[6px] text-white font-medium text-[17.6px] mt-6 shadow-lg transition-all hover:opacity-90 flex items-center justify-center gap-3 relative overflow-hidden"
+                  style="background: linear-gradient(90deg, #135AC6 0%, #6C4CF4 100%);">
+                  <span class="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">Submit</span>
+
+                </button>
+                <!-- Decorative Icon (Trail + Plane) positioned relative to the button wrapper -->
+                <img src="components/letter_send.svg" alt=""
+                  class="absolute left-1/2 -translate-x-1/2 top-[20px] w-[240px] h-[112px] object-contain pointer-events-none z-50 filter brightness-0 invert">
+              </div>
+
             </form>
+
+            <!-- 3D Illustration (Positioned relative to form) -->
+            <!-- Position adjusted to hug the form from the right/bottom as shown in reference -->
+            <div
+              class="pointer-events-none absolute w-[526px] md:w-[800px] h-[398px] top-1/2 -right-[20px] lg:-right-[60px] z-10 hidden md:block mt-8"
+              style="transform: translate(24%, -50%);">
+              <img src="assets/images/Contact Us.png" alt="Contact Us 3D Illustration"
+                class="w-full h-auto object-contain opacity-100">
+            </div>
+
           </div>
+
         </div>
       </div>
     </section>
 
     <!-- Footer -->
-    <footer class="border-t border-gray-100 bg-white pt-[64px] pb-[32px]">
-      <div class="w-full px-5">
-        <div class="mb-12 text-center md:text-left">
-          <div class="font-black text-2xl tracking-tight text-[#0b1220]">EVOLVEX AI</div>
-        </div>
+    <footer class="bg-white">
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-          <div>
-            <h3 class="font-bold text-[#0b1220] mb-4">Contact Information</h3>
-            <ul class="space-y-3 text-muted">
+      <!-- Divider -->
+      <div class="border-t border-[#F2F4F7]"></div>
+
+      <!-- Top Section: Logo -->
+      <div class="py-[40px] flex items-center justify-center">
+        <div class="font-bold text-[24px] uppercase tracking-wide text-[#0b1220]">EVOLVEX AI</div>
+      </div>
+
+      <!-- Divider -->
+      <div class="border-t border-[#F2F4F7]"></div>
+
+      <!-- Bottom Section: Content -->
+      <div class="max-w-[1000px] mx-auto px-5 pt-[64px] pb-[120px]">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+
+          <!-- Col 1: Contact Info -->
+          <div class="flex flex-col items-start gap-6">
+            <h3 class="font-semibold text-[20px] text-[#0b1220]">Contact Information</h3>
+            <ul class="space-y-4 text-[#475467] text-[16px]">
               <li>support@evolvex.ai</li>
               <li>+91 123 654 7890</li>
             </ul>
-            <div class="flex gap-4 mt-6">
+            <!-- Social Icons -->
+            <!-- Social Icons -->
+            <div class="flex items-center gap-3 mt-2">
               <a href="#"
-                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-50 text-[#6C4CF0] hover:bg-[#6C4CF0] hover:text-white transition-colors">
-                <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <rect x="3" y="3" width="18" height="18" rx="5" stroke-width="2" />
-                </svg>
+                class="group w-10 h-10 flex items-center justify-center bg-[#F2F4F7] rounded-[4px] transition-all hover:from-[#fafaff] hover:to-[#f7f9ff]">
+                <img src="components/instagram.svg" alt="Instagram"
+                  class="w-5 h-5 object-contain transition-all group-hover:brightness-0 group-hover:invert">
               </a>
               <a href="#"
-                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-50 text-[#6C4CF0] hover:bg-[#6C4CF0] hover:text-white transition-colors">
-                <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                  <rect x="2" y="9" width="4" height="12" />
-                  <circle cx="4" cy="4" r="2" />
-                </svg>
+                class="group w-10 h-10 flex items-center justify-center bg-[#F2F4F7] rounded-[4px] transition-all hover:from-[#fafaff] hover:to-[#f7f9ff]">
+                <img src="components/linked_in.svg" alt="LinkedIn"
+                  class="w-5 h-5 object-contain transition-all group-hover:brightness-0 group-hover:invert">
+              </a>
+              <a href="#"
+                class="group w-10 h-10 flex items-center justify-center bg-[#F2F4F7] rounded-[4px] transition-all hover:from-[#fafaff] hover:to-[#f7f9ff]">
+                <img src="components/f.svg" alt="Facebook"
+                  class="w-5 h-5 object-contain transition-all group-hover:brightness-0 group-hover:invert">
+              </a>
+              <a href="#"
+                class="group w-10 h-10 flex items-center justify-center bg-[#F2F4F7] rounded-[4px] transition-all hover:from-[#fafaff] hover:to-[#f7f9ff]">
+                <img src="components/twitter.svg" alt="Twitter"
+                  class="w-5 h-5 object-contain transition-all group-hover:brightness-0 group-hover:invert">
               </a>
             </div>
           </div>
 
-          <div>
-            <h3 class="font-bold text-[#0b1220] mb-4">Blog</h3>
-            <ul class="space-y-2 text-muted">
+          <!-- Col 2: Blog -->
+          <div class="flex flex-col items-start gap-6">
+            <h3 class="font-semibold text-[20px] text-[#0b1220]">Blog</h3>
+            <ul class="space-y-4 text-[#475467] text-[16px]">
               <li><a href="#" class="hover:text-[#6C4CF0] transition-colors">Career</a></li>
               <li><a href="#" class="hover:text-[#6C4CF0] transition-colors">Our Team</a></li>
             </ul>
           </div>
 
-          <div>
-            <h3 class="font-bold text-[#0b1220] mb-4">About</h3>
-            <ul class="space-y-2 text-muted">
+          <!-- Col 3: About -->
+          <div class="flex flex-col items-start gap-6">
+            <h3 class="font-semibold text-[20px] text-[#0b1220]">About</h3>
+            <ul class="space-y-4 text-[#475467] text-[16px]">
               <li><a href="#" class="hover:text-[#6C4CF0] transition-colors">Contacts</a></li>
               <li><a href="#" class="hover:text-[#6C4CF0] transition-colors">About us</a></li>
               <li><a href="#" class="hover:text-[#6C4CF0] transition-colors">FAQ</a></li>
             </ul>
           </div>
 
-          <div>
-            <h3 class="font-bold text-[#0b1220] mb-4">Product</h3>
-            <ul class="space-y-2 text-muted">
+          <!-- Col 4: Product -->
+          <div class="flex flex-col items-start gap-6">
+            <h3 class="font-semibold text-[20px] text-[#0b1220]">Product</h3>
+            <ul class="space-y-4 text-[#475467] text-[16px]">
               <li><a href="#" class="hover:text-[#6C4CF0] transition-colors">Terms of use</a></li>
               <li><a href="#" class="hover:text-[#6C4CF0] transition-colors">Privacy policy</a></li>
+              <li><a href="#" class="hover:text-[#6C4CF0] transition-colors">Terms of service</a></li>
             </ul>
           </div>
-        </div>
 
-        <div class="mt-16 pt-8 border-t border-gray-100 text-center text-muted text-sm">
-          &copy; <span id="year"></span> Evolvex AI Solutions Pvt. Ltd. All rights reserved.
         </div>
       </div>
     </footer>
@@ -877,8 +1015,7 @@
           </form>
         </div>
         <div class="hidden md:block w-1/2 relative">
-          <img src="assets/images/enquire-image.jpg" alt="" class="w-full h-full object-cover">
-          <div class="absolute inset-0 bg-[#6C4CF0]/20"></div>
+          <img src="assets/images/enquire.png" alt="" class="w-full h-full object-cover">
         </div>
       </div>
     </div>

@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Contact Us — EvolveX AI</title>
   <link rel="stylesheet" href="css/tailwind.css" />
+  <link rel="stylesheet" href="css/custom.css" />
 </head>
 
 <body class="m-0 p-0 overflow-x-hidden">
@@ -15,52 +16,21 @@
     <div class="w-full px-5 flex items-center justify-between py-[18px]">
       <a class="font-bold text-[17.6px]" href="index.html">EvolveX AI</a>
       <nav
-        class="hidden md:flex items-center gap-[28px] [&.open]:flex [&.open]:flex-col [&.open]:absolute [&.open]:top-full [&.open]:left-0 [&.open]:w-full [&.open]:bg-white [&.open]:p-6 [&.open]:shadow-xl [&.open]:border-t [&.open]:border-gray-100 [&.open]:z-50"
+        class="relative hidden md:flex items-center gap-[28px] [&.open]:flex [&.open]:flex-col [&.open]:absolute [&.open]:top-full [&.open]:left-0 [&.open]:w-full [&.open]:bg-white [&.open]:p-6 [&.open]:shadow-xl [&.open]:border-t [&.open]:border-gray-100 [&.open]:z-50"
         id="mainNav" role="navigation" aria-label="Main">
-        <a href="index.html"
-          class="group relative text-[14px] font-medium text-[#5f6368] p-[6px] transition-colors duration-200 hover:text-[#651FFF] [&.active]:text-[#651FFF]">
-          Home
-          <span
-            class="pointer-events-none absolute left-[calc(50%-14px)] -bottom-2 h-[6px] w-[6px] scale-75 rounded-full bg-[#651FFF] opacity-0 transition-all duration-200 group-hover:scale-100 group-hover:opacity-100 group-[.active]:scale-100 group-[.active]:opacity-100"></span>
-          <span
-            class="pointer-events-none absolute left-1/2 -bottom-2 h-[6px] w-[23px] -translate-x-1/2 scale-75 rounded-[4px] bg-[#651FFF] opacity-0 transition-all duration-200 group-hover:scale-100 group-hover:opacity-100 group-[.active]:scale-100 group-[.active]:opacity-100"></span>
-        </a>
-        <a href="services.html"
-          class="group relative text-[14px] font-medium text-[#5f6368] p-[6px] transition-colors duration-200 hover:text-[#651FFF] [&.active]:text-[#651FFF]">
-          Services
-          <span
-            class="pointer-events-none absolute left-[calc(50%-14px)] -bottom-2 h-[6px] w-[6px] scale-75 rounded-full bg-[#651FFF] opacity-0 transition-all duration-200 group-hover:scale-100 group-hover:opacity-100 group-[.active]:scale-100 group-[.active]:opacity-100"></span>
-          <span
-            class="pointer-events-none absolute left-1/2 -bottom-2 h-[6px] w-[23px] -translate-x-1/2 scale-75 rounded-[4px] bg-[#651FFF] opacity-0 transition-all duration-200 group-hover:scale-100 group-hover:opacity-100 group-[.active]:scale-100 group-[.active]:opacity-100"></span>
-        </a>
-        <a href="about.html"
-          class="group relative text-[14px] font-medium text-[#5f6368] p-[6px] transition-colors duration-200 hover:text-[#651FFF] [&.active]:text-[#651FFF]">
-          About Us
-          <span
-            class="pointer-events-none absolute left-[calc(50%-14px)] -bottom-2 h-[6px] w-[6px] scale-75 rounded-full bg-[#651FFF] opacity-0 transition-all duration-200 group-hover:scale-100 group-hover:opacity-100 group-[.active]:scale-100 group-[.active]:opacity-100"></span>
-          <span
-            class="pointer-events-none absolute left-1/2 -bottom-2 h-[6px] w-[23px] -translate-x-1/2 scale-75 rounded-[4px] bg-[#651FFF] opacity-0 transition-all duration-200 group-hover:scale-100 group-hover:opacity-100 group-[.active]:scale-100 group-[.active]:opacity-100"></span>
-        </a>
-        <a href="careers.html"
-          class="group relative text-[14px] font-medium text-[#5f6368] p-[6px] transition-colors duration-200 hover:text-[#651FFF] [&.active]:text-[#651FFF]">
-          Careers
-          <span
-            class="pointer-events-none absolute left-[calc(50%-14px)] -bottom-2 h-[6px] w-[6px] scale-75 rounded-full bg-[#651FFF] opacity-0 transition-all duration-200 group-hover:scale-100 group-hover:opacity-100 group-[.active]:scale-100 group-[.active]:opacity-100"></span>
-          <span
-            class="pointer-events-none absolute left-1/2 -bottom-2 h-[6px] w-[23px] -translate-x-1/2 scale-75 rounded-[4px] bg-[#651FFF] opacity-0 transition-all duration-200 group-hover:scale-100 group-hover:opacity-100 group-[.active]:scale-100 group-[.active]:opacity-100"></span>
-        </a>
-        <a href="contact.html"
-          class="group relative text-[14px] font-medium text-[#5f6368] p-[6px] transition-colors duration-200 hover:text-[#651FFF] [&.active]:text-[#651FFF] active">
-          Contact
-          <span
-            class="pointer-events-none absolute left-[calc(50%-14px)] -bottom-2 h-[6px] w-[6px] scale-75 rounded-full bg-[#651FFF] opacity-0 transition-all duration-200 group-hover:scale-100 group-hover:opacity-100 group-[.active]:scale-100 group-[.active]:opacity-100"></span>
-          <span
-            class="pointer-events-none absolute left-1/2 -bottom-2 h-[6px] w-[23px] -translate-x-1/2 scale-75 rounded-[4px] bg-[#651FFF] opacity-0 transition-all duration-200 group-hover:scale-100 group-hover:opacity-100 group-[.active]:scale-100 group-[.active]:opacity-100"></span>
-        </a>
+
+        <div class="nav-indicator" id="navIndicator">
+          <div class="nav-indicator-dot"></div>
+          <div class="nav-indicator-bar"></div>
+        </div>
+
+        <a href="index.html" class="nav-link font-medium">Home</a>
+        <a href="services.html" class="nav-link font-medium">Services</a>
+        <a href="about.html" class="nav-link font-medium">About Us</a>
+        <a href="careers.html" class="nav-link font-medium">Careers</a>
+        <a href="contact.html" class="nav-link font-medium nav-link-active">Contact</a>
       </nav>
-      <a href="#"
-        class="hidden md:inline-block rounded-[10px] bg-gradient-to-r from-brand-500 to-brand-600 px-[18px] py-[12px] text-white shadow-[0_1px_4px_rgba(12,12,12,0.04)] transition-transform duration-200 hover:scale-[1.02]"
-        id="openEnquire">Enquire Now</a>
+       <a href="#" class="hidden md:inline-flex btn-enquire" id="openEnquire">Enquire Now</a>
 
       <button id="navToggle" aria-expanded="false"
         class="md:hidden text-[#0b1220] font-semibold text-[15px]">Menu</button>
