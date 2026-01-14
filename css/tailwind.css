@@ -3311,7 +3311,7 @@ video {
   font-size: 18px;
 }
 
-.text-\[1rem\] {
+.text-\[16px\] {
   font-size: 16px;
 }
 
@@ -3347,7 +3347,7 @@ video {
   font-size: 28px;
 }
 
-.text-\[2rem\] {
+.text-\[32px\] {
   font-size: 32px;
 }
 
@@ -5024,7 +5024,7 @@ video {
     font-size: 28px;
   }
 
-  .md\:text-\[2rem\] {
+  .md\:text-\[32px\] {
     font-size: 32px;
   }
 
@@ -5044,7 +5044,7 @@ video {
     font-size: 38px;
   }
 
-  .md\:text-\[3rem\] {
+  .md\:text-\[48px\] {
     font-size: 48px;
   }
 
@@ -5430,7 +5430,7 @@ video {
     font-size: 48px;
   }
 
-  .lg\:text-\[4rem\] {
+  .lg\:text-\[64px\] {
     font-size: 64px;
   }
 
@@ -5446,7 +5446,7 @@ video {
     font-size: 63px;
   }
 
-  .lg\:text-\[9rem\] {
+  .lg\:text-\[144px\] {
     font-size: 144px;
   }
 
