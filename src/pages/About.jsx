@@ -3,6 +3,7 @@ import { GlobeDemo } from '../components/GlobeDemo';
 import WhyBusinessesChoose from '../components/WhyBusinessesChoose';
 import { FollowerPointerCard } from '../components/ui/following-pointer';
 import { CardSpotlight } from '../components/ui/card-spotlight';
+import Testimonials from '../components/Testimonials';
 
 const About = () => {
     useEffect(() => {
@@ -288,6 +289,9 @@ const About = () => {
                 </div>
             </section>
 
+            {/* Testimonials Section */}
+            <Testimonials />
+
             {/* Our Values Section */}
             <section
                 className="py-[100px] lg:py-[130px] bg-[#f5f6fa]"
@@ -534,12 +538,12 @@ const About = () => {
             <WhyBusinessesChoose />
 
             {/* About Page CTA */}
-            <section className="py-[90px] lg:py-[120px] pb-[140px] bg-white" id="about-cta" data-animate="fade-up">
+            {/* About Page CTA */}
+            {/* <section className="py-[90px] lg:py-[120px] pb-[140px] bg-white" id="about-cta" data-animate="fade-up">
                 <div className="w-full px-5">
 
                     <div className="relative bg-[#6f5af7] rounded-[28px] p-[48px_28px] lg:p-[72px_80px] overflow-hidden">
 
-                        {/* Decorative geometric overlays */}
                         <div
                             className="absolute w-[220px] h-[220px] bg-white/12 rounded-full top-[-80px] right-[180px] pointer-events-none">
                         </div>
@@ -569,6 +573,44 @@ const About = () => {
                     </div>
 
                 </div>
+            </section> */}
+
+            <section className='flex items-center justify-center p-4 py-20'>
+                <style>{`
+                    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+                        
+                    * {
+                        font-family: "Poppins", sans-serif;
+                    }
+                `}</style>
+                <div className='relative w-full max-w-5xl bg-gradient-to-bl from-indigo-600 to-indigo-900 rounded-2xl border border-indigo-500 px-6 py-16 pb-18 flex flex-col items-center text-center'>
+                    <div className='inline-block bg-white/10 backdrop-blur-md rounded-full px-6 py-2 mb-6'>
+                        <span className='text-slate-200 text-xs'>Let’s ship something great</span>
+                    </div>
+
+                    <h1 className='text-3xl md:text-[40px]/13 font-medium text-white mb-8 max-w-2xl leading-tight'>
+                        Bring your next product idea to <br className="hidden md:block" />life with Evolvex AI.
+                    </h1>
+
+                    <div className='flex flex-col sm:flex-row items-center gap-4'>
+                        <button className='bg-white text-gray-900 rounded-full px-6 py-3.5 text-sm flex items-center gap-2 hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl active:scale-95 cursor-pointer'>
+                            Kickstart the build
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth='2' stroke="currentColor" className="w-4 h-4">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                            </svg>
+                        </button>
+
+                        <button className='bg-white rounded-full p-1.5 pr-8 flex items-center gap-3 hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl active:scale-95 cursor-pointer'>
+                            <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200" alt="Avatar" className='size-9 rounded-full object-cover' />
+                            <div className="text-left flex flex-col justify-center gap-0.5">
+                                <span className="text-xs text-gray-900 leading-tight">Quick 15-min call</span>
+                                <span className="text-xs text-gray-900 font-medium leading-tight flex items-center gap-1">
+                                    We’re online<span className="w-1.5 h-1.5 bg-green-500 rounded-full inline-block"></span>
+                                </span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
             </section>
 
             {/* Contact Section - extracted */}
@@ -593,7 +635,7 @@ const About = () => {
                                 </li>
                                 <li className="flex items-start" style={{ gap: '45px' }}>
                                     <div className="w-6 h-6 flex items-center justify-center text-[#6C4CF0] shrink-0 mt-1">
-                                        <img src="/assets/svg/Location.svg" alt="Location" className="w-6 h-6 object-contain" />
+                                        <img src="/assets/svg/Location-.svg" alt="Location" className="w-6 h-6 object-contain" />
                                     </div>
                                     <div>
                                         <span className="block text-[#000000] text-[20px] font-regular">venketasa colony, Pollachi<br />Coimbatore
@@ -641,7 +683,7 @@ const About = () => {
                                 </div>
                             </form>
                             <div
-                                className="pointer-events-none absolute w-[526px] md:w-[800px] h-[398px] top-1/2 -right-[20px] lg:-right-[60px] z-10 hidden md:block mt-8"
+                                className="pointer-events-none absolute w-[480px] md:w-[600px] h-[300px] top-1/2 -right-[60px] lg:-right-[40px] z-10 hidden md:block mt-8"
                                 style={{ transform: 'translate(24%, -50%)' }}>
                                 <img src="/assets/images/Contact Us.png" alt="Contact Us 3D Illustration"
                                     className="w-full h-auto object-contain opacity-100" />

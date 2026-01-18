@@ -203,7 +203,12 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
   }
 
   float finalAlpha = clamp(alphaAcc * 1.2, 0.0, 1.0);
-  fragColor = vec4(clamp(col, 0.0, 1.0), finalAlpha);
+  
+  // Composite over background
+  vec3 bg = getBackground(baseUv);
+  vec3 result = col + bg * (1.0 - finalAlpha);
+  
+  fragColor = vec4(clamp(result, 0.0, 1.0), 1.0);
 }
 
 void main() {

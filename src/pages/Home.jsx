@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { runAntigravity } from '../scripts/antigravity.js';
 import WhyWorkWithUs from '../components/WhyWorkWithUs';
 import { StickyScroll } from '../components/ui/sticky-scroll-reveal';
+import Testimonials from '../components/Testimonials';
+import TrustedBy from '../components/TrustedBy';
 
 const servicesContent = [
     {
@@ -239,6 +241,8 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+            {/* Trusted By */}
+            <TrustedBy />
 
             {/* Who We Are */}
             <section className="relative bg-white py-24 current-folder" id="about">
@@ -490,6 +494,8 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+            {/* Testimonials */}
+            <Testimonials />
 
             {/* Careers Intro */}
             <section className="relative w-screen ml-[calc(50%-50vw)] pt-[90px] pb-[250px] overflow-hidden bg-white">
@@ -601,7 +607,7 @@ const Home = () => {
             </section>
 
             {/* CTA Join Banner */}
-            <section className="py-[100px]" id="services-cta">
+            {/* <section className="py-[100px]" id="services-cta">
                 <div className="w-full px-5 max-w-[1248px] mx-auto">
 
                     <div
@@ -635,6 +641,30 @@ const Home = () => {
                     </div>
 
                 </div>
+            </section> */}
+
+            <section className="py-[100px]" id="services-cta-new">
+                <style>{`
+                    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+                `}</style>
+                <div style={{ fontFamily: "'Poppins', sans-serif" }} className="max-w-5xl py-16 md:w-full mx-2 md:mx-auto flex flex-col items-center justify-center text-center bg-gradient-to-b from-[#5524B7] to-[#380B60] rounded-2xl p-10 text-white">
+                    <div className="flex flex-wrap items-center justify-center p-1 rounded-full bg-purple-600/10 backdrop-blur border border-purple-500/40 text-sm">
+                        <div className="flex items-center">
+                            <img className="size-6 md:size-7 rounded-full border-3 border-white"
+                                src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=50" alt="userImage1" />
+                            <img className="size-6 md:size-7 rounded-full border-3 border-white -translate-x-2"
+                                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=50" alt="userImage2" />
+                            <img className="size-6 md:size-7 rounded-full border-3 border-white -translate-x-4"
+                                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=50&h=50&auto=format&fit=crop"
+                                alt="userImage3" />
+                        </div>
+                        <p className="-translate-x-2 font-medium">Join the Evolvex talent network </p>
+                    </div>
+                    <h1 className="text-4xl md:text-5xl md:leading-[60px] font-semibold max-w-xl mt-5 bg-gradient-to-r from-white to-[#CAABFF] text-transparent bg-clip-text">Unlock Your Next Big Opportunity.</h1>
+                    <button className="px-8 py-3 text-white bg-violet-600 hover:bg-violet-700 transition-all rounded-full uppercase text-sm mt-8">
+                        Explore Careers
+                    </button>
+                </div>
             </section>
 
             {/* Contact Section */}
@@ -661,7 +691,7 @@ const Home = () => {
                                 </li>
                                 <li className="flex items-start" style={{ gap: '45px' }}>
                                     <div className="w-6 h-6 flex items-center justify-center text-[#6C4CF0] shrink-0 mt-1">
-                                        <img src="/assets/svg/Location.svg" alt="Location" className="w-6 h-6 object-contain" />
+                                        <img src="/assets/svg/Location-.svg" alt="Location" className="w-6 h-6 object-contain" />
                                     </div>
                                     <div>
                                         <span className="block text-[#000000] text-[20px] font-regular">venketasa colony, Pollachi<br />Coimbatore
@@ -709,7 +739,7 @@ const Home = () => {
                                 </div>
                             </form>
                             <div
-                                className="pointer-events-none absolute w-[526px] md:w-[800px] h-[398px] top-1/2 -right-[20px] lg:-right-[60px] z-10 hidden md:block mt-8"
+                                className="pointer-events-none absolute w-[480px] md:w-[600px] h-[300px] top-1/2 -right-[60px] lg:-right-[35px] z-10 hidden md:block mt-8"
                                 style={{ transform: 'translate(24%, -50%)' }}>
                                 <img src="/assets/images/Contact Us.png" alt="Contact Us 3D Illustration"
                                     className="w-full h-auto object-contain opacity-100" />

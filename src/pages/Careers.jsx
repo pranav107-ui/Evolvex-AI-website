@@ -17,6 +17,76 @@ const Careers = () => {
     return (
         <>
             {/* Careers Hero Section */}
+            {/* New Full Screen Hero Section */}
+            <section className="relative w-full min-h-screen flex items-center bg-gradient-to-b from-violet-100 to-[#FFE8E9] overflow-hidden">
+                <style>{`
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+    * { font-family: "Poppins", sans-serif; }
+  `}</style>
+
+                {/* Decorative Background Blur */}
+                <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-purple-300/30 rounded-full blur-3xl opacity-40 pointer-events-none"></div>
+                <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-pink-300/30 rounded-full blur-3xl opacity-40 pointer-events-none"></div>
+
+                {/* Desktop Hero Image (Edge-to-Edge Breakout) */}
+                <div className="hidden lg:block absolute right-[-20px] top-[63%] -translate-y-1/2 w-[50vw] h-[60vh] z-0">
+                    <img
+                        className="w-full h-full object-cover object-center rounded-l-[20px] shadow-2xl"
+                        src="/assets/images/Join-our-team1.png"
+                        alt="Team meeting"
+                    />
+                </div>
+
+                <div className="w-full max-w-7xl mx-auto px-5 md:px-10 relative z-10 pointer-events-none lg:pointer-events-auto">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 xl:gap-16 items-center h-full w-full">
+
+                        {/* Left Column: Content */}
+                        <div className="flex flex-col items-center lg:items-start text-center lg:text-left order-2 lg:order-1 pb-10 lg:pb-0 w-full pointer-events-auto">
+                            <h1 className="text-4xl md:text-5xl lg:text-7xl font-semibold text-gray-900 leading-[1.15] tracking-tight">
+                                Join Our Team <br className="hidden lg:block" />
+                                <span className="bg-gradient-to-r from-violet-600 to-pink-500 bg-clip-text text-transparent">
+                                    Shaping the future.
+                                </span>
+                            </h1>
+
+                            <p className="text-lg md:text-xl text-gray-700 mt-6 max-w-lg leading-relaxed">
+                                At Evolvex, our engineers and designers build intelligent digital products and AI-powered solutions that help businesses grow faster, work smarter, and scale with confidence.
+                            </p>
+
+                            <div className="flex flex-col sm:flex-row gap-4 mt-8 w-full sm:w-auto justify-center lg:justify-start">
+                                <a href="/open-roles" className="px-8 py-4 rounded-full text-base font-medium text-white bg-gray-900 hover:bg-black transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 cursor-pointer min-w-[160px] inline-flex justify-center items-center">
+                                    Join our team
+                                </a>
+
+                                <a href="/open-roles" className="px-8 py-4 rounded-full text-base font-medium text-gray-800 bg-white/60 border border-white/60 hover:bg-white hover:border-white transition-all shadow-sm hover:shadow-md cursor-pointer min-w-[160px] inline-flex justify-center items-center">
+                                    Explore Opportunities
+                                </a>
+                            </div>
+                        </div>
+
+                        {/* Right Column: Hero Image (Mobile Only) */}
+                        <div className="block lg:hidden order-1 flex justify-center items-center w-full pointer-events-auto">
+                            <div className="w-full max-w-[520px] sm:max-w-[640px]">
+                                <img
+                                    className="
+              w-full
+              h-[320px] sm:h-[420px] md:h-[480px]
+              object-cover object-center
+              rounded-3xl
+              drop-shadow-2xl
+            "
+                                    src="/assets/images/Join-our-team1.png"
+                                    alt="Team meeting"
+                                />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+            {/* Old Hero Section (Commented Out)
             <section className="relative py-[80px] lg:py-[140px] bg-white overflow-hidden" data-animate="fade-up">
 
                 <div
@@ -26,7 +96,6 @@ const Careers = () => {
                 <div
                     className="w-full max-w-[1200px] mx-auto px-5 relative mt-[180px] grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-[60px] lg:gap-[80px] items-center text-center lg:text-left">
 
-                    {/* Left Content */}
                     <div className="mx-auto lg:mx-0">
                         <h1 className="text-[40px] lg:text-[64px] font-bold leading-[1.1] text-[#111] mb-[24px]">
                             Join Our Team
@@ -54,7 +123,6 @@ const Careers = () => {
                         </div>
                     </div>
 
-                    {/* Right Illustration */}
                     <div className="flex justify-center lg:justify-end">
                         <img src="/assets/images/Join-Our-Team.png" alt="Careers illustration showing job opportunities"
                             className="max-w-full w-[480px] lg:w-[540px] h-auto object-contain drop-shadow-lg" />
@@ -62,6 +130,7 @@ const Careers = () => {
 
                 </div>
             </section>
+            */}
 
             {/* About Working With Us */}
             <section className="py-[90px] lg:py-[120px] pb-[110px] lg:pb-[140px] bg-white" id="working-with-us"

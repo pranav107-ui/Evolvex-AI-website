@@ -270,7 +270,7 @@ const OpenRoles = () => {
                                 </li>
                                 <li className="flex items-start" style={{ gap: '45px' }}>
                                     <div className="w-6 h-6 flex items-center justify-center text-[#6C4CF0] shrink-0 mt-1">
-                                        <img src="/assets/svg/Location.svg" alt="Location" className="w-6 h-6 object-contain" />
+                                        <img src="/assets/svg/Location-.svg" alt="Location" className="w-6 h-6 object-contain" />
                                     </div>
                                     <div>
                                         <span className="block text-[#000000] text-[20px] font-regular">venketasa colony, Pollachi<br />Coimbatore
@@ -318,7 +318,7 @@ const OpenRoles = () => {
                                 </div>
                             </form>
                             <div
-                                className="pointer-events-none absolute w-[526px] md:w-[800px] h-[398px] top-1/2 -right-[20px] lg:-right-[60px] z-10 hidden md:block mt-8"
+                                className="pointer-events-none absolute w-[480px] md:w-[600px] h-[300px] top-1/2 -right-[60px] lg:-right-[40px] z-10 hidden md:block mt-8"
                                 style={{ transform: 'translate(24%, -50%)' }}>
                                 <img src="/assets/images/Contact Us.png" alt="Contact Us 3D Illustration"
                                     className="w-full h-auto object-contain opacity-100" />

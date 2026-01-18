@@ -1,7 +1,10 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import FloatingLines from '../components/FloatingLines';
 import TiltedCard from './TiltedCard';
 import ScrollReveal from './ScrollReveal';
+import Testimonials from '../components/Testimonials';
+import TrustedBy from '../components/TrustedBy';
 
 const Services = () => {
     useEffect(() => {
@@ -444,41 +447,84 @@ const Services = () => {
                 </div>
             </section>
 
+            {/* Testimonials */}
+            <Testimonials />
+
+            {/* Trusted By */}
+            <TrustedBy />
+
             {/* CTA */}
             <section className="py-[100px]" id="services-cta">
-                <div className="w-full px-5 max-w-[1248px] mx-auto">
+                <style>{`
+                    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+                `}</style>
+                <div
+  style={{ fontFamily: "'Poppins', sans-serif" }}
+  className="
+    relative overflow-hidden
+    max-w-5xl py-16 md:pl-24 md:w-full mx-2 md:mx-auto
+    flex flex-col items-start justify-center text-left
+    rounded-2xl p-10 text-white
+    bg-[#4C0083]
+  "
+>
+  {/* Half Gradient Overlay (Evolvex Style) */}
+  <div className="absolute inset-0 pointer-events-none">
+    {/* Right-side soft gradient */}
+    <div className="absolute right-0 top-0 h-full w-[60%] bg-gradient-to-l from-[#7C3AED]/55 via-[#A855F7]/25 to-transparent" />
 
-                    <div
-                        className="relative bg-gradient-to-br from-[#6f5af7] to-[#7b61ff] rounded-[28px] p-[60px_28px] md:p-[80px_64px] overflow-hidden text-center"
-                        data-animate="fade-up">
+    {/* Bottom soft tint */}
+    <div className="absolute bottom-0 left-0 h-[55%] w-full bg-gradient-to-t from-black/20 via-transparent to-transparent" />
 
-                        <div
-                            className="absolute w-[260px] h-[260px] bg-white/10 rounded-full top-[-90px] left-[-90px] pointer-events-none">
-                        </div>
-                        <div
-                            className="absolute w-[320px] h-[320px] bg-white/10 rounded-[40px] rotate-45 right-[-140px] top-[-80px] pointer-events-none">
-                        </div>
+    {/* Decorative shapes (subtle) */}
+    <div className="absolute -top-24 -right-24 w-[320px] h-[320px] bg-white/10 rounded-full blur-2xl" />
+    <div className="absolute -bottom-28 right-24 w-[380px] h-[380px] bg-pink-400/15 rounded-full blur-3xl" />
+    <div className="absolute top-16 left-12 w-[220px] h-[220px] bg-blue-300/10 rounded-full blur-2xl" />
+  </div>
 
-                        <div className="relative z-10 max-w-[720px] mx-auto text-white">
+  {/* CONTENT */}
+  <div className="relative z-10">
+    <div className="flex items-center">
+      <div className="flex -space-x-3 pr-3">
+        <img
+          src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200"
+          alt="image"
+          className="size-8 rounded-full hover:-translate-y-px transition z-1 border border-white/20"
+        />
+        <img
+          src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200"
+          alt="image"
+          className="size-8 rounded-full hover:-translate-y-px transition z-[2] border border-white/20"
+        />
+        <img
+          src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&h=200&auto=format&fit=crop"
+          alt="image"
+          className="size-8 rounded-full hover:-translate-y-px transition z-[3] border border-white/20"
+        />
+      </div>
 
-                            <h2 className="text-[30px] md:text-[40px] font-bold mb-[16px] tracking-tight">
-                                Ready to Build Something Exceptional?
-                            </h2>
+     <div> <div className="flex items-center gap-px"> <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M5.85536 0.463527C6.00504 0.00287118 6.65674 0.00287028 6.80642 0.463526L7.82681 3.60397C7.89375 3.80998 8.08572 3.94946 8.30234 3.94946H11.6044C12.0888 3.94946 12.2901 4.56926 11.8983 4.85397L9.22687 6.79486C9.05162 6.92219 8.97829 7.14787 9.04523 7.35388L10.0656 10.4943C10.2153 10.955 9.68806 11.338 9.2962 11.0533L6.62478 9.11244C6.44954 8.98512 6.21224 8.98512 6.037 9.11244L3.36558 11.0533C2.97372 11.338 2.44648 10.955 2.59616 10.4943L3.61655 7.35388C3.68349 7.14787 3.61016 6.92219 3.43491 6.79486L0.763497 4.85397C0.37164 4.56927 0.573027 3.94946 1.05739 3.94946H4.35944C4.57606 3.94946 4.76803 3.80998 4.83497 3.60397L5.85536 0.463527Z" fill="#FF8F20" /> </svg> <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M5.85536 0.463527C6.00504 0.00287118 6.65674 0.00287028 6.80642 0.463526L7.82681 3.60397C7.89375 3.80998 8.08572 3.94946 8.30234 3.94946H11.6044C12.0888 3.94946 12.2901 4.56926 11.8983 4.85397L9.22687 6.79486C9.05162 6.92219 8.97829 7.14787 9.04523 7.35388L10.0656 10.4943C10.2153 10.955 9.68806 11.338 9.2962 11.0533L6.62478 9.11244C6.44954 8.98512 6.21224 8.98512 6.037 9.11244L3.36558 11.0533C2.97372 11.338 2.44648 10.955 2.59616 10.4943L3.61655 7.35388C3.68349 7.14787 3.61016 6.92219 3.43491 6.79486L0.763497 4.85397C0.37164 4.56927 0.573027 3.94946 1.05739 3.94946H4.35944C4.57606 3.94946 4.76803 3.80998 4.83497 3.60397L5.85536 0.463527Z" fill="#FF8F20" /> </svg> <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M5.85536 0.463527C6.00504 0.00287118 6.65674 0.00287028 6.80642 0.463526L7.82681 3.60397C7.89375 3.80998 8.08572 3.94946 8.30234 3.94946H11.6044C12.0888 3.94946 12.2901 4.56926 11.8983 4.85397L9.22687 6.79486C9.05162 6.92219 8.97829 7.14787 9.04523 7.35388L10.0656 10.4943C10.2153 10.955 9.68806 11.338 9.2962 11.0533L6.62478 9.11244C6.44954 8.98512 6.21224 8.98512 6.037 9.11244L3.36558 11.0533C2.97372 11.338 2.44648 10.955 2.59616 10.4943L3.61655 7.35388C3.68349 7.14787 3.61016 6.92219 3.43491 6.79486L0.763497 4.85397C0.37164 4.56927 0.573027 3.94946 1.05739 3.94946H4.35944C4.57606 3.94946 4.76803 3.80998 4.83497 3.60397L5.85536 0.463527Z" fill="#FF8F20" /> </svg> <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M5.85536 0.463527C6.00504 0.00287118 6.65674 0.00287028 6.80642 0.463526L7.82681 3.60397C7.89375 3.80998 8.08572 3.94946 8.30234 3.94946H11.6044C12.0888 3.94946 12.2901 4.56926 11.8983 4.85397L9.22687 6.79486C9.05162 6.92219 8.97829 7.14787 9.04523 7.35388L10.0656 10.4943C10.2153 10.955 9.68806 11.338 9.2962 11.0533L6.62478 9.11244C6.44954 8.98512 6.21224 8.98512 6.037 9.11244L3.36558 11.0533C2.97372 11.338 2.44648 10.955 2.59616 10.4943L3.61655 7.35388C3.68349 7.14787 3.61016 6.92219 3.43491 6.79486L0.763497 4.85397C0.37164 4.56927 0.573027 3.94946 1.05739 3.94946H4.35944C4.57606 3.94946 4.76803 3.80998 4.83497 3.60397L5.85536 0.463527Z" fill="#FF8F20" /> </svg> <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M5.85536 0.463527C6.00504 0.00287118 6.65674 0.00287028 6.80642 0.463526L7.82681 3.60397C7.89375 3.80998 8.08572 3.94946 8.30234 3.94946H11.6044C12.0888 3.94946 12.2901 4.56926 11.8983 4.85397L9.22687 6.79486C9.05162 6.92219 8.97829 7.14787 9.04523 7.35388L10.0656 10.4943C10.2153 10.955 9.68806 11.338 9.2962 11.0533L6.62478 9.11244C6.44954 8.98512 6.21224 8.98512 6.037 9.11244L3.36558 11.0533C2.97372 11.338 2.44648 10.955 2.59616 10.4943L3.61655 7.35388C3.68349 7.14787 3.61016 6.92219 3.43491 6.79486L0.763497 4.85397C0.37164 4.56927 0.573027 3.94946 1.05739 3.94946H4.35944C4.57606 3.94946 4.76803 3.80998 4.83497 3.60397L5.85536 0.463527Z" fill="#FF8F20" /> </svg> </div>
+        <p className="text-sm text-white/80">Trusted by founders & product teams</p>
+      </div>
+    </div>
 
-                            <p className="text-[14px] md:text-[16px] font-normal leading-[1.7] text-white/90 mb-[36px]">
-                                Our team is here to turn your vision into a scalable digital product.
-                            </p>
+    <h1 className="text-4xl md:text-[46px] md:leading-[60px] font-semibold max-w-xl mt-5">
+      Ready to Build Something Exceptional?
+    </h1>
 
-                            <a href="/contact"
-                                className="inline-block px-[36px] py-[14px] bg-white text-[#6f5af7] text-[14px] font-semibold rounded-full shadow-[0_12px_30px_rgba(0,0,0,0.15)] transition-all duration-250 hover:-translate-y-[2px] hover:shadow-[0_18px_40px_rgba(0,0,0,0.2)]">
-                                Get a Consultation
-                            </a>
+    <p className="text-[14px] md:text-[16px] font-normal leading-[1.7] text-white/90 mb-[36px]">
+      Our team is here to turn your vision into a scalable digital product.
+    </p>
 
-                        </div>
+    <Link
+      to="/contact"
+      className="px-12 py-3 text-white bg-white/15 hover:bg-white/25 border border-white/20 transition-all rounded-full text-sm mt-8 backdrop-blur-md"
+    >
+      Get a Consultation
+    </Link>
+  </div>
+</div>
 
-                    </div>
-
-                </div>
             </section>
 
             {/* Contact Section - extracted from index.html shared */}
@@ -505,7 +551,7 @@ const Services = () => {
                                 </li>
                                 <li className="flex items-start" style={{ gap: '45px' }}>
                                     <div className="w-6 h-6 flex items-center justify-center text-[#6C4CF0] shrink-0 mt-1">
-                                        <img src="/assets/svg/Location.svg" alt="Location" className="w-6 h-6 object-contain" />
+                                        <img src="/assets/svg/Location-.svg" alt="Location" className="w-6 h-6 object-contain" />
                                     </div>
                                     <div>
                                         <span className="block text-[#000000] text-[20px] font-regular">venketasa colony, Pollachi<br />Coimbatore
@@ -553,7 +599,7 @@ const Services = () => {
                                 </div>
                             </form>
                             <div
-                                className="pointer-events-none absolute w-[526px] md:w-[800px] h-[398px] top-1/2 -right-[20px] lg:-right-[60px] z-10 hidden md:block mt-8"
+                                className="pointer-events-none absolute w-[480px] md:w-[600px] h-[300px] top-1/2 -right-[60px] lg:-right-[40px] z-10 hidden md:block mt-8"
                                 style={{ transform: 'translate(24%, -50%)' }}>
                                 <img src="/assets/images/Contact Us.png" alt="Contact Us 3D Illustration"
                                     className="w-full h-auto object-contain opacity-100" />

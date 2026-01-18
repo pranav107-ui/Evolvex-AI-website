@@ -82,7 +82,7 @@ const JobDetails = () => {
                                     Tech | AI | Product Engineering
                                 </li>
                                 <li className="flex items-center gap-[8px]">
-                                    <img src="/assets/svg/location.svg" alt="Location" className="w-[16px] h-[16px]" />
+                                    <img src="/assets/svg/Location-.svg" alt="Location" className="w-[16px] h-[16px]" />
                                     Pollachi, India
                                 </li>
                                 <li className="flex items-center gap-[8px]">
