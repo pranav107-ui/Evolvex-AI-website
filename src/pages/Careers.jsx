@@ -1,4 +1,9 @@
+import { FollowerPointerCard } from '@/components/ui/FollowingPointer';
+import { PointerHighlight } from '@/components/ui/PointerHighlight';
 import WhyJoinUs from '@/components/WhyJoinUs';
+import WorkingWithUsSection from '@/components/WorkingWithUsSection';
+import LifeAtEvolvex from '@/components/LifeAtEvolvex';
+import CareersCTA from '@/components/CareersCTA';
 import React, { useEffect } from 'react';
 
 const Careers = () => {
@@ -30,14 +35,16 @@ const Careers = () => {
 
                 {/* Desktop Hero Image (Edge-to-Edge Breakout) */}
                 <div className="hidden lg:block absolute right-[-20px] top-[63%] -translate-y-1/2 w-[50vw] h-[60vh] z-0">
-                    <img
-                        className="w-full h-full object-cover object-center rounded-l-[20px] shadow-2xl"
-                        src="/assets/images/Join-our-team1.png"
-                        alt="Team meeting"
-                    />
+                    <FollowerPointerCard title="Career Growth Zone" className="w-full h-full">
+                        <img
+                            className="w-full h-full object-cover object-center rounded-l-[20px] shadow-2xl"
+                            src="/assets/images/Join-our-team1.png"
+                            alt="Team meeting"
+                        />
+                    </FollowerPointerCard>
                 </div>
 
-                <div className="w-full max-w-7xl mx-auto px-5 md:px-10 relative z-10 pointer-events-none lg:pointer-events-auto">
+                <div className="w-full max-w-7xl mx-auto px-5 md:px-10 relative z-10 pointer-events-none">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 xl:gap-16 items-center h-full w-full">
 
                         {/* Left Column: Content */}
@@ -49,9 +56,17 @@ const Careers = () => {
                                 </span>
                             </h1>
 
-                            <p className="text-lg md:text-xl text-gray-700 mt-6 max-w-lg leading-relaxed">
-                                At Evolvex, our engineers and designers build intelligent digital products and AI-powered solutions that help businesses grow faster, work smarter, and scale with confidence.
-                            </p>
+                            <div className="text-lg md:text-xl text-gray-700 mt-6 max-w-lg leading-relaxed">
+                                At{' '}
+                                <PointerHighlight
+                                    containerClassName="inline-block"
+                                    rectangleClassName="bg-blue-100 dark:bg-blue-900 border-blue-300 dark:border-blue-700"
+                                    pointerClassName="text-blue-500"
+                                >
+                                    <span className="relative z-10">Evolvex</span>
+                                </PointerHighlight>
+                                , our engineers and designers build intelligent digital products and AI-powered solutions that help businesses grow faster, work smarter, and scale with confidence.
+                            </div>
 
                             <div className="flex flex-col sm:flex-row gap-4 mt-8 w-full sm:w-auto justify-center lg:justify-start">
                                 <a href="/open-roles" className="px-8 py-4 rounded-full text-base font-medium text-white bg-gray-900 hover:bg-black transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 cursor-pointer min-w-[160px] inline-flex justify-center items-center">
@@ -67,17 +82,19 @@ const Careers = () => {
                         {/* Right Column: Hero Image (Mobile Only) */}
                         <div className="block lg:hidden order-1 flex justify-center items-center w-full pointer-events-auto">
                             <div className="w-full max-w-[520px] sm:max-w-[640px]">
-                                <img
-                                    className="
+                                <FollowerPointerCard title="Career Growth Zone">
+                                    <img
+                                        className="
               w-full
               h-[320px] sm:h-[420px] md:h-[480px]
               object-cover object-center
               rounded-3xl
               drop-shadow-2xl
             "
-                                    src="/assets/images/Join-our-team1.png"
-                                    alt="Team meeting"
-                                />
+                                        src="/assets/images/Join-our-team1.png"
+                                        alt="Team meeting"
+                                    />
+                                </FollowerPointerCard>
                             </div>
                         </div>
 
@@ -133,131 +150,14 @@ const Careers = () => {
             */}
 
             {/* About Working With Us */}
-            <section className="py-[90px] lg:py-[120px] pb-[110px] lg:pb-[140px] bg-white" id="working-with-us"
-                data-animate="fade-up">
-                <div className="w-full px-5">
+            <WorkingWithUsSection />
 
-                    <h2 className="text-center text-[28px] lg:text-[36px] font-bold text-[#111] mb-[40px] lg:mb-[56px]">
-                        About Working With Us
-                    </h2>
-
-                    <div
-                        className="relative max-w-[1148px] mx-auto py-[48px] px-[20px] lg:px-[0px] bg-[#f7f5ff] rounded-[22px] shadow-[0_20px_50px_rgba(0,0,0,0.06)] overflow-hidden flex items-center justify-center min-h-[172px]">
-                        <p
-                            className="text-[16px] lg:text-[20px] leading-[1.8] lg:leading-[36px] tracking-[-0.01em] text-[#4A4A4A] text-center max-w-[1067px] mx-auto relative z-10">
-                            We believe in empowering every team member to create meaningful impact. Our culture encourages innovation, continuous learning, and supportive collaboration across all departments. With a strong focus on growth and well-being, we ensure every individual has the platform and environment to thrive.
-                        </p>
-
-                        {/* Decorative circle (CSS only) */}
-                        <span
-                            className="absolute w-[90px] h-[90px] lg:w-[120px] lg:h-[120px] top-1/2 right-[-30px] lg:right-[-40px] -translate-y-1/2 bg-gradient-to-br from-[#E6DEFF] to-[#6C4CF4] rounded-full shadow-[0_12px_32px_rgba(111,90,247,0.35)] opacity-100"
-                            aria-hidden="true"></span>
-                    </div>
-
-                </div>
-            </section>
 
             {/* Life at Evolvex */}
-            <section className="py-[95px] lg:py-[130px] bg-white relative overflow-hidden" id="life-at-evolvex" data-animate="fade-up">
-
-                <div className="w-full max-w-[1200px] mx-auto px-5">
-
-                    {/* Section Header */}
-                    <div className="text-center mb-[50px]">
-                        <span className="block text-[12px] tracking-[0.35em] text-[#7b4dff] font-semibold mb-[12px] uppercase">
-                            CULTURE
-                        </span>
-                        <h2 className="text-[30px] lg:text-[44px] font-extrabold text-[#111] mb-[16px]">
-                            Life at Evolvex
-                        </h2>
-                        <p className="text-[15px] lg:text-[16px] leading-[1.85] text-[#555] max-w-[720px] mx-auto">
-                            A workplace built on growth, ownership, and creativity.
-                        </p>
-                    </div>
-
-                    {/* 2x2 Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-[22px] lg:gap-[28px]">
-                        {/* Card 1 */}
-                        <div className="group relative bg-white border border-[#ecebff] rounded-[22px] p-[26px] lg:p-[32px] shadow-[0_22px_60px_rgba(17,17,17,0.08)] hover:-translate-y-[4px] hover:shadow-[0_30px_70px_rgba(17,17,17,0.12)] transition-all duration-300 overflow-hidden h-full">
-                            {/* Decorative Glow */}
-                            <div className="absolute -top-[90px] -right-[90px] w-[220px] h-[220px] rounded-full bg-[radial-gradient(circle_at_30%_30%,rgba(176,132,255,0.55),rgba(123,77,255,0.10),transparent_65%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                            <div className="relative z-10">
-                                <div className="w-[52px] h-[52px] rounded-full bg-[#efe9ff] flex items-center justify-center mb-[24px] group-hover:scale-110 transition-transform duration-300">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7b4dff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                                    </svg>
-                                </div>
-                                <h3 className="text-[20px] font-bold text-[#111] mb-[10px]">Innovative Projects</h3>
-                                <p className="text-[15px] leading-[1.6] text-[#555]">
-                                    Work on impactful real-world products powered by modern technology.
-                                </p>
-                            </div>
-                        </div>
-
-                        {/* Card 2 */}
-                        <div className="group relative bg-white border border-[#ecebff] rounded-[22px] p-[26px] lg:p-[32px] shadow-[0_22px_60px_rgba(17,17,17,0.08)] hover:-translate-y-[4px] hover:shadow-[0_30px_70px_rgba(17,17,17,0.12)] transition-all duration-300 overflow-hidden h-full">
-                            {/* Decorative Glow */}
-                            <div className="absolute -top-[90px] -right-[90px] w-[220px] h-[220px] rounded-full bg-[radial-gradient(circle_at_30%_30%,rgba(176,132,255,0.55),rgba(123,77,255,0.10),transparent_65%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                            <div className="relative z-10">
-                                <div className="w-[52px] h-[52px] rounded-full bg-[#efe9ff] flex items-center justify-center mb-[24px] group-hover:scale-110 transition-transform duration-300">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7b4dff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                        <path d="M23 6l-9.5 9.5-5-5L1 18" />
-                                        <path d="M17 6h6v6" />
-                                    </svg>
-                                </div>
-                                <h3 className="text-[20px] font-bold text-[#111] mb-[10px]">Growth-Focused Culture</h3>
-                                <p className="text-[15px] leading-[1.6] text-[#555]">
-                                    Continuous learning, mentorship and upskilling opportunities.
-                                </p>
-                            </div>
-                        </div>
-
-                        {/* Card 3 */}
-                        <div className="group relative bg-white border border-[#ecebff] rounded-[22px] p-[26px] lg:p-[32px] shadow-[0_22px_60px_rgba(17,17,17,0.08)] hover:-translate-y-[4px] hover:shadow-[0_30px_70px_rgba(17,17,17,0.12)] transition-all duration-300 overflow-hidden h-full">
-                            {/* Decorative Glow */}
-                            <div className="absolute -top-[90px] -right-[90px] w-[220px] h-[220px] rounded-full bg-[radial-gradient(circle_at_30%_30%,rgba(176,132,255,0.55),rgba(123,77,255,0.10),transparent_65%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                            <div className="relative z-10">
-                                <div className="w-[52px] h-[52px] rounded-full bg-[#efe9ff] flex items-center justify-center mb-[24px] group-hover:scale-110 transition-transform duration-300">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7b4dff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                        <circle cx="12" cy="12" r="10" />
-                                        <path d="M12 6v6l4 2" />
-                                    </svg>
-                                </div>
-                                <h3 className="text-[20px] font-bold text-[#111] mb-[10px]">Flexible &amp; Supportive Environment</h3>
-                                <p className="text-[15px] leading-[1.6] text-[#555]">
-                                    Balanced work culture that respects your time and creativity.
-                                </p>
-                            </div>
-                        </div>
-
-                        {/* Card 4 */}
-                        <div className="group relative bg-white border border-[#ecebff] rounded-[22px] p-[26px] lg:p-[32px] shadow-[0_22px_60px_rgba(17,17,17,0.08)] hover:-translate-y-[4px] hover:shadow-[0_30px_70px_rgba(17,17,17,0.12)] transition-all duration-300 overflow-hidden h-full">
-                            {/* Decorative Glow */}
-                            <div className="absolute -top-[90px] -right-[90px] w-[220px] h-[220px] rounded-full bg-[radial-gradient(circle_at_30%_30%,rgba(176,132,255,0.55),rgba(123,77,255,0.10),transparent_65%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                            <div className="relative z-10">
-                                <div className="w-[52px] h-[52px] rounded-full bg-[#efe9ff] flex items-center justify-center mb-[24px] group-hover:scale-110 transition-transform duration-300">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7b4dff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                                    </svg>
-                                </div>
-                                <h3 className="text-[20px] font-bold text-[#111] mb-[10px]">Opportunities to Lead</h3>
-                                <p className="text-[15px] leading-[1.6] text-[#555]">
-                                    Ownership-driven environment where you can grow into leadership roles.
-                                </p>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-            </section>
+            <LifeAtEvolvex />
 
             {/* Why Join Us */}
-            <section className="py-[100px] lg:py-[140px] pb-[120px] lg:pb-[160px] bg-white relative overflow-hidden"
+            <section className="pt-[100px] lg:pt-[140px] pb-[60px] lg:pb-[80px] bg-white relative overflow-hidden"
                 id="why-join-us" data-animate="fade-up">
                 <div className="w-full px-5">
 
@@ -317,46 +217,9 @@ const Careers = () => {
 
 
             {/* Careers CTA */}
-            <section className="py-[100px]" id="careers-cta" data-animate="fade-up">
-                <div className="w-full px-5">
-
-                    <div className="relative bg-[#6f5cf6] rounded-[24px] overflow-hidden max-w-[1300px] mx-auto min-h-[360px] flex items-center justify-center">
-
-                        {/* Decorative shapes */}
-                        <div className="absolute inset-0 pointer-events-none">
-                            {/* Left Large Circle */}
-                            <div className="absolute w-[330px] h-[330px] bg-white opacity-10 rounded-full top-1/2 -translate-y-1/2 left-[-165px]"></div>
-
-                            {/* Right Geometric Cluster */}
-                            {/* Square 1 - Middle Right */}
-                            <div className="absolute w-[150px] h-[150px] bg-white opacity-10 rounded-[20px] top-[15%] right-[18%] rotate-[15deg]"></div>
-
-                            {/* Circle - Bottom Right */}
-                            <div className="absolute w-[220px] h-[220px] bg-white opacity-[0.05] rounded-full bottom-[-60px] right-[8%]"></div>
-
-                            {/* Square 2 - Far Right Edge */}
-                            <div className="absolute w-[180px] h-[180px] bg-white opacity-20 rounded-[24px] top-[50%] right-[-50px] -translate-y-1/2 rotate-[-5deg]"></div>
-                        </div>
-
-                        {/* Content */}
-                        <div className="relative z-10 max-w-[800px] text-center px-6 py-12 md:py-0">
-                            <h2 className="text-[30px] md:text-[42px] font-bold text-white mb-[16px] leading-[1.2]">
-                                Discover Your Next Role with Us
-                            </h2>
-                            <p className="text-[16px] md:text-[18px] leading-[1.6] text-white/90 mb-[36px] max-w-[540px] mx-auto">
-                                Browse our current openings and take the next step in your
-                                <br></br>career with Evolvex.
-                            </p>
-
-                            <a href="/open-roles"
-                                className="inline-block bg-white text-[#6f5cf6] px-[36px] py-[16px] rounded-full text-[16px] font-bold transition-transform duration-300 hover:scale-105 hover:shadow-lg">
-                                Discover Roles at Evolvex
-                            </a>
-                        </div>
-
-                    </div>
-
-                </div>
+            {/* CTA */}
+            <section className="relative -mt-[40px] lg:-mt-[60px] z-10">
+                <CareersCTA />
             </section>
 
             {/* Apply Now */}

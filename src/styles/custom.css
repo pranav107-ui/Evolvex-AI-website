@@ -162,38 +162,132 @@
 [data-animate].delay-300 {
     transition-delay: 0.3s;
 }
+
 /* Hero Title Animation Styles */
 #hero-title-anim .anim-rect {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 0;
-  border: 1.5px solid #1a1a1a;
-  box-sizing: border-box;
-  transition: width 1s ease-in-out, height 1s ease-in-out;
-  z-index: 10;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border: 1.5px solid #1a1a1a;
+    box-sizing: border-box;
+    transition: width 1s ease-in-out, height 1s ease-in-out;
+    z-index: 10;
 }
 
 #hero-title-anim.in-view .anim-rect {
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 /* Pointer */
 #hero-title-anim .anim-pointer {
-  opacity: 0;
-  top: 0;
-  left: 0;
-  position: absolute;
-  z-index: 30;
-  transition: opacity 0.1s ease-in-out, top 1s ease-in-out, left 1s ease-in-out;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 30;
+    transition: opacity 0.1s ease-in-out, top 1s ease-in-out, left 1s ease-in-out;
 }
 
 #hero-title-anim.in-view .anim-pointer {
-  opacity: 1;
-  top: 100%;
-  left: 100%;
-  transform: translate(4px, 4px);
+    opacity: 1;
+    top: 100%;
+    left: 100%;
+    transform: translate(4px, 4px);
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+/* Robot Animations */
+.robot-wrap {
+    perspective: 1000px;
+    animation: glow 4s ease-in-out infinite;
+}
+
+.robot-svg {
+    animation: floatRobot 6s ease-in-out infinite;
+    transform-origin: center;
+}
+
+@keyframes floatRobot {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-14px);
+    }
+}
+
+#robot-head {
+    transform-origin: center;
+    animation: headMove 5s ease-in-out infinite;
+}
+
+@keyframes headMove {
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(3deg);
+    }
+}
+
+#robot-antenna {
+    transform-origin: bottom center;
+    animation: antennaSpring 2.5s ease-in-out infinite;
+}
+
+@keyframes antennaSpring {
+
+    0%,
+    100% {
+        transform: scaleY(1);
+    }
+
+    50% {
+        transform: scaleY(1.18);
+    }
+}
+
+#robot-shadow {
+    animation: shadowPulse 6s ease-in-out infinite;
+    transform-origin: center;
+}
+
+@keyframes shadowPulse {
+
+    0%,
+    100% {
+        transform: scaleX(1);
+        opacity: 0.25;
+    }
+
+    50% {
+        transform: scaleX(0.75);
+        opacity: 0.12;
+    }
+}
+
+@keyframes glow {
+
+    0%,
+    100% {
+        filter: drop-shadow(0 0 6px rgba(120, 80, 255, .25));
+    }
+
+    50% {
+        filter: drop-shadow(0 0 16px rgba(120, 80, 255, .45));
+    }
 }

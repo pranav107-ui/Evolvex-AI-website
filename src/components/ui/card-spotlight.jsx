@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { useMotionValue, motion, useMotionTemplate } from "motion/react";
 import { CanvasRevealEffect } from "./canvas-reveal-effect";
 import { cn } from "@/lib/utils";
@@ -9,37 +9,37 @@ export const CardSpotlight = ({
     radius = 350,
     color = "#262626",
     className,
+    variant = "dark",
     ...props
 }) => {
     const mouseX = useMotionValue(0);
     const mouseY = useMotionValue(0);
-    function handleMouseMove({
-        currentTarget,
-        clientX,
-        clientY,
-    }) {
-        let { left, top } = currentTarget.getBoundingClientRect();
 
+    function handleMouseMove({ currentTarget, clientX, clientY }) {
+        let { left, top } = currentTarget.getBoundingClientRect();
         mouseX.set(clientX - left);
         mouseY.set(clientY - top);
     }
 
     const [isHovering, setIsHovering] = useState(false);
-    const handleMouseEnter = () => setIsHovering(true);
-    const handleMouseLeave = () => setIsHovering(false);
+
     return (
         <div
             className={cn(
-                "group/spotlight p-10 rounded-md relative border border-neutral-800 bg-black dark:border-neutral-800",
+                "group/spotlight relative overflow-hidden rounded-[22px]",
+                variant === "dark"
+                    ? "border border-neutral-800 bg-black text-white"
+                    : "border border-black/10 bg-white/85 text-black backdrop-blur-xl",
                 className
             )}
             onMouseMove={handleMouseMove}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
+            onMouseEnter={() => setIsHovering(true)}
+            onMouseLeave={() => setIsHovering(false)}
             {...props}
         >
+            {/* Spotlight layer */}
             <motion.div
-                className="pointer-events-none absolute z-0 -inset-px rounded-md opacity-0 transition duration-300 group-hover/spotlight:opacity-100"
+                className="pointer-events-none absolute z-0 -inset-px rounded-[22px] opacity-0 transition duration-300 group-hover/spotlight:opacity-100"
                 style={{
                     backgroundColor: color,
                     maskImage: useMotionTemplate`
@@ -56,15 +56,17 @@ export const CardSpotlight = ({
                         animationSpeed={5}
                         containerClassName="bg-transparent absolute inset-0 pointer-events-none"
                         colors={[
-                            [59, 130, 246],
-                            [139, 92, 246],
+                            [108, 76, 244], // brand violet
+                            [255, 79, 216], // brand pink
                         ]}
                         dotSize={3}
                         showGradient={false}
                     />
                 )}
             </motion.div>
-            {children}
+
+            {/* content */}
+            <div className="relative z-10">{children}</div>
         </div>
     );
 };

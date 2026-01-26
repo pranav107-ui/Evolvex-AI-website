@@ -10,8 +10,23 @@ export const FollowerPointerCard = ({
     const x = useMotionValue(0);
     const y = useMotionValue(0);
     const ref = React.useRef(null);
+    const [rect, setRect] = useState(null);
     const [isInside, setIsInside] = useState(false);
 
+    useEffect(() => {
+        if (ref.current) {
+            setRect(ref.current.getBoundingClientRect());
+        }
+    }, []);
+
+    const handleMouseMove = (e) => {
+        if (rect) {
+            const scrollX = window.scrollX;
+            const scrollY = window.scrollY;
+            x.set(e.clientX - rect.left + scrollX);
+            y.set(e.clientY - rect.top + scrollY);
+        }
+    };
     const handleMouseLeave = () => {
         setIsInside(false);
     };
@@ -19,15 +34,6 @@ export const FollowerPointerCard = ({
     const handleMouseEnter = () => {
         setIsInside(true);
     };
-
-    const handleMouseMove = (e) => {
-        if (ref.current) {
-            const rect = ref.current.getBoundingClientRect();
-            x.set(e.clientX - rect.left);
-            y.set(e.clientY - rect.top);
-        }
-    };
-
     return (
         <div
             onMouseLeave={handleMouseLeave}
@@ -87,7 +93,7 @@ export const FollowPointer = ({
                 fill="currentColor"
                 strokeWidth="1"
                 viewBox="0 0 16 16"
-                className="h-6 w-6 -translate-x-[12px] -translate-y-[10px] -rotate-[70deg] transform stroke-[#7b4dff] text-[#7b4dff]"
+                className="h-6 w-6 -translate-x-[12px] -translate-y-[10px] -rotate-[70deg] transform stroke-sky-600 text-sky-500"
                 height="1em"
                 width="1em"
                 xmlns="http://www.w3.org/2000/svg"
@@ -96,7 +102,7 @@ export const FollowPointer = ({
             </svg>
             <motion.div
                 style={{
-                    backgroundColor: "#7b4dff",
+                    backgroundColor: colors[Math.floor(Math.random() * colors.length)],
                 }}
                 initial={{
                     scale: 0.5,
@@ -111,10 +117,10 @@ export const FollowPointer = ({
                     opacity: 0,
                 }}
                 className={
-                    "min-w-max rounded-full px-2 py-2 text-xs whitespace-nowrap text-white"
+                    "min-w-max rounded-full bg-neutral-200 px-2 py-2 text-xs whitespace-nowrap text-white font-bold"
                 }
             >
-                {title || `Evolvex AI`}
+                {title || `William Shakespeare`}
             </motion.div>
         </motion.div>
     );

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Squares from '../components/Squares';
 
 const OpenRoles = () => {
     useEffect(() => {
@@ -115,36 +116,47 @@ const OpenRoles = () => {
             {/* Hero Section */}
             <section
                 className="relative min-h-[80vh] lg:min-h-[90vh] flex items-center overflow-hidden bg-[linear-gradient(135deg,#eef6ff_0%,#f6f3ff_45%,#fff6f8_100%)]"
-                aria-label="Open roles hero" data-animate="fade-up">
+                aria-label="Open roles hero"
+                data-animate="fade-up"
+            >
                 {/* Background Gradients */}
                 <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                    <div
-                        className="absolute top-[30%] left-[10%] w-[1200px] max-w-full h-[600px] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(closest-side,rgba(173,216,255,0.45),transparent_60%)]">
-                    </div>
-                    <div
-                        className="absolute top-[20%] right-[-10%] w-[1200px] max-w-full h-[600px] bg-[radial-gradient(closest-side,rgba(255,200,230,0.45),transparent_60%)]">
-                    </div>
+                    <div className="absolute top-[30%] left-[10%] w-[1200px] max-w-full h-[600px] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(closest-side,rgba(173,216,255,0.45),transparent_60%)]" />
+                    <div className="absolute top-[20%] right-[-10%] w-[1200px] max-w-full h-[600px] bg-[radial-gradient(closest-side,rgba(255,200,230,0.45),transparent_60%)]" />
                 </div>
 
-                <div className="w-full max-w-[1200px] mx-auto px-5 grid grid-cols-1 items-center relative z-10">
+                {/* ✅ Squares FULL EDGE-TO-EDGE */}
+                <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none md:pointer-events-auto">
+                    <Squares
+                        speed={0.15}
+                        squareSize={70}
+                        direction="down"
+                        borderColor="#e7e3ff"
+                        hoverFillColor="#6c4cf4"
+                    />
+                </div>
 
-                    <div className="max-w-[720px] mx-auto lg:mx-0 text-center lg:text-left">
-                        <h1 className="text-[38px] md:text-[48px] lg:text-[56px] font-extrabold leading-[1.15] text-[#121212] mb-[24px]">
-                            Explore Opportunities at <br className="hidden md:block" /> Evolvex AI
-                        </h1>
+                {/* ✅ Content wrapper (only content max width) */}
+                <div className="relative z-10 w-full">
+                    <div className="mx-auto w-full max-w-[1200px] px-5 grid grid-cols-1 items-center">
+                        <div className="max-w-[720px] mx-auto lg:mx-0 text-center lg:text-left">
+                            <h1 className="text-[38px] md:text-[48px] lg:text-[56px] font-extrabold leading-[1.15] text-[#121212] mb-[24px]">
+                                Explore Opportunities at <br className="hidden md:block" /> Evolvex AI
+                            </h1>
 
-                        <p className="text-[16px] md:text-[18px] leading-[1.7] text-[#4a4a4a] max-w-[640px] mx-auto lg:mx-0 mb-[36px]">
-                            Join our mission to build intelligent, scalable and human-first
-                            digital solutions. Discover roles that match your passion and
-                            expertise.
-                        </p>
+                            <p className="text-[16px] md:text-[18px] leading-[1.7] text-[#4a4a4a] max-w-[640px] mx-auto lg:mx-0 mb-[36px]">
+                                Join our mission to build intelligent, scalable and human-first digital solutions.
+                                Discover roles that match your passion and expertise.
+                            </p>
 
-                        <a href="#roles-list"
-                            className="inline-flex items-center justify-center px-[32px] py-[14px] text-[15px] font-semibold rounded-[12px] text-white bg-gradient-to-br from-[#B455F3] to-[#3937F3] shadow-[0_10px_25px_rgba(106,76,255,0.35)] transition-transform duration-250 hover:-translate-y-[3px] hover:shadow-[0_16px_35px_rgba(106,76,255,0.45)]">
-                            View Current Openings
-                        </a>
+                            <a
+                                href="#roles-list"
+                                className="inline-flex items-center justify-center px-[32px] py-[14px] text-[15px] font-semibold rounded-[12px] text-white bg-gradient-to-br from-[#B455F3] to-[#3937F3] shadow-[0_10px_25px_rgba(106,76,255,0.35)] transition-transform duration-250 hover:-translate-y-[3px] hover:shadow-[0_16px_35px_rgba(106,76,255,0.45)]"
+                            >
+                                View Current Openings
+                            </a>
+                        </div>
                     </div>
-
                 </div>
             </section>
 
@@ -236,15 +248,17 @@ const OpenRoles = () => {
             </section>
 
             {/* End Note */}
-            <section className="py-[60px] md:py-[80px] bg-white border-t border-b border-[#EEE8F6]">
-                <div className="w-full px-5 text-center">
-                    <h2 className="text-[22px] md:text-[28px] font-bold text-[#1a1a1a] mb-[16px]">
-                        Thank you for exploring our current opportunities.
-                    </h2>
-                    <p className="text-[15px] md:text-[16px] leading-[1.7] text-[#4a4a4a] max-w-[720px] mx-auto">
-                        If you did not find a suitable position today, we encourage you <br></br> to stay
-                        connected and reach out to us for future openings.
-                    </p>
+            <section className="py-[60px] md:py-[80px] bg-white">
+                <div className='border-y border-dashed border-slate-200 w-full max-w-5xl mx-auto px-10 sm:px-16 my-10'>
+                    <div className="flex flex-col text-center items-center justify-center gap-6 px-4 md:px-10 border-x border-dashed border-slate-200 py-16 sm:py-20 -mt-10 -mb-10 w-full">
+                        <h2 className="text-[22px] md:text-[28px] font-bold text-[#1a1a1a] mb-[8px]">
+                            Thank you for exploring our current opportunities.
+                        </h2>
+                        <p className="text-[15px] md:text-[16px] leading-[1.7] text-[#4a4a4a] max-w-[720px] mx-auto">
+                            If you did not find a suitable position today, we encourage you <br className="hidden md:block" /> to stay
+                            connected and reach out to us for future openings.
+                        </p>
+                    </div>
                 </div>
             </section>
 

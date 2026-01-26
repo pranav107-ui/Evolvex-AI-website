@@ -18,7 +18,7 @@ const servicesContent = [
                     src="/assets/images/product-engineering.png"
                     width={550}
                     height={430}
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-contain p-8"
                     alt="Product Engineering" />
             </div>
         ),
@@ -30,10 +30,10 @@ const servicesContent = [
         content: (
             <div className="h-full w-full flex items-center justify-center bg-white">
                 <img
-                    src="/assets/images/software-development.png"
+                    src="/assets/images/custom-software.png"
                     width={550}
                     height={430}
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-contain p-8"
                     alt="Custom Software Development" />
             </div>
         ),
@@ -48,7 +48,7 @@ const servicesContent = [
                     src="/assets/images/mobile-development.png"
                     width={550}
                     height={430}
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-contain p-8"
                     alt="Mobile App Development" />
             </div>
         ),
@@ -68,10 +68,10 @@ const servicesContent = [
         content: (
             <div className="h-full w-full flex items-center justify-center bg-white">
                 <img
-                    src="/assets/images/service-ai-automation.png"
+                    src="/assets/images/AI-automation.png"
                     width={550}
                     height={430}
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-contain p-8"
                     alt="Artificial Intelligence & Automation" />
             </div>
         ),
@@ -159,13 +159,15 @@ const Home = () => {
 
     return (
         <>
-            {/* Hero */}
+            {/* ================= HERO SECTION ================= */}
             <section
-                className="relative min-h-[calc(100vh-80px)] py-[120px] pb-[80px] overflow-hidden bg-[radial-gradient(420px_420px_at_75%_45%,rgba(96,165,250,0.35),transparent_60%),linear-gradient(120deg,#eef4ff_0%,#f7fbff_35%,#fff4f7_100%)] flex items-center"
+                className="relative min-h-[calc(100vh-80px)] py-[120px] pb-[80px] overflow-hidden bg-gradient-to-br from-[#f8faff] via-white to-[#f9fbff] flex items-center justify-center text-center"
                 aria-label="Hero">
 
                 <div id="hero-canvas-container" className="absolute inset-0 z-0"></div>
 
+                {/* ===== BACKUP: ORIGINAL TWO-COLUMN LAYOUT ===== */}
+                {/* 
                 <div
                     className="w-full px-5 grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-[64px] items-center text-center lg:text-left relative z-10">
                     <div className="hero-content" data-animate="fade-up">
@@ -198,9 +200,9 @@ const Home = () => {
                         <p className="text-[16px] leading-[1.65] text-gray-600 max-w-none mb-[36px] mx-0 lg:mx-0">Building intelligent
                             digital solutions that transform brands into future-ready, high-performing powerhouses.</p>
                         <div className="flex flex-wrap items-center justify-center lg:justify-start gap-[18px]">
-                            <Link to="/services"
-                                className="inline-flex min-w-[160px] h-[48px] px-[28px] items-center justify-center rounded-[8px] bg-gradient-to-r from-[#B455F3] to-[#393AF3] text-white text-white font-semibold text-[15px] shadow-[0_4px_14px_rgba(108,76,244,0.3)] transition-transform duration-200 hover:scale-[1.02] hover:bg-[#5b3ddb]">Get
-                                Started</Link>
+                            <a href="#services"
+                                className="inline-flex min-w-[160px] h-[48px] px-[28px] items-center justify-center rounded-[8px] bg-gradient-to-r from-[#B455F3] to-[#393AF3] text-white font-semibold text-[15px] shadow-[0_4px_14px_rgba(108,76,244,0.3)] transition-transform duration-200 hover:scale-[1.02] hover:bg-[#5b3ddb]">Get
+                                Started</a>
                             <Link to="/services"
                                 className="inline-flex min-w-[170px] h-[48px] px-[28px] items-center justify-center rounded-[8px] bg-white border border-[#6C4CF4] text-[#6C4CF4] font-semibold text-[15px] shadow-sm transition-transform duration-200 hover:scale-[1.02] hover:bg-gray-50">Explore
                                 Services</Link>
@@ -219,6 +221,47 @@ const Home = () => {
                             <div className="absolute bottom-[40%] left-[20%] w-1 h-1 bg-[#4285F4] rounded-full opacity-50"></div>
                             <div className="absolute top-[60%] right-[5%] w-1.5 h-1.5 bg-[#4285F4] rounded-full opacity-60"></div>
                             <div className="absolute bottom-[10%] left-[50%] w-1 h-1 bg-[#4285F4] rounded-full opacity-30"></div>
+                        </div>
+                    </div>
+                </div>
+                 */}
+
+                {/* ===== PROFESSIONAL CENTERED LAYOUT ===== */}
+                <div className="relative z-10 max-w-[860px] px-6 w-full flex flex-col items-center justify-center">
+
+                    <div className="hero-content" data-animate="fade-up">
+                        <h1 className="text-[42px] md:text-[62px] lg:text-[72px] leading-[1.05] font-bold tracking-[-0.04em] text-[#111] mb-[26px]">
+                            <span className="block">Innovation. Intelligence.</span>
+
+                            <span id="hero-title-anim" className="relative inline-block text-[#6C4CF4] px-[8px] mt-2 leading-none">
+                                <span className="relative z-10">Evolvex</span>
+
+                                <span className="anim-rect absolute top-0 left-0 border border-[#1a1a1a] pointer-events-none box-border z-0"></span>
+
+                                <span className="anim-pointer absolute top-0 left-0 z-20 text-blue-500 pointer-events-none opacity-0">
+                                    <svg stroke="#6C4CF4" fill="#6C4CF4" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"
+                                        viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"
+                                        className="w-5 h-5 -rotate-90">
+                                        <path d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103z"></path>
+                                    </svg>
+                                </span>
+                            </span>
+                        </h1>
+
+                        <p className="text-[18px] leading-[1.8] text-gray-600 max-w-[640px] mx-auto mb-[44px]">
+                            We design intelligent digital systems that help modern businesses scale faster, operate smarter, and lead with technology.
+                        </p>
+
+                        <div className="flex flex-wrap items-center justify-center gap-[20px]">
+                            <a href="#services"
+                                className="inline-flex min-w-[180px] h-[52px] px-[34px] items-center justify-center rounded-[12px] bg-gradient-to-r from-[#B455F3] to-[#393AF3] text-white font-semibold text-[15px] shadow-[0_8px_24px_rgba(108,76,244,0.35)] transition-transform duration-200 hover:scale-[1.04]">
+                                Get Started
+                            </a>
+
+                            <Link to="/services"
+                                className="inline-flex min-w-[190px] h-[52px] px-[34px] items-center justify-center rounded-[12px] bg-white border border-[#6C4CF4] text-[#6C4CF4] font-semibold text-[15px] shadow-sm transition-transform duration-200 hover:scale-[1.04] hover:bg-gray-50">
+                                Explore Services
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -317,7 +360,7 @@ const Home = () => {
                             AI.
                         </p>
 
-                        <a href="#" className="inline-block mt-8 px-7 py-3 text-[14px] font-medium text-white
+                        <a href="/contact" className="inline-block mt-8 px-7 py-3 text-[14px] font-medium text-white
                 bg-[#6C4CF4] rounded-[10px] transition hover:opacity-90">
                             Start Your Project
                         </a>
@@ -661,9 +704,9 @@ const Home = () => {
                         <p className="-translate-x-2 font-medium">Join the Evolvex talent network </p>
                     </div>
                     <h1 className="text-4xl md:text-5xl md:leading-[60px] font-semibold max-w-xl mt-5 bg-gradient-to-r from-white to-[#CAABFF] text-transparent bg-clip-text">Unlock Your Next Big Opportunity.</h1>
-                    <button className="px-8 py-3 text-white bg-violet-600 hover:bg-violet-700 transition-all rounded-full uppercase text-sm mt-8">
+                    <a href="/careers" className="px-8 py-3 text-white bg-violet-600 hover:bg-violet-700 transition-all rounded-full uppercase text-sm mt-8">
                         Explore Careers
-                    </button>
+                    </a>
                 </div>
             </section>
 

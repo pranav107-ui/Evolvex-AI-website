@@ -5,8 +5,30 @@ import TiltedCard from './TiltedCard';
 import ScrollReveal from './ScrollReveal';
 import Testimonials from '../components/Testimonials';
 import TrustedBy from '../components/TrustedBy';
+import ExpertiseCard from "../components/ExpertiseCard";
+import {
+    Boxes,
+    Code2,
+    Cloud,
+    Bot,
+    Smartphone,
+
+    BriefcaseBusiness,
+} from "lucide-react";
+
+
+import Robot from "@/assets/svg/robot.svg?react";
 
 const Services = () => {
+
+    // Add Scroll To Section Helper
+    const scrollToSection = (id) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    };
+
     useEffect(() => {
         // Animation triggers for fade-up, etc.
         const observer = new IntersectionObserver((entries) => {
@@ -74,75 +96,68 @@ const Services = () => {
 
                         {/* Card 1: Product Engineering */}
                         <TiltedCard captionText="Product Engineering" showMobileWarning={false} rotateAmplitude={10} scaleOnHover={1.03} containerHeight="100%">
-                            <article
-                                className="relative h-[280px] p-[26px] rounded-[16px] overflow-hidden shadow-[0_8px_24px_rgba(18,16,74,0.04)] bg-[#f4f1ff] flex flex-col justify-start">
-                                <h3 className="text-[22px] font-bold text-[#141033] mb-[14px] leading-[1.2]">Product Engineering</h3>
-                                <p className="text-[16px] leading-[1.5] text-[#666666]">
-                                    Build scalable digital products from concept to launch.
-                                </p>
-                                <span className="absolute bottom-[-20px] left-[20px] w-[80px] h-[40px] rounded-t-[40px] bg-[#7a5cff]"></span>
-                            </article>
+                            <ExpertiseCard
+                                title="Product Engineering"
+                                desc="Build scalable digital products from concept to launch."
+                                accentClass="bg-gradient-to-r from-[#6C4CF4] to-[#FF4FD8]"
+                                icon={<Boxes className="w-5 h-5 text-[#6C4CF4]" />}
+                                onClick={() => scrollToSection('service-product')}
+                            />
                         </TiltedCard>
 
-                        {/* Card 2: Custom Software */}
+                        {/* Card 2: Custom Software Development */}
                         <TiltedCard captionText="Custom Software Development" showMobileWarning={false} rotateAmplitude={10} scaleOnHover={1.03} containerHeight="100%">
-                            <article
-                                className="relative h-[280px] p-[26px] rounded-[16px] overflow-hidden shadow-[0_8px_24px_rgba(18,16,74,0.04)] bg-[#eef5ff] flex flex-col justify-start">
-                                <h3 className="text-[22px] font-bold text-[#141033] mb-[14px] leading-[1.2]">Custom Software Development</h3>
-                                <p className="text-[16px] leading-[1.5] text-[#666666]">
-                                    Tailored software solutions that streamline operations.
-                                </p>
-                                <span className="absolute bottom-[-20px] left-[20px] w-[80px] h-[40px] rounded-t-[40px] bg-[#2f7cff]"></span>
-                            </article>
+                            <ExpertiseCard
+                                title="Custom Software Development"
+                                desc="Tailored software solutions that streamline operations."
+                                accentClass="bg-gradient-to-r from-[#2F7CFF] to-[#6C4CF4]"
+                                icon={<Code2 className="w-5 h-5 text-[#2F7CFF]" />}
+                                onClick={() => scrollToSection('service-software')}
+                            />
                         </TiltedCard>
 
                         {/* Card 3: Cloud & DevOps */}
                         <TiltedCard captionText="Cloud & DevOps" showMobileWarning={false} rotateAmplitude={10} scaleOnHover={1.03} containerHeight="100%">
-                            <article
-                                className="relative h-[280px] p-[26px] rounded-[16px] overflow-hidden shadow-[0_8px_24px_rgba(18,16,74,0.04)] bg-[#f3f6ff] flex flex-col justify-start">
-                                <h3 className="text-[22px] font-bold text-[#141033] mb-[14px] leading-[1.2]">Cloud & DevOps</h3>
-                                <p className="text-[16px] leading-[1.5] text-[#666666]">
-                                    Cloud migration, CI/CD, automation, and infrastructure scaling.
-                                </p>
-                                <span className="absolute bottom-[-20px] left-[20px] w-[80px] h-[40px] rounded-t-[40px] bg-[#7b61ff]"></span>
-                            </article>
+                            <ExpertiseCard
+                                title="Cloud & DevOps"
+                                desc="Cloud migration, CI/CD, automation, and infrastructure scaling."
+                                accentClass="bg-gradient-to-r from-[#6C4CF4] to-[#7AE7FF]"
+                                icon={<Cloud className="w-5 h-5 text-[#6C4CF4]" />}
+                                onClick={() => scrollToSection('service-cloud')}
+                            />
                         </TiltedCard>
 
                         {/* Card 4: AI & Automation */}
                         <TiltedCard captionText="AI & Automation" showMobileWarning={false} rotateAmplitude={10} scaleOnHover={1.03} containerHeight="100%">
-                            <article
-                                className="relative h-[280px] p-[26px] rounded-[16px] overflow-hidden shadow-[0_8px_24px_rgba(18,16,74,0.04)] bg-[#fff1fb] flex flex-col justify-start">
-                                <h3 className="text-[22px] font-bold text-[#141033] mb-[14px] leading-[1.2]">AI & Automation</h3>
-                                <p className="text-[16px] leading-[1.5] text-[#666666]">
-                                    Intelligent solutions for automation, predictions, and decision-making.
-                                </p>
-                                <span className="absolute bottom-[-20px] left-[20px] w-[80px] h-[40px] rounded-t-[40px] bg-[#c45bff]"></span>
-                            </article>
+                            <ExpertiseCard
+                                title="AI & Automation"
+                                desc="Intelligent solutions for automation, predictions, and decision-making."
+                                accentClass="bg-gradient-to-r from-[#FF4FD8] to-[#B44CFF]"
+                                icon={<Bot className="w-5 h-5 text-[#B44CFF]" />}
+                                onClick={() => scrollToSection('service-ai')}
+                            />
                         </TiltedCard>
 
                         {/* Card 5: Mobile App Development */}
                         <TiltedCard captionText="Mobile App Development" showMobileWarning={false} rotateAmplitude={10} scaleOnHover={1.03} containerHeight="100%">
-                            <article
-                                className="relative h-[280px] p-[26px] rounded-[16px] overflow-hidden shadow-[0_8px_24px_rgba(18,16,74,0.04)] bg-[#edfffb] flex flex-col justify-start">
-                                <h3 className="text-[22px] font-bold text-[#141033] mb-[14px] leading-[1.2]">Mobile App Development</h3>
-                                <p className="text-[16px] leading-[1.5] text-[#666666]">
-                                    Cross-platform and native apps with high performance.
-                                </p>
-                                <span className="absolute bottom-[-20px] left-[20px] w-[80px] h-[40px] rounded-t-[40px] bg-[#00c2a8]"></span>
-                            </article>
+                            <ExpertiseCard
+                                title="Mobile App Development"
+                                desc="Cross-platform and native apps with high performance."
+                                accentClass="bg-gradient-to-r from-[#00C2A8] to-[#6C4CF4]"
+                                icon={<Smartphone className="w-5 h-5 text-[#00A98F]" />}
+                                onClick={() => scrollToSection('service-mobile')}
+                            />
                         </TiltedCard>
 
-                        {/* Card 6: IT Consulting */}
+                        {/* Card 6: IT Consulting & Digital Transformation */}
                         <TiltedCard captionText="IT Consulting & Digital Transformation" showMobileWarning={false} rotateAmplitude={10} scaleOnHover={1.03} containerHeight="100%">
-                            <article
-                                className="relative h-[280px] p-[26px] rounded-[16px] overflow-hidden shadow-[0_8px_24px_rgba(18,16,74,0.04)] bg-[#fff3e8] flex flex-col justify-start">
-                                <h3 className="text-[22px] font-bold text-[#141033] mb-[14px] leading-[1.2]">IT Consulting & Digital Transformation
-                                </h3>
-                                <p className="text-[16px] leading-[1.5] text-[#666666]">
-                                    Technology strategy, modernization, and process optimization.
-                                </p>
-                                <span className="absolute bottom-[-20px] left-[20px] w-[80px] h-[40px] rounded-t-[40px] bg-[#ff8a34]"></span>
-                            </article>
+                            <ExpertiseCard
+                                title="IT Consulting & Digital Transformation"
+                                desc="Technology strategy, modernization, and process optimization."
+                                accentClass="bg-gradient-to-r from-[#FF8A34] to-[#FF4FD8]"
+                                icon={<BriefcaseBusiness className="w-5 h-5 text-[#FF8A34]" />}
+                                onClick={() => scrollToSection('service-it')}
+                            />
                         </TiltedCard>
 
                     </div>
@@ -156,11 +171,20 @@ const Services = () => {
 
                     <header className="text-center mb-[70px]" data-animate="fade-up">
                         <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-[36px] md:mb-[48px]">
-                            <img
-                                src="/assets/svg/robot.svg"
-                                alt="Robot mascot"
-                                className="w-[120px] md:w-[150px] h-auto object-contain animate-bounce-slow"
-                            />
+                            <div
+                                className="robot-wrap relative w-[120px] md:w-[150px] h-auto"
+                                onMouseMove={(e) => {
+                                    const rect = e.currentTarget.getBoundingClientRect();
+                                    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 12;
+                                    const y = ((e.clientY - rect.top) / rect.height - 0.5) * 12;
+                                    e.currentTarget.style.transform = `rotateY(${x}deg) rotateX(${-y}deg)`;
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.currentTarget.style.transform = "rotateX(0deg) rotateY(0deg)";
+                                }}
+                            >
+                                <Robot className="robot-svg w-full h-full object-contain" />
+                            </div>
 
                             <h2 className="text-[27.2px] md:text-[33.6px] font-bold text-[#170F49]">
                                 How We Deliver Excellence
@@ -169,8 +193,8 @@ const Services = () => {
                     </header>
 
                     {/* Item 1: Product Engineering */}
-                    {/* Item 1: Product Engineering */}
                     <div
+                        id="service-product"
                         className="grid grid-cols-1 md:grid-cols-[1.1fr_0.9fr] items-center gap-[30px] md:gap-[40px] mb-[70px] md:mb-[90px]"
                         data-animate="fade-up">
                         <div className="w-full">
@@ -200,8 +224,8 @@ const Services = () => {
                     </div>
 
                     {/* Item 2: Software Development (Reverse) */}
-                    {/* Item 2: Software Development (Reverse) */}
                     <div
+                        id="service-software"
                         className="grid grid-cols-1 md:grid-cols-[0.9fr_1.1fr] items-center gap-[30px] md:gap-[40px] mb-[70px] md:mb-[90px]"
                         data-animate="fade-up">
                         <div className="w-full order-1 md:order-2">
@@ -229,8 +253,8 @@ const Services = () => {
                     </div>
 
                     {/* Item 3: AI-Powered Automation */}
-                    {/* Item 3: AI-Powered Automation */}
                     <div
+                        id="service-ai"
                         className="grid grid-cols-1 md:grid-cols-[1.1fr_0.9fr] items-center gap-[30px] md:gap-[40px] mb-[70px] md:mb-[90px]"
                         data-animate="fade-up">
                         <div className="w-full">
@@ -253,14 +277,14 @@ const Services = () => {
                             </ScrollReveal>
                         </div>
                         <div className="flex justify-center items-center mt-[30px] md:mt-0">
-                            <img src="/assets/images/ai-automation.png" alt="AI Powered Automation illustration"
+                            <img src="/assets/images/AI-automation.png" alt="AI Powered Automation illustration"
                                 className="w-full max-w-[320px] md:max-w-[360px] h-auto block" />
                         </div>
                     </div>
 
                     {/* Item 4: Cloud & DevOps (Reverse) */}
-                    {/* Item 4: Cloud & DevOps (Reverse) */}
                     <div
+                        id="service-cloud"
                         className="grid grid-cols-1 md:grid-cols-[0.9fr_1.1fr] items-center gap-[30px] md:gap-[40px] mb-[70px] md:mb-[90px]"
                         data-animate="fade-up">
                         <div className="w-full order-1 md:order-2">
@@ -289,8 +313,8 @@ const Services = () => {
                     </div>
 
                     {/* Item 5: Mobile App Development */}
-                    {/* Item 5: Mobile App Development */}
                     <div
+                        id="service-mobile"
                         className="grid grid-cols-1 md:grid-cols-[1.1fr_0.9fr] items-center gap-[30px] md:gap-[40px] mb-[70px] md:mb-[90px]"
                         data-animate="fade-up">
                         <div className="w-full">
@@ -319,8 +343,9 @@ const Services = () => {
                     </div>
 
                     {/* Item 6: IT Consulting & Digital Platforms (Reverse) */}
-                    {/* Item 6: IT Consulting & Digital Platforms (Reverse) */}
-                    <div className="grid grid-cols-1 md:grid-cols-[0.9fr_1.1fr] items-center gap-[30px] md:gap-[40px]"
+                    <div
+                        id="service-it"
+                        className="grid grid-cols-1 md:grid-cols-[0.9fr_1.1fr] items-center gap-[30px] md:gap-[40px]"
                         data-animate="fade-up">
                         <div className="w-full order-1 md:order-2">
                             <h3 className="text-[24px] md:text-[32px] font-semibold text-[#140a4f] mb-[12px]">IT Consulting & Digital
@@ -459,71 +484,71 @@ const Services = () => {
                     @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
                 `}</style>
                 <div
-  style={{ fontFamily: "'Poppins', sans-serif" }}
-  className="
+                    style={{ fontFamily: "'Poppins', sans-serif" }}
+                    className="
     relative overflow-hidden
     max-w-5xl py-16 md:pl-24 md:w-full mx-2 md:mx-auto
     flex flex-col items-start justify-center text-left
     rounded-2xl p-10 text-white
     bg-[#4C0083]
   "
->
-  {/* Half Gradient Overlay (Evolvex Style) */}
-  <div className="absolute inset-0 pointer-events-none">
-    {/* Right-side soft gradient */}
-    <div className="absolute right-0 top-0 h-full w-[60%] bg-gradient-to-l from-[#7C3AED]/55 via-[#A855F7]/25 to-transparent" />
+                >
+                    {/* Half Gradient Overlay (Evolvex Style) */}
+                    <div className="absolute inset-0 pointer-events-none">
+                        {/* Right-side soft gradient */}
+                        <div className="absolute right-0 top-0 h-full w-[60%] bg-gradient-to-l from-[#7C3AED]/55 via-[#A855F7]/25 to-transparent" />
 
-    {/* Bottom soft tint */}
-    <div className="absolute bottom-0 left-0 h-[55%] w-full bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+                        {/* Bottom soft tint */}
+                        <div className="absolute bottom-0 left-0 h-[55%] w-full bg-gradient-to-t from-black/20 via-transparent to-transparent" />
 
-    {/* Decorative shapes (subtle) */}
-    <div className="absolute -top-24 -right-24 w-[320px] h-[320px] bg-white/10 rounded-full blur-2xl" />
-    <div className="absolute -bottom-28 right-24 w-[380px] h-[380px] bg-pink-400/15 rounded-full blur-3xl" />
-    <div className="absolute top-16 left-12 w-[220px] h-[220px] bg-blue-300/10 rounded-full blur-2xl" />
-  </div>
+                        {/* Decorative shapes (subtle) */}
+                        <div className="absolute -top-24 -right-24 w-[320px] h-[320px] bg-white/10 rounded-full blur-2xl" />
+                        <div className="absolute -bottom-28 right-24 w-[380px] h-[380px] bg-pink-400/15 rounded-full blur-3xl" />
+                        <div className="absolute top-16 left-12 w-[220px] h-[220px] bg-blue-300/10 rounded-full blur-2xl" />
+                    </div>
 
-  {/* CONTENT */}
-  <div className="relative z-10">
-    <div className="flex items-center">
-      <div className="flex -space-x-3 pr-3">
-        <img
-          src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200"
-          alt="image"
-          className="size-8 rounded-full hover:-translate-y-px transition z-1 border border-white/20"
-        />
-        <img
-          src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200"
-          alt="image"
-          className="size-8 rounded-full hover:-translate-y-px transition z-[2] border border-white/20"
-        />
-        <img
-          src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&h=200&auto=format&fit=crop"
-          alt="image"
-          className="size-8 rounded-full hover:-translate-y-px transition z-[3] border border-white/20"
-        />
-      </div>
+                    {/* CONTENT */}
+                    <div className="relative z-10">
+                        <div className="flex items-center">
+                            <div className="flex -space-x-3 pr-3">
+                                <img
+                                    src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200"
+                                    alt="image"
+                                    className="size-8 rounded-full hover:-translate-y-px transition z-1 border border-white/20"
+                                />
+                                <img
+                                    src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200"
+                                    alt="image"
+                                    className="size-8 rounded-full hover:-translate-y-px transition z-[2] border border-white/20"
+                                />
+                                <img
+                                    src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&h=200&auto=format&fit=crop"
+                                    alt="image"
+                                    className="size-8 rounded-full hover:-translate-y-px transition z-[3] border border-white/20"
+                                />
+                            </div>
 
-     <div> <div className="flex items-center gap-px"> <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M5.85536 0.463527C6.00504 0.00287118 6.65674 0.00287028 6.80642 0.463526L7.82681 3.60397C7.89375 3.80998 8.08572 3.94946 8.30234 3.94946H11.6044C12.0888 3.94946 12.2901 4.56926 11.8983 4.85397L9.22687 6.79486C9.05162 6.92219 8.97829 7.14787 9.04523 7.35388L10.0656 10.4943C10.2153 10.955 9.68806 11.338 9.2962 11.0533L6.62478 9.11244C6.44954 8.98512 6.21224 8.98512 6.037 9.11244L3.36558 11.0533C2.97372 11.338 2.44648 10.955 2.59616 10.4943L3.61655 7.35388C3.68349 7.14787 3.61016 6.92219 3.43491 6.79486L0.763497 4.85397C0.37164 4.56927 0.573027 3.94946 1.05739 3.94946H4.35944C4.57606 3.94946 4.76803 3.80998 4.83497 3.60397L5.85536 0.463527Z" fill="#FF8F20" /> </svg> <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M5.85536 0.463527C6.00504 0.00287118 6.65674 0.00287028 6.80642 0.463526L7.82681 3.60397C7.89375 3.80998 8.08572 3.94946 8.30234 3.94946H11.6044C12.0888 3.94946 12.2901 4.56926 11.8983 4.85397L9.22687 6.79486C9.05162 6.92219 8.97829 7.14787 9.04523 7.35388L10.0656 10.4943C10.2153 10.955 9.68806 11.338 9.2962 11.0533L6.62478 9.11244C6.44954 8.98512 6.21224 8.98512 6.037 9.11244L3.36558 11.0533C2.97372 11.338 2.44648 10.955 2.59616 10.4943L3.61655 7.35388C3.68349 7.14787 3.61016 6.92219 3.43491 6.79486L0.763497 4.85397C0.37164 4.56927 0.573027 3.94946 1.05739 3.94946H4.35944C4.57606 3.94946 4.76803 3.80998 4.83497 3.60397L5.85536 0.463527Z" fill="#FF8F20" /> </svg> <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M5.85536 0.463527C6.00504 0.00287118 6.65674 0.00287028 6.80642 0.463526L7.82681 3.60397C7.89375 3.80998 8.08572 3.94946 8.30234 3.94946H11.6044C12.0888 3.94946 12.2901 4.56926 11.8983 4.85397L9.22687 6.79486C9.05162 6.92219 8.97829 7.14787 9.04523 7.35388L10.0656 10.4943C10.2153 10.955 9.68806 11.338 9.2962 11.0533L6.62478 9.11244C6.44954 8.98512 6.21224 8.98512 6.037 9.11244L3.36558 11.0533C2.97372 11.338 2.44648 10.955 2.59616 10.4943L3.61655 7.35388C3.68349 7.14787 3.61016 6.92219 3.43491 6.79486L0.763497 4.85397C0.37164 4.56927 0.573027 3.94946 1.05739 3.94946H4.35944C4.57606 3.94946 4.76803 3.80998 4.83497 3.60397L5.85536 0.463527Z" fill="#FF8F20" /> </svg> <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M5.85536 0.463527C6.00504 0.00287118 6.65674 0.00287028 6.80642 0.463526L7.82681 3.60397C7.89375 3.80998 8.08572 3.94946 8.30234 3.94946H11.6044C12.0888 3.94946 12.2901 4.56926 11.8983 4.85397L9.22687 6.79486C9.05162 6.92219 8.97829 7.14787 9.04523 7.35388L10.0656 10.4943C10.2153 10.955 9.68806 11.338 9.2962 11.0533L6.62478 9.11244C6.44954 8.98512 6.21224 8.98512 6.037 9.11244L3.36558 11.0533C2.97372 11.338 2.44648 10.955 2.59616 10.4943L3.61655 7.35388C3.68349 7.14787 3.61016 6.92219 3.43491 6.79486L0.763497 4.85397C0.37164 4.56927 0.573027 3.94946 1.05739 3.94946H4.35944C4.57606 3.94946 4.76803 3.80998 4.83497 3.60397L5.85536 0.463527Z" fill="#FF8F20" /> </svg> <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M5.85536 0.463527C6.00504 0.00287118 6.65674 0.00287028 6.80642 0.463526L7.82681 3.60397C7.89375 3.80998 8.08572 3.94946 8.30234 3.94946H11.6044C12.0888 3.94946 12.2901 4.56926 11.8983 4.85397L9.22687 6.79486C9.05162 6.92219 8.97829 7.14787 9.04523 7.35388L10.0656 10.4943C10.2153 10.955 9.68806 11.338 9.2962 11.0533L6.62478 9.11244C6.44954 8.98512 6.21224 8.98512 6.037 9.11244L3.36558 11.0533C2.97372 11.338 2.44648 10.955 2.59616 10.4943L3.61655 7.35388C3.68349 7.14787 3.61016 6.92219 3.43491 6.79486L0.763497 4.85397C0.37164 4.56927 0.573027 3.94946 1.05739 3.94946H4.35944C4.57606 3.94946 4.76803 3.80998 4.83497 3.60397L5.85536 0.463527Z" fill="#FF8F20" /> </svg> </div>
-        <p className="text-sm text-white/80">Trusted by founders & product teams</p>
-      </div>
-    </div>
+                            <div> <div className="flex items-center gap-px"> <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M5.85536 0.463527C6.00504 0.00287118 6.65674 0.00287028 6.80642 0.463526L7.82681 3.60397C7.89375 3.80998 8.08572 3.94946 8.30234 3.94946H11.6044C12.0888 3.94946 12.2901 4.56926 11.8983 4.85397L9.22687 6.79486C9.05162 6.92219 8.97829 7.14787 9.04523 7.35388L10.0656 10.4943C10.2153 10.955 9.68806 11.338 9.2962 11.0533L6.62478 9.11244C6.44954 8.98512 6.21224 8.98512 6.037 9.11244L3.36558 11.0533C2.97372 11.338 2.44648 10.955 2.59616 10.4943L3.61655 7.35388C3.68349 7.14787 3.61016 6.92219 3.43491 6.79486L0.763497 4.85397C0.37164 4.56927 0.573027 3.94946 1.05739 3.94946H4.35944C4.57606 3.94946 4.76803 3.80998 4.83497 3.60397L5.85536 0.463527Z" fill="#FF8F20" /> </svg> <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M5.85536 0.463527C6.00504 0.00287118 6.65674 0.00287028 6.80642 0.463526L7.82681 3.60397C7.89375 3.80998 8.08572 3.94946 8.30234 3.94946H11.6044C12.0888 3.94946 12.2901 4.56926 11.8983 4.85397L9.22687 6.79486C9.05162 6.92219 8.97829 7.14787 9.04523 7.35388L10.0656 10.4943C10.2153 10.955 9.68806 11.338 9.2962 11.0533L6.62478 9.11244C6.44954 8.98512 6.21224 8.98512 6.037 9.11244L3.36558 11.0533C2.97372 11.338 2.44648 10.955 2.59616 10.4943L3.61655 7.35388C3.68349 7.14787 3.61016 6.92219 3.43491 6.79486L0.763497 4.85397C0.37164 4.56927 0.573027 3.94946 1.05739 3.94946H4.35944C4.57606 3.94946 4.76803 3.80998 4.83497 3.60397L5.85536 0.463527Z" fill="#FF8F20" /> </svg> <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M5.85536 0.463527C6.00504 0.00287118 6.65674 0.00287028 6.80642 0.463526L7.82681 3.60397C7.89375 3.80998 8.08572 3.94946 8.30234 3.94946H11.6044C12.0888 3.94946 12.2901 4.56926 11.8983 4.85397L9.22687 6.79486C9.05162 6.92219 8.97829 7.14787 9.04523 7.35388L10.0656 10.4943C10.2153 10.955 9.68806 11.338 9.2962 11.0533L6.62478 9.11244C6.44954 8.98512 6.21224 8.98512 6.037 9.11244L3.36558 11.0533C2.97372 11.338 2.44648 10.955 2.59616 10.4943L3.61655 7.35388C3.68349 7.14787 3.61016 6.92219 3.43491 6.79486L0.763497 4.85397C0.37164 4.56927 0.573027 3.94946 1.05739 3.94946H4.35944C4.57606 3.94946 4.76803 3.80998 4.83497 3.60397L5.85536 0.463527Z" fill="#FF8F20" /> </svg> <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M5.85536 0.463527C6.00504 0.00287118 6.65674 0.00287028 6.80642 0.463526L7.82681 3.60397C7.89375 3.80998 8.08572 3.94946 8.30234 3.94946H11.6044C12.0888 3.94946 12.2901 4.56926 11.8983 4.85397L9.22687 6.79486C9.05162 6.92219 8.97829 7.14787 9.04523 7.35388L10.0656 10.4943C10.2153 10.955 9.68806 11.338 9.2962 11.0533L6.62478 9.11244C6.44954 8.98512 6.21224 8.98512 6.037 9.11244L3.36558 11.0533C2.97372 11.338 2.44648 10.955 2.59616 10.4943L3.61655 7.35388C3.68349 7.14787 3.61016 6.92219 3.43491 6.79486L0.763497 4.85397C0.37164 4.56927 0.573027 3.94946 1.05739 3.94946H4.35944C4.57606 3.94946 4.76803 3.80998 4.83497 3.60397L5.85536 0.463527Z" fill="#FF8F20" /> </svg> <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M5.85536 0.463527C6.00504 0.00287118 6.65674 0.00287028 6.80642 0.463526L7.82681 3.60397C7.89375 3.80998 8.08572 3.94946 8.30234 3.94946H11.6044C12.0888 3.94946 12.2901 4.56926 11.8983 4.85397L9.22687 6.79486C9.05162 6.92219 8.97829 7.14787 9.04523 7.35388L10.0656 10.4943C10.2153 10.955 9.68806 11.338 9.2962 11.0533L6.62478 9.11244C6.44954 8.98512 6.21224 8.98512 6.037 9.11244L3.36558 11.0533C2.97372 11.338 2.44648 10.955 2.59616 10.4943L3.61655 7.35388C3.68349 7.14787 3.61016 6.92219 3.43491 6.79486L0.763497 4.85397C0.37164 4.56927 0.573027 3.94946 1.05739 3.94946H4.35944C4.57606 3.94946 4.76803 3.80998 4.83497 3.60397L5.85536 0.463527Z" fill="#FF8F20" /> </svg> </div>
+                                <p className="text-sm text-white/80">Trusted by founders & product teams</p>
+                            </div>
+                        </div>
 
-    <h1 className="text-4xl md:text-[46px] md:leading-[60px] font-semibold max-w-xl mt-5">
-      Ready to Build Something Exceptional?
-    </h1>
+                        <h1 className="text-4xl md:text-[46px] md:leading-[60px] font-semibold max-w-xl mt-5">
+                            Ready to Build Something Exceptional?
+                        </h1>
 
-    <p className="text-[14px] md:text-[16px] font-normal leading-[1.7] text-white/90 mb-[36px]">
-      Our team is here to turn your vision into a scalable digital product.
-    </p>
+                        <p className="text-[14px] md:text-[16px] font-normal leading-[1.7] text-white/90 mb-[36px]">
+                            Our team is here to turn your vision into a scalable digital product.
+                        </p>
 
-    <Link
-      to="/contact"
-      className="px-12 py-3 text-white bg-white/15 hover:bg-white/25 border border-white/20 transition-all rounded-full text-sm mt-8 backdrop-blur-md"
-    >
-      Get a Consultation
-    </Link>
-  </div>
-</div>
+                        <a
+                            href="/contact"
+                            className="px-12 py-3 text-white bg-white/15 hover:bg-white/25 border border-white/20 transition-all rounded-full text-sm mt-8 backdrop-blur-md"
+                        >
+                            Get a Consultation
+                        </a>
+                    </div>
+                </div>
 
             </section>
 

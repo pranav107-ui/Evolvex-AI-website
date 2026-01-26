@@ -103,7 +103,7 @@ const WhyWorkWithUs = () => {
                                 {/* Image */}
                                 <img
                                     className="object-cover absolute transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] bottom-[-255px] w-[228px] -right-12 h-[227px] group-[.expanded]:bottom-[-298px] group-[.expanded]:w-80 group-[.expanded]:right-0 group-[.expanded]:h-[300px]"
-                                    alt="Innovation Driven" src="/assets/images/innovation-environment.png" />
+                                    alt="Innovation Driven" src="/assets/images/innovation-environment2.png" />
                             </div>
                         </div>
                     </div>
@@ -173,7 +173,7 @@ const WhyWorkWithUs = () => {
                                 {/* Image */}
                                 <img
                                     className="object-cover absolute transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] bottom-[-255px] w-[228px] -right-12 h-[227px] group-[.expanded]:bottom-[-298px] group-[.expanded]:w-80 group-[.expanded]:right-0 group-[.expanded]:h-[300px]"
-                                    alt="Element life style" src="/assets/images/work-life-balance.png" />
+                                    alt="Element life style" src="/assets/images/work-life-balance2.png" />
                             </div>
                         </div>
                     </div>

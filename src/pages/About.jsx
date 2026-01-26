@@ -1,9 +1,14 @@
 import React, { useEffect } from 'react';
-import { GlobeDemo } from '../components/GlobeDemo';
+import { motion } from 'framer-motion';
+import OurStorySection from '../components/OurStorySection';
 import WhyBusinessesChoose from '../components/WhyBusinessesChoose';
 import { FollowerPointerCard } from '../components/ui/following-pointer';
 import { CardSpotlight } from '../components/ui/card-spotlight';
 import Testimonials from '../components/Testimonials';
+
+
+
+
 
 const About = () => {
     useEffect(() => {
@@ -53,241 +58,101 @@ const About = () => {
                 </div>
             </section>
 
-            {/* Our Story Section */}
-            <section className="py-[100px] lg:py-[130px] bg-white text-left" id="our-story" data-animate="fade-up">
-                <div className="max-w-[1200px] mx-auto px-5 w-full">
-                    <div className="grid grid-cols-1 lg:grid-cols-[52fr_48fr] gap-[60px] lg:gap-[100px] items-center">
-
-                        {/* Left Content */}
-                        <div className="w-full">
-                            {/* Label */}
-                            <p className="text-[#7b4dff] font-semibold text-[12px] tracking-[0.35em] uppercase mb-[12px]">
-                                Foundation
-                            </p>
-
-                            {/* Heading */}
-                            <h2 className="text-[32px] lg:text-[46px] font-extrabold text-[#111] leading-[1.1] mb-[24px]">
-                                Our Story
-                            </h2>
-
-                            {/* Intro Paragraph */}
-                            <p className="text-[15px] lg:text-[16px] leading-[1.85] text-[#555] max-w-[520px] mb-[40px]">
-                                Evolvex AI began with a belief that innovation has the power to reshape industries. We help businesses navigate the digital landscape with intelligence, clarity, and measurable impact.
-                            </p>
-
-                            {/* Story Blocks */}
-                            <div className="space-y-[28px] mb-[45px]">
-
-                                {/* Block 1: The Beginning */}
-                                <div className="group pl-[18px] border-l-[3px] border-[#efe9ff] hover:border-[#7b4dff] transition-colors duration-300">
-                                    <p className="text-[12px] tracking-wider text-[#7b4dff]/80 font-semibold mb-[4px] uppercase">
-                                        The Beginning
-                                    </p>
-                                    <p className="text-[15px] leading-[1.7] text-[#4a4a4a]">
-                                        We started with one goal: to make advanced technology practical and accessible for real businesses.
-                                    </p>
-                                </div>
-
-                                {/* Block 2: The Shift */}
-                                <div className="group pl-[18px] border-l-[3px] border-[#efe9ff] hover:border-[#7b4dff] transition-colors duration-300">
-                                    <p className="text-[12px] tracking-wider text-[#7b4dff]/80 font-semibold mb-[4px] uppercase">
-                                        The Shift
-                                    </p>
-                                    <p className="text-[15px] leading-[1.7] text-[#4a4a4a]">
-                                        As we grew, we learned that strong outcomes come from combining strategy, design, and engineering.
-                                    </p>
-                                </div>
-
-                                {/* Block 3: Today */}
-                                <div className="group pl-[18px] border-l-[3px] border-[#efe9ff] hover:border-[#7b4dff] transition-colors duration-300">
-                                    <p className="text-[12px] tracking-wider text-[#7b4dff]/80 font-semibold mb-[4px] uppercase">
-                                        Today
-                                    </p>
-                                    <p className="text-[15px] leading-[1.7] text-[#4a4a4a]">
-                                        Today, we build scalable digital systems that accelerate growth, improve efficiency, and unlock new opportunities.
-                                    </p>
-                                </div>
-
-                            </div>
-
-                            {/* Proof Metrics */}
-                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-[16px]">
-                                {/* Metric 1 */}
-                                <div className="bg-[#fff] border border-[#f0f0f0] rounded-[12px] p-[16px] shadow-sm hover:shadow-md transition-shadow duration-300">
-                                    <p className="text-[24px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#b084ff] to-[#7b4dff] mb-[2px]">
-                                        30+
-                                    </p>
-                                    <p className="text-[13px] text-[#555] font-medium">Projects Delivered</p>
-                                </div>
-
-                                {/* Metric 2 */}
-                                <div className="bg-[#fff] border border-[#f0f0f0] rounded-[12px] p-[16px] shadow-sm hover:shadow-md transition-shadow duration-300">
-                                    <p className="text-[24px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#b084ff] to-[#7b4dff] mb-[2px]">
-                                        12+
-                                    </p>
-                                    <p className="text-[13px] text-[#555] font-medium">Industries Served</p>
-                                </div>
-
-                                {/* Metric 3 */}
-                                <div className="bg-[#fff] border border-[#f0f0f0] rounded-[12px] p-[16px] shadow-sm hover:shadow-md transition-shadow duration-300">
-                                    <p className="text-[24px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#b084ff] to-[#7b4dff] mb-[2px]">
-                                        98%
-                                    </p>
-                                    <p className="text-[13px] text-[#555] font-medium">Client Satisfaction</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Right Visual - Premium Brand Orb */}
-                        <div className="relative w-full flex justify-center lg:justify-end">
-                            {/* Orb Container */}
-                            <div className="relative w-[340px] h-[340px] lg:w-[420px] lg:h-[420px] rounded-full flex items-center justify-center">
-
-                                {/* Background Glow (Global) */}
-                                <div className="absolute inset-0 bg-[#7b4dff] opacity-[0.08] blur-[80px] rounded-full animate-pulse" />
-
-                                {/* Orbit Arc 1 (Outer) */}
-                                <svg className="absolute w-full h-full rotate-[30deg] animate-[spin_60s_linear_infinite]" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="210" cy="210" r="208" stroke="url(#paint0_linear)" strokeWidth="1" strokeDasharray="10 10" strokeOpacity="0.3" />
-                                    <defs>
-                                        <linearGradient id="paint0_linear" x1="210" y1="0" x2="210" y2="420" gradientUnits="userSpaceOnUse">
-                                            <stop stopColor="#b084ff" stopOpacity="0" />
-                                            <stop offset="0.5" stopColor="#7b4dff" />
-                                            <stop offset="1" stopColor="#b084ff" stopOpacity="0" />
-                                        </linearGradient>
-                                    </defs>
-                                </svg>
-
-                                {/* Orb Base */}
-                                <div className="relative w-[80%] h-[80%] rounded-full bg-[#0d061f] overflow-hidden shadow-[0_0_60px_rgba(123,77,255,0.15)] border border-[#7b4dff]/20">
-                                    {/* Grid Pattern inside Orb */}
-                                    <div className="absolute inset-0 opacity-[0.2]"
-                                        style={{
-                                            backgroundImage: 'radial-gradient(#8d67ff 1px, transparent 1px)',
-                                            backgroundSize: '20px 20px'
-                                        }}>
-                                    </div>
-
-                                    {/* Inner Gradient Overlay */}
-                                    <div className="absolute inset-0 bg-gradient-to-br from-[#1a0b2e] via-transparent to-[#2e1a5e] opacity-80" />
-
-                                    {/* Central Core Glow */}
-                                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40%] h-[40%] bg-[#7b4dff] blur-[60px] opacity-40 animate-pulse" />
-                                </div>
-
-                                {/* Floating Glow Nodes */}
-                                {/* Node 1: Top Right */}
-                                <div className="absolute top-[10%] right-[15%] w-[12px] h-[12px] bg-[#00f0ff] rounded-full blur-[2px] shadow-[0_0_15px_#00f0ff] animate-[bounce_4s_infinite]" />
-
-                                {/* Node 2: Bottom Left */}
-                                <div className="absolute bottom-[15%] left-[10%] w-[10px] h-[10px] bg-[#b084ff] rounded-full blur-[2px] shadow-[0_0_15px_#b084ff] animate-[bounce_5s_infinite_reverse]" />
-
-                                {/* Node 3: Center Orbiting */}
-                                <div className="absolute top-[50%] left-[0%] w-[8px] h-[8px] bg-[#fff] rounded-full blur-[1px] shadow-[0_0_10px_#fff]" />
-
-
-                                {/* Orbit Arc 2 (Inner Intersecting) */}
-                                <svg className="absolute w-[110%] h-[110%] rotate-[-45deg] opacity-40" viewBox="0 0 460 460" fill="none">
-                                    <ellipse cx="230" cy="230" rx="228" ry="100" stroke="#b084ff" strokeWidth="1" strokeDasharray="4 8" />
-                                </svg>
-
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
+            {/* Our Story Section - Redesigned Narrative */}
+            {/* Our Story Section - Premium Corporate Version */}
+            <OurStorySection />
 
             {/* Mission & Vision Section */}
-            <section
-                className="py-[100px] lg:py-[130px] bg-white"
-                id="mission-vision"
-                data-animate="fade-up"
-            >
-                <div className="w-full px-5">
-                    <div className="max-w-[1200px] mx-auto">
+            <section className="relative py-28 bg-white overflow-hidden" id="mission-vision">
+                {/* 2. Floating Light Background */}
+                <div className="absolute inset-0 -z-10">
+                    <div className="absolute top-[-120px] left-1/2 -translate-x-1/2 w-[700px] h-[700px]
+                    bg-gradient-to-r from-[#5B8CFF]/10 via-[#7C5CFF]/10 to-[#B84CFF]/10 blur-[140px] rounded-full"/>
+                </div>
 
-                        {/* Top Heading */}
-                        <div className="text-center mb-[60px] lg:mb-[80px]">
-                            <p className="text-[12px] tracking-[0.35em] text-[#7b4dff] font-semibold mb-[12px]">
-                                FOUNDATION
+                <div className="max-w-6xl mx-auto px-6">
+                    {/* 1. Soft Gradient Divider Line */}
+                    <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-[#7C5CFF]/40 to-transparent mb-16" />
+
+                    {/* Header */}
+                    <div className="text-center mb-20 relative z-10">
+                        <p className="text-center text-sm md:text-base tracking-[0.25em] font-semibold 
+text-[#7C5CFF] mb-8 uppercase">
+                            OUR DIRECTION
+                        </p>
+                        {/* 5. Headline Underline Accent */}
+                        <h2 className="relative inline-block text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                            Mission and Vision
+                            <span className="absolute left-0 -bottom-2 w-full h-[3px] bg-gradient-to-r from-[#5B8CFF] via-[#7C5CFF] to-[#B84CFF] rounded-full" />
+                        </h2>
+                        <p className="text-gray-600 text-lg mt-4 max-w-2xl mx-auto">
+                            Clear direction. Strong execution. Long-term impact.
+                        </p>
+                    </div>
+
+                    {/* Content Grid */}
+                    <div className="flex flex-col md:flex-row items-center justify-center gap-6 w-full relative z-10">
+                        {/* Mission Card - Slide Left */}
+                        <motion.div
+                            initial={{ opacity: 0, x: -40 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6 }}
+                            className="bg-white p-10 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300 w-full md:flex-1 relative z-10"
+                        >
+                            {/* 6. Micro Glow on Title */}
+                            <p className="text-xs tracking-[0.3em] font-semibold text-[#7C5CFF] uppercase mb-3">
+                                MISSION
                             </p>
-                            <h2 className="text-[30px] lg:text-[44px] font-extrabold text-[#111] leading-[1.1]">
-                                Mission &amp; Vision
-                            </h2>
-                            <p className="max-w-[680px] mx-auto text-[15px] lg:text-[16px] leading-[1.85] text-[#555] mt-[14px]">
-                                Our mission defines what we build today, and our vision shapes the future we aim to create. Together, they guide every decision at Evolvex AI.
+                            <h3 className="text-2xl font-semibold text-gray-900 mb-5">
+                                Delivering Technology That Drives Business Forward
+                            </h3>
+                            <p className="text-gray-600 leading-relaxed">
+                                We exist to help organizations move faster, operate smarter, and grow stronger through dependable digital solutions. Our focus is on building systems that improve performance, simplify complexity, and create measurable business value.
                             </p>
+                        </motion.div>
+
+                        {/* Spring Connector */}
+                        <div className="hidden md:flex flex-shrink-0 -mx-12 z-0">
+                            <div className="relative w-[160px]">
+                                <img src="/assets/svg/spring.svg" alt="" className="w-full h-auto object-contain" />
+                                <div className="absolute inset-0 bg-[#8000FF]" style={{
+                                    mixBlendMode: 'overlay',
+                                    maskImage: 'url("/assets/svg/spring.svg")',
+                                    maskSize: 'contain',
+                                    maskRepeat: 'no-repeat',
+                                    maskPosition: 'center',
+                                    WebkitMaskImage: 'url("/assets/svg/spring.svg")',
+                                    WebkitMaskSize: 'contain',
+                                    WebkitMaskRepeat: 'no-repeat',
+                                    WebkitMaskPosition: 'center'
+                                }}></div>
+                            </div>
                         </div>
 
-                        {/* New Cards */}
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-[26px] lg:gap-[32px]">
-
-                            {/* Mission */}
-                            <div className="relative rounded-[26px] p-[1px] bg-gray-600 overflow-hidden">
-                                <div className="absolute -top-[140px] -left-[140px] w-[260px] h-[260px] bg-[#b084ff] opacity-[0.18] blur-[50px]" />
-                                <div className="relative bg-white rounded-[26px] p-[28px] lg:p-[34px] shadow-[0_22px_60px_rgba(17,17,17,0.10)] h-full">
-                                    <div className="flex items-center gap-[14px] mb-[18px]">
-                                        <div className="w-[56px] h-[56px] rounded-full bg-[#efe9ff] flex items-center justify-center">
-                                            {/* Target Icon */}
-                                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M12 22C17.523 22 22 17.523 22 12C22 6.477 17.523 2 12 2C6.477 2 2 6.477 2 12C2 17.523 6.477 22 12 22Z" stroke="#7b4dff" strokeWidth="2" />
-                                                <path d="M12 16C14.209 16 16 14.209 16 12C16 9.791 14.209 8 12 8C9.791 8 8 9.791 8 12C8 14.209 9.791 16 12 16Z" stroke="#7b4dff" strokeWidth="2" />
-                                                <path d="M12 12L20 4" stroke="#7b4dff" strokeWidth="2" strokeLinecap="round" />
-                                            </svg>
-                                        </div>
-
-                                        <div>
-                                            <p className="text-[12px] tracking-[0.25em] text-[#7b4dff] font-semibold">
-                                                MISSION
-                                            </p>
-                                            <h3 className="text-[22px] font-extrabold text-[#111] leading-[1.1]">
-                                                What We Deliver
-                                            </h3>
-                                        </div>
-                                    </div>
-
-                                    <p className="text-[15px] leading-[1.9] text-[#555]">
-                                        To deliver intelligent, scalable, and human-centred digital solutions that empower businesses to grow with innovation and efficiency.
-                                    </p>
-                                </div>
-                            </div>
-
-                            {/* Vision */}
-                            <div className="relative rounded-[26px] p-[1px] bg-gray-600 overflow-hidden">
-                                <div className="absolute -bottom-[140px] -right-[140px] w-[280px] h-[280px] bg-[#7b4dff] opacity-[0.16] blur-[60px]" />
-                                <div className="relative bg-white rounded-[26px] p-[28px] lg:p-[34px] shadow-[0_22px_60px_rgba(17,17,17,0.10)] h-full">
-                                    <div className="flex items-center gap-[14px] mb-[18px]">
-                                        <div className="w-[56px] h-[56px] rounded-full bg-[#efe9ff] flex items-center justify-center">
-                                            {/* Rocket Icon */}
-                                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M14 9L15 10L21 4L20 3L14 9Z" fill="#7b4dff" />
-                                                <path d="M7 14C5 16 4 21 4 21C4 21 9 20 11 18C13 16 12 14 12 14L10 12C10 12 8 12 7 14Z" stroke="#7b4dff" strokeWidth="2" strokeLinejoin="round" />
-                                                <path d="M10 12C10 12 10.5 9.5 12.5 7.5C15.5 4.5 21 4 21 4C21 4 20.5 9.5 17.5 12.5C15.5 14.5 13 15 13 15L10 12Z" stroke="#7b4dff" strokeWidth="2" strokeLinejoin="round" />
-                                                <path d="M9 15L5 19" stroke="#7b4dff" strokeWidth="2" strokeLinecap="round" />
-                                            </svg>
-                                        </div>
-
-                                        <div>
-                                            <p className="text-[12px] tracking-[0.25em] text-[#7b4dff] font-semibold">
-                                                VISION
-                                            </p>
-                                            <h3 className="text-[22px] font-extrabold text-[#111] leading-[1.1]">
-                                                Where We Are Going
-                                            </h3>
-                                        </div>
-                                    </div>
-
-                                    <p className="text-[15px] leading-[1.9] text-[#555]">
-                                        To become a global leader in transforming ideas into impactful digital experiences through creativity, technology, and continuous innovation.
-                                    </p>
-                                </div>
-                            </div>
-
-                        </div>
+                        {/* Vision Card - Slide Right */}
+                        <motion.div
+                            initial={{ opacity: 0, x: 40 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6 }}
+                            className="bg-white p-10 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300 w-full md:flex-1 relative z-10"
+                        >
+                            {/* 6. Micro Glow on Title */}
+                            <p className="text-xs tracking-[0.3em] font-semibold text-[#7C5CFF] uppercase mb-3">
+                                VISION
+                            </p>
+                            <h3 className="text-2xl font-semibold text-gray-900 mb-5">
+                                Becoming a Trusted Force in Digital Transformation
+                            </h3>
+                            <p className="text-gray-600 leading-relaxed">
+                                We aim to shape the future of modern enterprises by setting high standards in technology delivery, strategic thinking, and execution excellence. Our ambition is to be the partner businesses rely on when progress matters most.
+                            </p>
+                        </motion.div>
                     </div>
                 </div>
             </section>
+
 
             {/* Testimonials Section */}
             <Testimonials />
@@ -593,12 +458,12 @@ const About = () => {
                     </h1>
 
                     <div className='flex flex-col sm:flex-row items-center gap-4'>
-                        <button className='bg-white text-gray-900 rounded-full px-6 py-3.5 text-sm flex items-center gap-2 hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl active:scale-95 cursor-pointer'>
+                        <a href="/contact" className='bg-white text-gray-900 rounded-full px-6 py-3.5 text-sm flex items-center gap-2 hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl active:scale-95 cursor-pointer'>
                             Kickstart the build
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth='2' stroke="currentColor" className="w-4 h-4">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                             </svg>
-                        </button>
+                        </a>
 
                         <button className='bg-white rounded-full p-1.5 pr-8 flex items-center gap-3 hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl active:scale-95 cursor-pointer'>
                             <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200" alt="Avatar" className='size-9 rounded-full object-cover' />

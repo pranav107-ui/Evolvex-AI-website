@@ -1,105 +1,136 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import { useMotionValueEvent, useScroll } from "motion/react";
-import { motion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import { cn } from "@/lib/utils";
 
-export const StickyScroll = ({
-    content,
-    contentClassName,
-}) => {
-    const [activeCard, setActiveCard] = React.useState(0);
+export const StickyScroll = ({ content, contentClassName }) => {
     const ref = useRef(null);
-    const { scrollYProgress } = useScroll({
-        container: ref,
-        offset: ["start start", "end end"],
-    });
-    const cardLength = content.length;
 
-    useMotionValueEvent(scrollYProgress, "change", (latest) => {
-        const cardsBreakpoints = content.map((_, index) => index / cardLength);
-        const closestBreakpointIndex = cardsBreakpoints.reduce(
-            (acc, breakpoint, index) => {
-                const distance = Math.abs(latest - breakpoint);
-                if (distance < Math.abs(latest - cardsBreakpoints[acc])) {
-                    return index;
-                }
-                return acc;
-            },
-            0,
-        );
-        setActiveCard(closestBreakpointIndex);
-    });
+    const SECTION_HEIGHT = 750; // must match scroll track height
+    const [activeCard, setActiveCard] = useState(0);
+    const [direction, setDirection] = useState(1); // 1 = down, -1 = up
 
-    const backgroundColors = [
-        "var(--slate-900)",
-        "var(--black)",
-        "var(--neutral-900)",
-    ];
-    const linearGradients = [
-        "linear-gradient(to bottom right, #06b6d4, #10b981)",
-        "linear-gradient(to bottom right, #ec4899, #6366f1)",
-        "linear-gradient(to bottom right, #f97316, #eab308)",
-    ];
-
-    const [backgroundGradient, setBackgroundGradient] = useState(
-        linearGradients[0],
-    );
-
+    // ✅ Always start from first card
     useEffect(() => {
-        setBackgroundGradient(linearGradients[activeCard % linearGradients.length]);
-    }, [activeCard]);
+        if (ref.current) {
+            ref.current.scrollTo({ top: 0, behavior: "instant" });
+        }
+        setActiveCard(0);
+    }, []);
+
+    // ✅ Perfect active card update based on actual scroll position
+    useEffect(() => {
+        const el = ref.current;
+        if (!el) return;
+
+        let lastScrollTop = el.scrollTop;
+
+        const onScroll = () => {
+            const st = el.scrollTop;
+
+            // detect direction
+            const nextDirection = st > lastScrollTop ? 1 : -1;
+            setDirection(nextDirection);
+            lastScrollTop = st;
+
+            // calculate active section (perfect snapping logic)
+            const rawIndex = st / SECTION_HEIGHT;
+            const nextIndex = Math.min(
+                content.length - 1,
+                Math.max(0, Math.round(rawIndex))
+            );
+
+            setActiveCard(nextIndex);
+        };
+
+        el.addEventListener("scroll", onScroll, { passive: true });
+
+        return () => {
+            el.removeEventListener("scroll", onScroll);
+        };
+    }, [content.length]);
 
     return (
-        <motion.div
-            className="relative flex h-[850px] overflow-y-auto rounded-md no-scrollbar w-full max-w-[1200px] mx-auto justify-between px-4 lg:px-10"
+        <div
             ref={ref}
+            className="relative mx-auto w-full max-w-[1200px] h-[750px] overflow-y-auto no-scrollbar rounded-2xl"
         >
-            <style jsx>{`
-                .no-scrollbar::-webkit-scrollbar {
-                    display: none;
-                }
-                .no-scrollbar {
-                    -ms-overflow-style: none;
-                    scrollbar-width: none;
-                }
-            `}</style>
-            <div className="relative flex flex-col items-start px-4 pt-10 pb-[600px] w-full max-w-[500px]">
-                {content.map((item, index) => (
-                    <div key={item.title + index} className="mb-80 mt-20">
-                        <motion.h2
-                            initial={{
-                                opacity: 0,
-                            }}
-                            animate={{
-                                opacity: activeCard === index ? 1 : 0.3,
-                            }}
-                            className="text-[24px] font-bold text-[#1a1a1a] mb-6"
+            <div className="relative">
+                {/* ✅ Sticky overlay */}
+                <div className="pointer-events-none sticky top-0 h-[750px]">
+                    <div className="grid grid-cols-1 lg:grid-cols-[520px_1fr] gap-16 px-4 sm:px-6 lg:px-10 h-full items-center">
+                        {/* ✅ LEFT TEXT ANIMATION (Perfect UP/DOWN) */}
+                        <div className="hidden lg:block pointer-events-auto">
+                            <AnimatePresence mode="wait" custom={direction}>
+                                <motion.div
+                                    key={activeCard}
+                                    custom={direction}
+                                    initial={(dir) => ({
+                                        opacity: 0,
+                                        y: dir === 1 ? 24 : -24,
+                                    })}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={(dir) => ({
+                                        opacity: 0,
+                                        y: dir === 1 ? -24 : 24,
+                                    })}
+                                    transition={{ duration: 0.35, ease: "easeInOut" }}
+                                >
+                                    <h3 className="text-[38px] font-bold text-[#0b1220] leading-[1.15]">
+                                        {content[activeCard].title}
+                                    </h3>
+
+                                    <div className="mt-5 text-[16px] leading-[1.85] text-gray-600 max-w-[420px]">
+                                        {content[activeCard].description}
+                                    </div>
+                                </motion.div>
+                            </AnimatePresence>
+                        </div>
+
+                        {/* ✅ RIGHT IMAGE (Old behavior, no animation) */}
+                        <div
+                            className={cn(
+                                "hidden lg:block pointer-events-auto w-[520px] h-[460px] rounded-2xl overflow-hidden bg-white border border-gray-200 shadow-sm",
+                                contentClassName
+                            )}
                         >
-                            {item.title}
-                        </motion.h2>
-                        <motion.div
-                            initial={{
-                                opacity: 0,
-                            }}
-                            animate={{
-                                opacity: activeCard === index ? 1 : 0.3,
-                            }}
-                            className="text-[16px] leading-[1.6] text-slate-600"
-                        >
-                            {item.description}
-                        </motion.div>
+                            {content[activeCard]?.content ?? null}
+                        </div>
                     </div>
-                ))}
+                </div>
+
+                {/* ✅ Scroll track: must match SECTION_HEIGHT */}
+                <div className="hidden lg:block">
+                    {content.map((_, index) => (
+                        <div key={index} className="h-[750px]" />
+                    ))}
+                </div>
+
+                {/* ✅ Mobile fallback */}
+                <div className="lg:hidden flex flex-col gap-10 px-4 sm:px-6 py-10">
+                    {content.map((item, index) => (
+                        <div key={item.title + index} className="rounded-2xl border bg-white p-6">
+                            <h3 className="text-[22px] font-bold text-[#0b1220]">{item.title}</h3>
+                            <div className="mt-3 text-[15px] leading-[1.7] text-gray-600">
+                                {item.description}
+                            </div>
+                            <div className="mt-5 rounded-xl overflow-hidden border">
+                                {item.content}
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </div>
-            <div
-                className={cn(
-                    "sticky top-60 hidden w-[520px] h-[450px] overflow-hidden rounded-md bg-white lg:block",
-                    contentClassName,
-                )}
-            >
-                {content[activeCard].content ?? null}
-            </div>
-        </motion.div>
+
+            <style jsx>{`
+        .no-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        .no-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}</style>
+        </div>
     );
 };
