@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring, useMotionValue } from "framer-motion";
 import { Link } from 'react-router-dom';
 import DotGrid from './DotGrid';
 
@@ -90,7 +90,8 @@ const ProductShowcase = () => {
     const containerRef = useRef(null);
     const panelRef = useRef(null);
 
-    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+    const mouseX = useMotionValue(0);
+    const mouseY = useMotionValue(0);
 
     // Track scroll progress within this section
     const { scrollYProgress } = useScroll({
@@ -102,15 +103,13 @@ const ProductShowcase = () => {
         const handleMouseMove = (e) => {
             if (panelRef.current) {
                 const rect = panelRef.current.getBoundingClientRect();
-                setMousePosition({
-                    x: e.clientX - rect.left,
-                    y: e.clientY - rect.top
-                });
+                mouseX.set(e.clientX - rect.left);
+                mouseY.set(e.clientY - rect.top);
             }
         };
         window.addEventListener('mousemove', handleMouseMove);
         return () => window.removeEventListener('mousemove', handleMouseMove);
-    }, []);
+    }, [mouseX, mouseY]);
 
 
 
@@ -227,11 +226,11 @@ const ProductShowcase = () => {
                             // Background glow removed as per request
                         }}
                     >
-                        <span
+                        <motion.span
                             className="anim-pointer absolute z-50 text-blue-500 pointer-events-none opacity-100 transition-opacity duration-300"
                             style={{
-                                top: mousePosition.y,
-                                left: mousePosition.x,
+                                top: mouseY,
+                                left: mouseX,
                                 transform: 'translate(-50%, -50%)' // Center the pointer on the mouse
                             }}
                         >
@@ -240,7 +239,7 @@ const ProductShowcase = () => {
                                 className="w-5 h-5 -rotate-90">
                                 <path d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103z"></path>
                             </svg>
-                        </span>
+                        </motion.span>
                     </div>
 
                     {/* Glowing Accent (Subtle) */}

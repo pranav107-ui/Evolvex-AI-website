@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 
 
-import Robot from "@/assets/svg/robot.svg?react";
+// import Robot from "@/assets/svg/robot.svg?react";
 import { StatefulButton } from '../components/ui/stateful-button';
 
 const Services = () => {
@@ -183,7 +183,7 @@ const Services = () => {
 
                     <div className="text-center mb-[70px]">
                         <ScrollReveal variant="heading">
-                            <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-[36px] md:mb-[48px]">
+                           <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-[36px] md:mb-[48px]">
                                 <div
                                     className="robot-wrap relative w-[120px] md:w-[150px] h-auto"
                                     onMouseMove={(e) => {
@@ -196,7 +196,11 @@ const Services = () => {
                                         e.currentTarget.style.transform = "rotateX(0deg) rotateY(0deg)";
                                     }}
                                 >
-                                    <Robot className="robot-svg w-full h-full object-contain" />
+                                    <img
+                                        src="/assets/svg/robot.svg"
+                                        alt="Robot"
+                                        className="robot-svg w-full h-full object-contain"
+                                    />
                                 </div>
 
                                 <h2 className="text-[27.2px] md:text-[33.6px] font-bold text-[#170F49]">

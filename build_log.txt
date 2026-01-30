@@ -1,0 +1,41 @@
+
+> evolvex-website@1.0.0 build
+> vite build
+
+[36mvite v6.4.1 [32mbuilding for production...[36m[39m
+transforming...
+
+[1m[33mwarn[39m[22m - The class `ease-[cubic-bezier(0.25,0.1,0.25,1.0)]` is ambiguous and matches multiple utilities.
+[1m[33mwarn[39m[22m - If this is content and not a class, replace it with `ease-&lsqb;cubic-bezier(0.25,0.1,0.25,1.0)&rsqb;` to silence this warning.
+[32m✓[39m 2205 modules transformed.
+rendering chunks...
+computing gzip size...
+[2mdist/[22m[32mindex.html                           [39m[1m[2m  0.74 kB[22m[1m[22m[2m │ gzip:   0.44 kB[22m
+[2mdist/[22m[35massets/index-BtkLtPOl.css            [39m[1m[2m123.96 kB[22m[1m[22m[2m │ gzip:  20.22 kB[22m
+[2mdist/[22m[36massets/TrustedBy-OyjOsbuK.js         [39m[1m[2m  1.63 kB[22m[1m[22m[2m │ gzip:   0.77 kB[22m
+[2mdist/[22m[36massets/createLucideIcon-CD7qC2Fl.js  [39m[1m[2m  1.86 kB[22m[1m[22m[2m │ gzip:   0.80 kB[22m
+[2mdist/[22m[36massets/OurTeam-DHb81jOb.js           [39m[1m[2m  3.24 kB[22m[1m[22m[2m │ gzip:   1.42 kB[22m
+[2mdist/[22m[36massets/FAQ-k4s5nFw8.js               [39m[1m[2m  3.25 kB[22m[1m[22m[2m │ gzip:   1.63 kB[22m
+[2mdist/[22m[36massets/Blog-DrfH_BVI.js              [39m[1m[2m  4.34 kB[22m[1m[22m[2m │ gzip:   1.76 kB[22m
+[2mdist/[22m[36massets/TermsOfService-BTpS47BS.js    [39m[1m[2m  6.54 kB[22m[1m[22m[2m │ gzip:   2.00 kB[22m
+[2mdist/[22m[36massets/TermsOfUse-D9Tzrs_u.js        [39m[1m[2m  6.70 kB[22m[1m[22m[2m │ gzip:   2.17 kB[22m
+[2mdist/[22m[36massets/Testimonials-BY4DJVS6.js      [39m[1m[2m  7.41 kB[22m[1m[22m[2m │ gzip:   2.71 kB[22m
+[2mdist/[22m[36massets/PrivacyPolicy-Disps26u.js     [39m[1m[2m  7.72 kB[22m[1m[22m[2m │ gzip:   2.24 kB[22m
+[2mdist/[22m[36massets/EnquiryOverlay-CE_bgAse.js    [39m[1m[2m  8.67 kB[22m[1m[22m[2m │ gzip:   2.35 kB[22m
+[2mdist/[22m[36massets/stateful-button-CnGyttfe.js   [39m[1m[2m  9.77 kB[22m[1m[22m[2m │ gzip:   4.00 kB[22m
+[2mdist/[22m[36massets/Contact-fNrCdl7u.js           [39m[1m[2m 10.87 kB[22m[1m[22m[2m │ gzip:   2.75 kB[22m
+[2mdist/[22m[36massets/OpenRoles-BPnHyKzH.js         [39m[1m[2m 14.69 kB[22m[1m[22m[2m │ gzip:   4.66 kB[22m
+[2mdist/[22m[36massets/JobDetails-hsHzSVBK.js        [39m[1m[2m 19.39 kB[22m[1m[22m[2m │ gzip:   4.14 kB[22m
+[2mdist/[22m[36massets/About-n6PBsS1Y.js             [39m[1m[2m 36.67 kB[22m[1m[22m[2m │ gzip:   8.93 kB[22m
+[2mdist/[22m[36massets/Services-0TTVLdVG.js          [39m[1m[2m 45.06 kB[22m[1m[22m[2m │ gzip:  11.68 kB[22m
+[2mdist/[22m[36massets/Careers-Dsgjmr6A.js           [39m[1m[2m 46.47 kB[22m[1m[22m[2m │ gzip:  11.94 kB[22m
+[2mdist/[22m[36massets/Home-DnnBYOJa.js              [39m[1m[2m143.87 kB[22m[1m[22m[2m │ gzip:  48.98 kB[22m
+[2mdist/[22m[36massets/card-spotlight-D0M1TvEW.js    [39m[1m[2m161.40 kB[22m[1m[22m[2m │ gzip:  51.87 kB[22m
+[2mdist/[22m[36massets/index-CHGFuEIQ.js             [39m[1m[2m433.27 kB[22m[1m[22m[2m │ gzip: 140.79 kB[22m
+[2mdist/[22m[36massets/three.module-CmrjMjFR.js      [39m[1m[33m679.81 kB[39m[22m[2m │ gzip: 175.13 kB[22m
+[33m
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.[39m
+[32m✓ built in 18.59s[39m
