@@ -64,7 +64,7 @@ function BenefitCard({ icon: Icon, title, desc, index }) {
             <div className="relative z-10 flex items-start gap-4">
                 {/* icon */}
                 <div className="relative">
-                    <div className="grid h-11 w-11 place-items-center rounded-[14px] border border-black/5 bg-white shadow-[0_10px_28px_rgba(0,0,0,0.08)]">
+                    <div className="grid h-11 w-11 place-items-center mt-2 rounded-[14px] border border-black/5 bg-white shadow-[0_10px_28px_rgba(0,0,0,0.08)]">
                         <motion.div
                             initial={false}
                             whileHover={{ rotate: index % 2 === 0 ? 6 : -6, scale: 1.03 }}
@@ -75,7 +75,7 @@ function BenefitCard({ icon: Icon, title, desc, index }) {
                     </div>
 
                     {/* tiny dot detail */}
-                    <div className="absolute -bottom-2 left-1/2 h-[7px] w-[7px] -translate-x-1/2 rounded-full bg-[#FF4FD8]/40 blur-[0px]" />
+
                 </div>
 
                 {/* content */}
@@ -128,7 +128,6 @@ export default function WorkingWithUsSection() {
         <section
             id="working-with-us"
             className="relative overflow-hidden py-[90px] lg:py-[120px] pb-[110px] lg:pb-[140px]"
-            data-animate="fade-up"
         >
             {/* background */}
             <div className="absolute inset-0 bg-gradient-to-b from-[#F7F4FF] via-white to-[#FFF6FB]" />
@@ -249,7 +248,7 @@ export default function WorkingWithUsSection() {
                         </div>
 
                         {/* subtle floating accent */}
-                       
+
                     </motion.div>
                 </div>
             </div>

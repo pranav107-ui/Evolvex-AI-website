@@ -1,37 +1,25 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import OurStorySection from '../components/OurStorySection';
 import WhyBusinessesChoose from '../components/WhyBusinessesChoose';
 import { FollowerPointerCard } from '../components/ui/following-pointer';
 import { CardSpotlight } from '../components/ui/card-spotlight';
 import Testimonials from '../components/Testimonials';
-
-
-
-
+import ScrollReveal from '../components/ui/ScrollReveal';
+import { StatefulButton } from '../components/ui/stateful-button';
 
 const About = () => {
-    useEffect(() => {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('in-view');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
-    }, []);
+    // IntersectionObserver removed - animations handled by ScrollReveal
 
     return (
         <>
             {/* About Hero */}
-            <section className="py-[90px] lg:py-[120px] pb-[70px] lg:pb-[100px] bg-white left-8 mt-12" data-animate="fade-up">
+            <section className="py-[90px] lg:py-[120px] pb-[70px] lg:pb-[100px] bg-white left-8 mt-12">
                 <div
                     className="w-full px-5 grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-[60px] lg:gap-[80px] items-center text-center lg:text-left">
 
                     {/* Left Content */}
-                    <div className="mx-auto">
+                    <ScrollReveal variant="featureLeft" className="mx-auto">
                         <h1 className="text-[56px] font-bold leading-[1.15] tracking-[-0.02em] text-[#1A1A1A] mb-[24px]">
                             Shaping the Future with
                             <br></br>Intelligent Digital Innovation
@@ -47,13 +35,13 @@ const About = () => {
                             className="inline-block px-[32px] py-[16px] text-[15px] font-semibold text-white rounded-[10px] bg-gradient-to-r from-[#B455F3] to-[#393AF3] shadow-[0_10px_28px_rgba(111,90,247,0.35)] transition-transform duration-200 hover:-translate-y-[2px] hover:shadow-[0_16px_36px_rgba(111,90,247,0.45)]">
                             Start Your Project
                         </a>
-                    </div>
+                    </ScrollReveal>
 
                     {/* Right Visual */}
-                    <div className="flex justify-center items-center">
+                    <ScrollReveal variant="featureRight" className="flex justify-center items-center">
                         <img src="/assets/images/abstract.png" alt="Abstract digital innovation visual" loading="eager"
                             className="w-full max-w-[480px] h-auto drop-shadow-2xl" />
-                    </div>
+                    </ScrollReveal>
 
                 </div>
             </section>
@@ -161,13 +149,13 @@ text-[#7C5CFF] mb-8 uppercase">
             <section
                 className="py-[100px] lg:py-[130px] bg-[#f5f6fa]"
                 id="our-values"
-                data-animate="fade-up"
             >
                 <div className="text-center mb-[60px] lg:mb-[80px]">
-
-                    <h2 className="text-[32px] lg:text-[44px] font-extrabold text-[#111]">
-                        Our Values
-                    </h2>
+                    <ScrollReveal variant="heading">
+                        <h2 className="text-[32px] lg:text-[44px] font-extrabold text-[#111]">
+                            Our Values
+                        </h2>
+                    </ScrollReveal>
                 </div>
                 <div className="w-full px-5">
                     <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-[60px] lg:gap-[90px] items-center">
@@ -478,11 +466,10 @@ text-[#7C5CFF] mb-8 uppercase">
                 </div>
             </section>
 
-            {/* Contact Section - extracted */}
             <section id="contact" className="py-[96px] bg-white relative overflow-hidden" aria-labelledby="contact-heading">
                 <div className="w-full max-w-[1200px] mx-auto px-5 relative z-10">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-                        <div data-animate="fade-right">
+                        <ScrollReveal variant="featureLeft">
                             <header className="mb-[40px]">
                                 <h2 id="contact-heading" className="text-[40px] lg:text-[48px] font-medium text-[#6C4CF0] mb-6 leading-tight">
                                     Contact Us</h2>
@@ -516,8 +503,8 @@ text-[#7C5CFF] mb-8 uppercase">
                                     </div>
                                 </li>
                             </ul>
-                        </div>
-                        <div className="relative mt-8 lg:mt-0 lg:h-[600px] flex items-center" data-animate="fade-left">
+                        </ScrollReveal>
+                        <ScrollReveal variant="featureRight" className="relative mt-8 lg:mt-0 lg:h-[600px] flex items-center">
                             <form action="#" method="post" className="space-y-5 w-full max-w-[480px] relative z-20">
                                 <div>
                                     <input type="text" placeholder="Name"
@@ -538,11 +525,13 @@ text-[#7C5CFF] mb-8 uppercase">
                                         className="w-full px-6 py-4 rounded-[8px] border border-[#D8D8D8] bg-transparent hover:border-[#6C4CF4] focus:border-[#6C4CF0] focus:ring-4 focus:ring-[#6C4CF0]/10 outline-none transition-all placeholder:text-gray-400 text-[#494949] resize-none text-[16px] mt-6"></textarea>
                                 </div>
                                 <div className="relative">
-                                    <button type="submit"
+                                    <StatefulButton
                                         className="w-full h-[64px] px-6 py-4 rounded-[6px] text-white font-medium text-[17.6px] mt-6 shadow-lg transition-all hover:opacity-90 flex items-center justify-center gap-3 relative overflow-hidden"
-                                        style={{ background: 'linear-gradient(90deg, #135AC6 0%, #6C4CF4 100%)' }}>
-                                        <span className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">Submit</span>
-                                    </button>
+                                        style={{ background: 'linear-gradient(90deg, #135AC6 0%, #6C4CF4 100%)' }}
+                                        onClick={(e) => { e.preventDefault(); return new Promise(resolve => setTimeout(resolve, 3000)); }}
+                                    >
+                                        Submit
+                                    </StatefulButton>
                                     <img src="/assets/svg/letter_send.svg" alt=""
                                         className="absolute left-1/2 -translate-x-1/2 top-[20px] w-[240px] h-[112px] object-contain pointer-events-none z-50 filter brightness-0 invert" />
                                 </div>
@@ -553,7 +542,7 @@ text-[#7C5CFF] mb-8 uppercase">
                                 <img src="/assets/images/Contact Us.png" alt="Contact Us 3D Illustration"
                                     className="w-full h-auto object-contain opacity-100" />
                             </div>
-                        </div>
+                        </ScrollReveal>
                     </div>
                 </div>
             </section>

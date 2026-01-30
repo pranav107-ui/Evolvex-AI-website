@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import ScrollReveal from './ui/ScrollReveal';
+
 const WhyWorkWithUs = () => {
     // State for hover effects. null means default state (both flex-1)
     const [leftHover, setLeftHover] = useState(null); // 'growth' | 'innovation'
@@ -35,10 +37,10 @@ const WhyWorkWithUs = () => {
     return (
         <section className="py-[80px]" id="why-work" aria-labelledby="why-work-title">
             <div className="w-full px-5">
-                <header className="text-center mb-[32px]" data-animate="fade-up">
+                <ScrollReveal variant="heading" className="text-center mb-[32px]">
                     <h2 id="why-work-title" className="text-[32px] font-extrabold text-[#0b1220] mb-2">Why Businesses Choose Evolvex AI</h2>
-                   
-                </header>
+
+                </ScrollReveal>
 
                 <div className="flex flex-col md:flex-row gap-[28px] w-full max-w-[1200px] mx-auto md:h-[880px] p-4">
 
@@ -86,7 +88,7 @@ const WhyWorkWithUs = () => {
                             <div className="w-full flex self-stretch flex-col items-start gap-[22px] flex-[0_0_auto] relative">
                                 <div className="w-full flex self-stretch flex-col items-start gap-3.5 flex-[0_0_auto] px-0 py-2 relative">
                                     <div className="font-sans self-stretch mt-[-1.00px] tracking-[0] text-2xl text-white relative h-[29px] font-bold leading-[normal]">
-                                       Scalable and Future-Ready Solutions
+                                        Scalable and Future-Ready Solutions
                                     </div>
 
                                     {/* Text Container */}
@@ -156,7 +158,7 @@ const WhyWorkWithUs = () => {
                             <div className="w-full flex self-stretch flex-col items-start gap-[22px] flex-[0_0_auto] relative">
                                 <div className="w-full flex self-stretch flex-col items-start gap-3.5 flex-[0_0_auto] px-0 py-2 relative">
                                     <div className="font-sans self-stretch mt-[-1.00px] tracking-[0] text-2xl text-white relative h-[29px] font-bold leading-[normal]">
-                                       Dedicated Partnership Approach
+                                        Dedicated Partnership Approach
                                     </div>
 
                                     {/* Text Container */}

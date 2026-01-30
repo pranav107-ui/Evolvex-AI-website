@@ -1,12 +1,45 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
-const Navbar = () => {
+const Navbar = ({ onOpenOverlay }) => {
     // Basic mobile menu toggle
     const [isOpen, setIsOpen] = useState(false);
     const navRef = useRef(null);
     const indicatorRef = useRef(null);
     const location = useLocation();
+
+    // Scroll Logic for Smart Navbar
+    const [isVisible, setIsVisible] = useState(true);
+
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        let lastScrollY = window.scrollY;
+
+        const controlNavbar = () => {
+            const currentScrollY = window.scrollY;
+
+            // Update visible state
+            if (currentScrollY > 100) {
+                if (currentScrollY > lastScrollY) {
+                    setIsVisible(false); // Hide on scroll down
+                } else {
+                    setIsVisible(true); // Show on scroll up
+                }
+            } else {
+                setIsVisible(true); // Always show at top
+            }
+
+            // Update scrolled state for style
+            setIsScrolled(currentScrollY > 20);
+
+            lastScrollY = currentScrollY;
+        };
+
+        window.addEventListener('scroll', controlNavbar);
+        return () => window.removeEventListener('scroll', controlNavbar);
+    }, []);
 
     const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -55,8 +88,27 @@ const Navbar = () => {
         return () => window.removeEventListener('resize', resetIndicator);
     }, [location.pathname]);
 
+    const handleEnquireClick = (e) => {
+        e.preventDefault();
+        if (onOpenOverlay) {
+            onOpenOverlay();
+        } else {
+            // Fallback for legacy behavior if prop not provided (though ID might be missing now)
+            const overlay = document.getElementById('enquireOverlay');
+            if (overlay) {
+                overlay.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+        }
+    };
+
     return (
-        <header className="sticky top-0 z-40 bg-white border-b border-[#eee]">
+        <motion.header
+            className={`sticky top-0 z-40 transition-all duration-300 ${isScrolled ? 'bg-white/80 backdrop-blur-md shadow-sm border-transparent' : 'bg-white border-b border-[#eee]'}`}
+            initial={{ y: 0 }}
+            animate={{ y: isVisible ? 0 : "-100%" }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+        >
             <div className="w-full px-5 flex items-center justify-between py-[18px] relative">
 
                 {/* Logo */}
@@ -121,12 +173,12 @@ const Navbar = () => {
                         Contact
                     </NavLink>
                 </nav>
-                <a href="#" className="hidden md:inline-flex btn-enquire" id="openEnquire" onClick={(e) => { e.preventDefault(); document.getElementById('enquireOverlay').style.display = 'flex'; document.body.style.overflow = 'hidden'; }}>Enquire Now</a>
+                <a href="#" className="hidden md:inline-flex btn-enquire" id="openEnquire" onClick={handleEnquireClick}>Enquire Now</a>
 
-                    <button id="navToggle" aria-expanded={isOpen} onClick={toggleMenu}
-                        className="md:hidden text-[#0b1220] font-semibold text-[15px]">Menu</button>
+                <button id="navToggle" aria-expanded={isOpen} onClick={toggleMenu}
+                    className="md:hidden text-[#0b1220] font-semibold text-[15px]">Menu</button>
             </div>
-        </header>
+        </motion.header>
     );
 };
 

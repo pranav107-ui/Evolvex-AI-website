@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import ScrollReveal from './ui/ScrollReveal';
+
 const WhyWorkWithUs = () => {
     // State for hover effects. null means default state (both flex-1)
     const [leftHover, setLeftHover] = useState(null); // 'growth' | 'innovation'
@@ -35,7 +37,7 @@ const WhyWorkWithUs = () => {
     return (
         <section className="py-[80px]" id="why-work" aria-labelledby="why-work-title">
             <div className="w-full px-5">
-                <header className="text-center mb-[32px]" data-animate="fade-up">
+                <ScrollReveal variant="heading" className="text-center mb-[32px]">
                     <h2 id="why-work-title" className="text-[32px] font-extrabold text-[#0b1220] mb-2">Why Work With Us</h2>
                     <p className="text-gray-600 max-w-[820px] mx-auto mt-[14px] text-[19.2px] md:text-[20px]">
                         Join a workplace that values innovation,
@@ -43,7 +45,7 @@ const WhyWorkWithUs = () => {
                         We provide a supportive environment where ideas are welcomed, talents are nurtured,<br />
                         and every individual contributes to creating meaningful solutions.
                     </p>
-                </header>
+                </ScrollReveal>
 
                 <div className="flex flex-col md:flex-row gap-[28px] w-full max-w-[1200px] mx-auto md:h-[880px] p-4">
 

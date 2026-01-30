@@ -5,7 +5,7 @@ export default function CareersCTA() {
     const reduceMotion = useReducedMotion();
 
     return (
-        <section className="py-[100px] lg:py-[120px]" id="careers-cta" data-animate="fade-up">
+        <section className="py-[100px] lg:py-[120px]" id="careers-cta">
             <div className="w-full px-5">
                 <motion.div
                     initial={reduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 26 }}

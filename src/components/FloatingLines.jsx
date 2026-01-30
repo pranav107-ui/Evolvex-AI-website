@@ -55,6 +55,7 @@ uniform vec2 parallaxOffset;
 uniform vec3 lineGradient[8];
 uniform int lineGradientCount;
 uniform vec3 backgroundColor;
+uniform int uStyle;
 
 const vec3 BLACK = vec3(0.0);
 const vec3 PINK  = vec3(233.0, 71.0, 245.0) / 255.0;
@@ -111,6 +112,11 @@ float wave(vec2 uv, float offset, vec2 screenUv, vec2 mouseUv, bool shouldBend) 
   }
 
   float m = uv.y - y;
+
+  if (uStyle == 1) {
+    return 1.0 - smoothstep(0.005, 0.04, abs(m));
+  }
+
   return 0.014 / max(abs(m) + 0.026, 1e-3);
 }
 
@@ -260,7 +266,8 @@ export default function FloatingLines({
   mouseDamping = 0.05,
   parallax = true,
   parallaxStrength = 0.2,
-  mixBlendMode = 'screen'
+  mixBlendMode = 'screen',
+  styleMode = 'clean'
 }) {
   const containerRef = useRef(null);
   const targetMouseRef = useRef(new Vector2(-1000, -1000));
@@ -359,7 +366,8 @@ export default function FloatingLines({
         value: Array.from({ length: MAX_GRADIENT_STOPS }, () => new Vector3(1, 1, 1))
       },
       lineGradientCount: { value: 0 },
-      backgroundColor: { value: bgVec }
+      backgroundColor: { value: bgVec },
+      uStyle: { value: styleMode === 'clean' ? 1 : 0 }
     };
 
     if (linesGradient && linesGradient.length > 0) {
@@ -491,7 +499,8 @@ export default function FloatingLines({
     mouseDamping,
     parallax,
     parallaxStrength,
-    backgroundColor
+    backgroundColor,
+    styleMode
   ]);
 
   return (

@@ -244,7 +244,6 @@ export default function LifeAtEvolvex() {
             <section
                 className="relative overflow-hidden py-[95px] lg:py-[130px]"
                 id="life-at-evolvex"
-                data-animate="fade-up"
             >
                 {/* background */}
                 <div className="absolute inset-0 bg-gradient-to-b from-white via-[#FBFAFF] to-white" />
@@ -280,7 +279,7 @@ export default function LifeAtEvolvex() {
                             A workplace built on growth, ownership, and creativity.
                         </motion.p>
 
-                      
+
                     </motion.div>
 
                     {/* Grid */}

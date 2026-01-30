@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import FloatingLines from '../components/FloatingLines';
-import TiltedCard from './TiltedCard';
-import ScrollReveal from './ScrollReveal';
+import TiltedCard from '../components/TiltedCard';
+import ScrollReveal from '../components/ui/ScrollReveal';
 import Testimonials from '../components/Testimonials';
 import TrustedBy from '../components/TrustedBy';
 import ExpertiseCard from "../components/ExpertiseCard";
@@ -18,6 +18,7 @@ import {
 
 
 import Robot from "@/assets/svg/robot.svg?react";
+import { StatefulButton } from '../components/ui/stateful-button';
 
 const Services = () => {
 
@@ -30,17 +31,7 @@ const Services = () => {
     };
 
     useEffect(() => {
-        // Animation triggers for fade-up, etc.
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('in-view');
-                    // Add staggered delays if needed logic here or handled by CSS class presence
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
+        // Any other side effects
     }, []);
 
     return (
@@ -59,106 +50,127 @@ const Services = () => {
                         interactive={false}
                         parallax={false}
                         mixBlendMode="normal"
+                        styleMode="clean"
                     />
                 </div>
 
 
-                <div className="max-w-[1248px] mx-auto text-center" data-animate="fade-up">
+                <div className="relative z-10 max-w-[1248px] mx-auto text-center">
 
-                    <h1 className="text-[42px] md:text-[52px] lg:text-[64px] leading-[1.1] font-bold text-[#1a1a1a] mb-[24px] tracking-tight">
-                        Transforming Ideas into Intelligent<br />
-                        Digital Solutions
-                    </h1>
+                    <ScrollReveal variant="heading">
+                        <h1 className="text-[42px] md:text-[52px] lg:text-[64px] leading-[1.1] font-bold text-[#1a1a1a] mb-[24px] tracking-tight">
+                            Transforming Ideas into Intelligent<br />
+                            Digital Solutions
+                        </h1>
+                    </ScrollReveal>
 
-                    <p className="text-[16px] md:text-[18px] leading-[1.6] text-[#6F6C8F] max-w-[600px] mx-auto mb-[40px]">
-                        Discover our expertise across engineering, cloud, AI, and business
-                        modernization.
-                    </p>
+                    <ScrollReveal variant="text">
+                        <p className="text-[16px] md:text-[18px] leading-[1.6] text-[#6F6C8F] max-w-[600px] mx-auto mb-[40px]">
+                            Discover our expertise across engineering, cloud, AI, and business
+                            modernization.
+                        </p>
+                    </ScrollReveal>
 
-                    <div className="flex flex-wrap gap-4 justify-center">
-                        <a href="/contact"
-                            className="inline-flex px-[36px] py-[14px] rounded-[10px] bg-gradient-to-r from-[#B455F3] to-[#393AF3] text-white font-semibold text-[15.2px] shadow-[0_10px_30px_rgba(108,76,240,0.35)] transition-transform duration-200 hover:scale-[1.02]">
-                            Get a Consultation
-                        </a>
-                    </div>
+                    <ScrollReveal variant="button">
+                        <div className="flex flex-wrap gap-4 justify-center">
+                            <a href="/contact"
+                                className="inline-flex px-[36px] py-[14px] rounded-[10px] bg-gradient-to-r from-[#B455F3] to-[#393AF3] text-white font-semibold text-[15.2px] shadow-[0_10px_30px_rgba(108,76,240,0.35)] transition-transform duration-200 hover:scale-[1.02]">
+                                Get a Consultation
+                            </a>
+                        </div>
+                    </ScrollReveal>
                 </div>
             </section>
 
             {/* Explore Our Expertise */}
             <section className="py-[60px] md:py-[80px] bg-white" id="expertise">
-                <div className="w-full px-5 max-w-[1248px] mx-auto" data-animate="fade-up">
+                <div className="w-full px-5 max-w-[1248px] mx-auto">
 
-                    <h2 className="text-center text-[25.6px] md:text-[32px] font-bold text-[#140a4f] mb-[36px] md:mb-[48px]">
-                        Explore Our Expertise
-                    </h2>
+                    <ScrollReveal variant="heading">
+                        <h2 className="text-center text-[25.6px] md:text-[32px] font-bold text-[#140a4f] mb-[36px] md:mb-[48px]">
+                            Explore Our Expertise
+                        </h2>
+                    </ScrollReveal>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[28px]">
 
                         {/* Card 1: Product Engineering */}
-                        <TiltedCard captionText="Product Engineering" showMobileWarning={false} rotateAmplitude={10} scaleOnHover={1.03} containerHeight="100%">
-                            <ExpertiseCard
-                                title="Product Engineering"
-                                desc="Build scalable digital products from concept to launch."
-                                accentClass="bg-gradient-to-r from-[#6C4CF4] to-[#FF4FD8]"
-                                icon={<Boxes className="w-5 h-5 text-[#6C4CF4]" />}
-                                onClick={() => scrollToSection('service-product')}
-                            />
-                        </TiltedCard>
+                        <ScrollReveal variant="card" delay={0.1}>
+                            <TiltedCard captionText="Product Engineering" showMobileWarning={false} rotateAmplitude={10} scaleOnHover={1.03} containerHeight="100%">
+                                <ExpertiseCard
+                                    title="Product Engineering"
+                                    desc="Build scalable digital products from concept to launch."
+                                    accentClass="bg-gradient-to-r from-[#6C4CF4] to-[#FF4FD8]"
+                                    icon={<Boxes className="w-5 h-5 text-[#6C4CF4]" />}
+                                    onClick={() => scrollToSection('service-product')}
+                                />
+                            </TiltedCard>
+                        </ScrollReveal>
 
                         {/* Card 2: Custom Software Development */}
-                        <TiltedCard captionText="Custom Software Development" showMobileWarning={false} rotateAmplitude={10} scaleOnHover={1.03} containerHeight="100%">
-                            <ExpertiseCard
-                                title="Custom Software Development"
-                                desc="Tailored software solutions that streamline operations."
-                                accentClass="bg-gradient-to-r from-[#2F7CFF] to-[#6C4CF4]"
-                                icon={<Code2 className="w-5 h-5 text-[#2F7CFF]" />}
-                                onClick={() => scrollToSection('service-software')}
-                            />
-                        </TiltedCard>
+                        <ScrollReveal variant="card" delay={0.2}>
+                            <TiltedCard captionText="Custom Software Development" showMobileWarning={false} rotateAmplitude={10} scaleOnHover={1.03} containerHeight="100%">
+                                <ExpertiseCard
+                                    title="Custom Software Development"
+                                    desc="Tailored software solutions that streamline operations."
+                                    accentClass="bg-gradient-to-r from-[#2F7CFF] to-[#6C4CF4]"
+                                    icon={<Code2 className="w-5 h-5 text-[#2F7CFF]" />}
+                                    onClick={() => scrollToSection('service-software')}
+                                />
+                            </TiltedCard>
+                        </ScrollReveal>
 
                         {/* Card 3: Cloud & DevOps */}
-                        <TiltedCard captionText="Cloud & DevOps" showMobileWarning={false} rotateAmplitude={10} scaleOnHover={1.03} containerHeight="100%">
-                            <ExpertiseCard
-                                title="Cloud & DevOps"
-                                desc="Cloud migration, CI/CD, automation, and infrastructure scaling."
-                                accentClass="bg-gradient-to-r from-[#6C4CF4] to-[#7AE7FF]"
-                                icon={<Cloud className="w-5 h-5 text-[#6C4CF4]" />}
-                                onClick={() => scrollToSection('service-cloud')}
-                            />
-                        </TiltedCard>
+                        <ScrollReveal variant="card" delay={0.3}>
+                            <TiltedCard captionText="Cloud & DevOps" showMobileWarning={false} rotateAmplitude={10} scaleOnHover={1.03} containerHeight="100%">
+                                <ExpertiseCard
+                                    title="Cloud & DevOps"
+                                    desc="Cloud migration, CI/CD, automation, and infrastructure scaling."
+                                    accentClass="bg-gradient-to-r from-[#6C4CF4] to-[#7AE7FF]"
+                                    icon={<Cloud className="w-5 h-5 text-[#6C4CF4]" />}
+                                    onClick={() => scrollToSection('service-cloud')}
+                                />
+                            </TiltedCard>
+                        </ScrollReveal>
 
                         {/* Card 4: AI & Automation */}
-                        <TiltedCard captionText="AI & Automation" showMobileWarning={false} rotateAmplitude={10} scaleOnHover={1.03} containerHeight="100%">
-                            <ExpertiseCard
-                                title="AI & Automation"
-                                desc="Intelligent solutions for automation, predictions, and decision-making."
-                                accentClass="bg-gradient-to-r from-[#FF4FD8] to-[#B44CFF]"
-                                icon={<Bot className="w-5 h-5 text-[#B44CFF]" />}
-                                onClick={() => scrollToSection('service-ai')}
-                            />
-                        </TiltedCard>
+                        <ScrollReveal variant="card" delay={0.4}>
+                            <TiltedCard captionText="AI & Automation" showMobileWarning={false} rotateAmplitude={10} scaleOnHover={1.03} containerHeight="100%">
+                                <ExpertiseCard
+                                    title="AI & Automation"
+                                    desc="Intelligent solutions for automation, predictions, and decision-making."
+                                    accentClass="bg-gradient-to-r from-[#FF4FD8] to-[#B44CFF]"
+                                    icon={<Bot className="w-5 h-5 text-[#B44CFF]" />}
+                                    onClick={() => scrollToSection('service-ai')}
+                                />
+                            </TiltedCard>
+                        </ScrollReveal>
 
                         {/* Card 5: Mobile App Development */}
-                        <TiltedCard captionText="Mobile App Development" showMobileWarning={false} rotateAmplitude={10} scaleOnHover={1.03} containerHeight="100%">
-                            <ExpertiseCard
-                                title="Mobile App Development"
-                                desc="Cross-platform and native apps with high performance."
-                                accentClass="bg-gradient-to-r from-[#00C2A8] to-[#6C4CF4]"
-                                icon={<Smartphone className="w-5 h-5 text-[#00A98F]" />}
-                                onClick={() => scrollToSection('service-mobile')}
-                            />
-                        </TiltedCard>
+                        <ScrollReveal variant="card" delay={0.5}>
+                            <TiltedCard captionText="Mobile App Development" showMobileWarning={false} rotateAmplitude={10} scaleOnHover={1.03} containerHeight="100%">
+                                <ExpertiseCard
+                                    title="Mobile App Development"
+                                    desc="Cross-platform and native apps with high performance."
+                                    accentClass="bg-gradient-to-r from-[#00C2A8] to-[#6C4CF4]"
+                                    icon={<Smartphone className="w-5 h-5 text-[#00A98F]" />}
+                                    onClick={() => scrollToSection('service-mobile')}
+                                />
+                            </TiltedCard>
+                        </ScrollReveal>
 
                         {/* Card 6: IT Consulting & Digital Transformation */}
-                        <TiltedCard captionText="IT Consulting & Digital Transformation" showMobileWarning={false} rotateAmplitude={10} scaleOnHover={1.03} containerHeight="100%">
-                            <ExpertiseCard
-                                title="IT Consulting & Digital Transformation"
-                                desc="Technology strategy, modernization, and process optimization."
-                                accentClass="bg-gradient-to-r from-[#FF8A34] to-[#FF4FD8]"
-                                icon={<BriefcaseBusiness className="w-5 h-5 text-[#FF8A34]" />}
-                                onClick={() => scrollToSection('service-it')}
-                            />
-                        </TiltedCard>
+                        <ScrollReveal variant="card" delay={0.6}>
+                            <TiltedCard captionText="IT Consulting & Digital Transformation" showMobileWarning={false} rotateAmplitude={10} scaleOnHover={1.03} containerHeight="100%">
+                                <ExpertiseCard
+                                    title="IT Consulting & Digital Transformation"
+                                    desc="Technology strategy, modernization, and process optimization."
+                                    accentClass="bg-gradient-to-r from-[#FF8A34] to-[#FF4FD8]"
+                                    icon={<BriefcaseBusiness className="w-5 h-5 text-[#FF8A34]" />}
+                                    onClick={() => scrollToSection('service-it')}
+                                />
+                            </TiltedCard>
+                        </ScrollReveal>
 
                     </div>
 
@@ -169,208 +181,162 @@ const Services = () => {
             <section className="py-[70px] md:py-[90px] bg-white" id="delivery-excellence">
                 <div className="w-full px-5 max-w-[1248px] mx-auto">
 
-                    <header className="text-center mb-[70px]" data-animate="fade-up">
-                        <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-[36px] md:mb-[48px]">
-                            <div
-                                className="robot-wrap relative w-[120px] md:w-[150px] h-auto"
-                                onMouseMove={(e) => {
-                                    const rect = e.currentTarget.getBoundingClientRect();
-                                    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 12;
-                                    const y = ((e.clientY - rect.top) / rect.height - 0.5) * 12;
-                                    e.currentTarget.style.transform = `rotateY(${x}deg) rotateX(${-y}deg)`;
-                                }}
-                                onMouseLeave={(e) => {
-                                    e.currentTarget.style.transform = "rotateX(0deg) rotateY(0deg)";
-                                }}
-                            >
-                                <Robot className="robot-svg w-full h-full object-contain" />
-                            </div>
+                    <div className="text-center mb-[70px]">
+                        <ScrollReveal variant="heading">
+                            <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-[36px] md:mb-[48px]">
+                                <div
+                                    className="robot-wrap relative w-[120px] md:w-[150px] h-auto"
+                                    onMouseMove={(e) => {
+                                        const rect = e.currentTarget.getBoundingClientRect();
+                                        const x = ((e.clientX - rect.left) / rect.width - 0.5) * 12;
+                                        const y = ((e.clientY - rect.top) / rect.height - 0.5) * 12;
+                                        e.currentTarget.style.transform = `rotateY(${x}deg) rotateX(${-y}deg)`;
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        e.currentTarget.style.transform = "rotateX(0deg) rotateY(0deg)";
+                                    }}
+                                >
+                                    <Robot className="robot-svg w-full h-full object-contain" />
+                                </div>
 
-                            <h2 className="text-[27.2px] md:text-[33.6px] font-bold text-[#170F49]">
-                                How We Deliver Excellence
-                            </h2>
-                        </div>
-                    </header>
+                                <h2 className="text-[27.2px] md:text-[33.6px] font-bold text-[#170F49]">
+                                    How We Deliver Excellence
+                                </h2>
+                            </div>
+                        </ScrollReveal>
+                    </div>
 
                     {/* Item 1: Product Engineering */}
-                    <div
-                        id="service-product"
-                        className="grid grid-cols-1 md:grid-cols-[1.1fr_0.9fr] items-center gap-[30px] md:gap-[40px] mb-[70px] md:mb-[90px]"
-                        data-animate="fade-up">
+                    <ScrollReveal variant="featureLeft" className="grid grid-cols-1 md:grid-cols-[1.1fr_0.9fr] items-center gap-[30px] md:gap-[40px] mb-[70px] md:mb-[90px]" id="service-product">
                         <div className="w-full">
                             <h3 className="text-[24px] md:text-[32px] font-semibold text-[#140a4f] mb-[12px]">Product Engineering</h3>
                             <p className="text-[18px] md:text-[20px] font-medium text-[#4f4b78] mb-[14px] leading-[1.6]">
                                 Transforming ideas into scalable, high-quality digital products with
                                 precision and innovation.
                             </p>
-                            <ScrollReveal
-                                baseOpacity={0}
-                                enableBlur={true}
-                                baseRotation={5}
-                                blurStrength={10}
-                                textClassName="text-[18px] md:text-[20px] text-[#6b678a] leading-[1.7]"
-                                containerClassName="my-0"
-                            >
-                                We provide end-to-end product engineering services, covering strategy,
-                                design, development, testing, and deployment. Our approach ensures
-                                that your product delivers real-world value while maintaining long-term
-                                stability and performance.
+                            <ScrollReveal variant="text" className="my-0">
+                                <p className="text-[18px] md:text-[20px] text-[#6b678a] leading-[1.7]">
+                                    We provide end-to-end product engineering services, covering strategy,
+                                    design, development, testing, and deployment. Our approach ensures
+                                    that your product delivers real-world value while maintaining long-term
+                                    stability and performance.
+                                </p>
                             </ScrollReveal>
                         </div>
                         <div className="flex justify-center items-center mt-[30px] md:mt-0">
                             <img src="/assets/images/product-engineering.png" alt="Product Engineering illustration"
                                 className="w-full max-w-[320px] md:max-w-[360px] h-auto block" />
                         </div>
-                    </div>
+                    </ScrollReveal>
 
                     {/* Item 2: Software Development (Reverse) */}
-                    <div
-                        id="service-software"
-                        className="grid grid-cols-1 md:grid-cols-[0.9fr_1.1fr] items-center gap-[30px] md:gap-[40px] mb-[70px] md:mb-[90px]"
-                        data-animate="fade-up">
+                    <ScrollReveal variant="featureRight" className="grid grid-cols-1 md:grid-cols-[0.9fr_1.1fr] items-center gap-[30px] md:gap-[40px] mb-[70px] md:mb-[90px]" id="service-software">
                         <div className="w-full order-1 md:order-2">
                             <h3 className="text-[24px] md:text-[32px] font-semibold text-[#140a4f] mb-[12px]">Software Development</h3>
                             <p className="text-[18px] md:text-[20px] font-medium text-[#4f4b78] mb-[14px] leading-[1.6]">
                                 Tailored software solutions designed to meet your unique business needs.
                             </p>
-                            <ScrollReveal
-                                baseOpacity={0}
-                                enableBlur={true}
-                                baseRotation={5}
-                                blurStrength={10}
-                                textClassName="text-[18px] md:text-[20px] text-[#6b678a] leading-[1.7]"
-                                containerClassName="my-0"
-                            >
-                                We develop bespoke software applications that align with your workflows
-                                and organizational goals. Our engineering practices focus on
-                                extensibility, reliability, and future-readiness.
+                            <ScrollReveal variant="text" className="my-0">
+                                <p className="text-[18px] md:text-[20px] text-[#6b678a] leading-[1.7]">
+                                    We develop bespoke software applications that align with your workflows
+                                    and organizational goals. Our engineering practices focus on
+                                    extensibility, reliability, and future-readiness.
+                                </p>
                             </ScrollReveal>
                         </div>
                         <div className="flex justify-center items-center mt-[30px] md:mt-0 order-2 md:order-1">
                             <img src="/assets/images/software-development.png" alt="Software Development illustration"
                                 className="w-full max-w-[320px] md:max-w-[360px] h-auto block" />
                         </div>
-                    </div>
+                    </ScrollReveal>
 
                     {/* Item 3: AI-Powered Automation */}
-                    <div
-                        id="service-ai"
-                        className="grid grid-cols-1 md:grid-cols-[1.1fr_0.9fr] items-center gap-[30px] md:gap-[40px] mb-[70px] md:mb-[90px]"
-                        data-animate="fade-up">
+                    <ScrollReveal variant="featureLeft" className="grid grid-cols-1 md:grid-cols-[1.1fr_0.9fr] items-center gap-[30px] md:gap-[40px] mb-[70px] md:mb-[90px]" id="service-ai">
                         <div className="w-full">
                             <h3 className="text-[24px] md:text-[32px] font-semibold text-[#140a4f] mb-[12px]">AI-Powered Automation
                             </h3>
                             <p className="text-[18px] md:text-[20px] font-medium text-[#4f4b78] mb-[14px] leading-[1.6]">
                                 Intelligent automation that reduces manual effort and drives operational excellence.
                             </p>
-                            <ScrollReveal
-                                baseOpacity={0}
-                                enableBlur={true}
-                                baseRotation={5}
-                                blurStrength={10}
-                                textClassName="text-[18px] md:text-[20px] text-[#6b678a] leading-[1.7]"
-                                containerClassName="my-0"
-                            >
-                                We integrate advanced AI models to automate repetitive tasks, analyze
-                                complex datasets, and uncover actionable insights. Our solutions
-                                improve efficiency, reduce costs, and enhance business workflows.
+                            <ScrollReveal variant="text" className="my-0">
+                                <p className="text-[18px] md:text-[20px] text-[#6b678a] leading-[1.7]">
+                                    We integrate advanced AI models to automate repetitive tasks, analyze
+                                    complex datasets, and uncover actionable insights. Our solutions
+                                    improve efficiency, reduce costs, and enhance business workflows.
+                                </p>
                             </ScrollReveal>
                         </div>
                         <div className="flex justify-center items-center mt-[30px] md:mt-0">
                             <img src="/assets/images/AI-automation.png" alt="AI Powered Automation illustration"
                                 className="w-full max-w-[320px] md:max-w-[360px] h-auto block" />
                         </div>
-                    </div>
+                    </ScrollReveal>
 
                     {/* Item 4: Cloud & DevOps (Reverse) */}
-                    <div
-                        id="service-cloud"
-                        className="grid grid-cols-1 md:grid-cols-[0.9fr_1.1fr] items-center gap-[30px] md:gap-[40px] mb-[70px] md:mb-[90px]"
-                        data-animate="fade-up">
+                    <ScrollReveal variant="featureRight" className="grid grid-cols-1 md:grid-cols-[0.9fr_1.1fr] items-center gap-[30px] md:gap-[40px] mb-[70px] md:mb-[90px]" id="service-cloud">
                         <div className="w-full order-1 md:order-2">
                             <h3 className="text-[24px] md:text-[32px] font-semibold text-[#140a4f] mb-[12px]">Cloud & DevOps</h3>
                             <p className="text-[18px] md:text-[20px] font-medium text-[#4f4b78] mb-[14px] leading-[1.6]">
                                 Accelerated delivery and enhanced efficiency through cloud-native solutions.
                             </p>
-                            <ScrollReveal
-                                baseOpacity={0}
-                                enableBlur={true}
-                                baseRotation={5}
-                                blurStrength={10}
-                                textClassName="text-[18px] md:text-[20px] text-[#6b678a] leading-[1.7]"
-                                containerClassName="my-0"
-                            >
-                                Our Cloud & DevOps services streamline development pipelines, automate
-                                deployments, and ensure reliable infrastructure operations. We help
-                                organizations achieve continuous integration and continuous delivery
-                                excellence.
+                            <ScrollReveal variant="text" className="my-0">
+                                <p className="text-[18px] md:text-[20px] text-[#6b678a] leading-[1.7]">
+                                    Our Cloud & DevOps services streamline development pipelines, automate
+                                    deployments, and ensure reliable infrastructure operations. We help
+                                    organizations achieve continuous integration and continuous delivery
+                                    excellence.
+                                </p>
                             </ScrollReveal>
                         </div>
                         <div className="flex justify-center items-center mt-[30px] md:mt-0 order-2 md:order-1">
                             <img src="/assets/images/cloud-devops.png" alt="Cloud and DevOps illustration"
                                 className="w-full max-w-[320px] md:max-w-[360px] h-auto block" />
                         </div>
-                    </div>
+                    </ScrollReveal>
 
                     {/* Item 5: Mobile App Development */}
-                    <div
-                        id="service-mobile"
-                        className="grid grid-cols-1 md:grid-cols-[1.1fr_0.9fr] items-center gap-[30px] md:gap-[40px] mb-[70px] md:mb-[90px]"
-                        data-animate="fade-up">
+                    <ScrollReveal variant="featureLeft" className="grid grid-cols-1 md:grid-cols-[1.1fr_0.9fr] items-center gap-[30px] md:gap-[40px] mb-[70px] md:mb-[90px]" id="service-mobile">
                         <div className="w-full">
                             <h3 className="text-[24px] md:text-[32px] font-semibold text-[#140a4f] mb-[12px]">Mobile App Development
                             </h3>
                             <p className="text-[18px] md:text-[20px] font-medium text-[#4f4b78] mb-[14px] leading-[1.6]">
                                 End-to-end mobile solutions that deliver seamless user experiences.
                             </p>
-                            <ScrollReveal
-                                baseOpacity={0}
-                                enableBlur={true}
-                                baseRotation={5}
-                                blurStrength={10}
-                                textClassName="text-[18px] md:text-[20px] text-[#6b678a] leading-[1.7]"
-                                containerClassName="my-0"
-                            >
-                                We build intuitive, high-performance mobile applications for Android
-                                and iOS, focusing on user engagement, scalability, and seamless backend
-                                connectivity.
+                            <ScrollReveal variant="text" className="my-0">
+                                <p className="text-[18px] md:text-[20px] text-[#6b678a] leading-[1.7]">
+                                    We build intuitive, high-performance mobile applications for Android
+                                    and iOS, focusing on user engagement, scalability, and seamless backend
+                                    connectivity.
+                                </p>
                             </ScrollReveal>
                         </div>
                         <div className="flex justify-center items-center mt-[30px] md:mt-0">
                             <img src="/assets/images/mobile-development.png" alt="Mobile App Development illustration"
                                 className="w-full max-w-[320px] md:max-w-[360px] h-auto block" />
                         </div>
-                    </div>
+                    </ScrollReveal>
 
                     {/* Item 6: IT Consulting & Digital Platforms (Reverse) */}
-                    <div
-                        id="service-it"
-                        className="grid grid-cols-1 md:grid-cols-[0.9fr_1.1fr] items-center gap-[30px] md:gap-[40px]"
-                        data-animate="fade-up">
+                    <ScrollReveal variant="featureRight" className="grid grid-cols-1 md:grid-cols-[0.9fr_1.1fr] items-center gap-[30px] md:gap-[40px]" id="service-it">
                         <div className="w-full order-1 md:order-2">
                             <h3 className="text-[24px] md:text-[32px] font-semibold text-[#140a4f] mb-[12px]">IT Consulting & Digital
                                 Platforms</h3>
                             <p className="text-[18px] md:text-[20px] font-medium text-[#4f4b78] mb-[14px] leading-[1.6]">
                                 Strategic guidance and platform development that empower digital transformation.
                             </p>
-                            <ScrollReveal
-                                baseOpacity={0}
-                                enableBlur={true}
-                                baseRotation={5}
-                                blurStrength={10}
-                                textClassName="text-[18px] md:text-[20px] text-[#6b678a] leading-[1.7]"
-                                containerClassName="my-0"
-                            >
-                                We help organizations modernize operations through technology audits,
-                                digital strategy planning, and platform implementation. Our solutions
-                                align business objectives with clear insights and robust systems.
+                            <ScrollReveal variant="text" className="my-0">
+                                <p className="text-[18px] md:text-[20px] text-[#6b678a] leading-[1.7]">
+                                    We help organizations modernize operations through technology audits,
+                                    digital strategy planning, and platform implementation. Our solutions
+                                    align business objectives with clear insights and robust systems.
+                                </p>
                             </ScrollReveal>
                         </div>
                         <div className="flex justify-center items-center mt-[30px] md:mt-0 order-2 md:order-1">
                             <img src="/assets/images/it-consulting.png" alt="IT Consulting and Digital Platforms illustration"
                                 className="w-full max-w-[320px] md:max-w-[360px] h-auto block" />
                         </div>
-                    </div>
+                    </ScrollReveal>
 
                 </div>
             </section>
@@ -379,93 +345,103 @@ const Services = () => {
             <section className="py-[70px] md:py-[90px] pb-[100px] bg-white" id="delivery-process">
                 <div className="w-full px-5 max-w-[1248px] mx-auto">
 
-                    <header className="text-center max-w-[720px] mx-auto mb-[70px]" data-animate="fade-up">
-                        <h2 className="text-[28.8px] md:text-[38.4px] font-bold text-[#2b2b2b] mb-[14px]">
-                            Our Delivery Process
-                        </h2>
-                        <p className="text-[16px] text-regular leading-[24px] text-[#555555]">
-                            A structured and transparent workflow that ensures quality, efficiency,
-                            and predictable outcomes at every stage of your project.
-                        </p>
+                    <header className="text-center max-w-[720px] mx-auto mb-[70px]">
+                        <ScrollReveal variant="heading">
+                            <h2 className="text-[28.8px] md:text-[38.4px] font-bold text-[#2b2b2b] mb-[14px]">
+                                Our Delivery Process
+                            </h2>
+                            <p className="text-[16px] text-regular leading-[24px] text-[#555555]">
+                                A structured and transparent workflow that ensures quality, efficiency,
+                                and predictable outcomes at every stage of your project.
+                            </p>
+                        </ScrollReveal>
                     </header>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[90px] lg:gap-[70px]">
 
                         {/* Step 1 */}
-                        <article className="relative pt-[60px]" data-step="1" data-animate="fade-up">
-                            <div
-                                className="absolute top-0 right-0 text-[120px] lg:text-[204px] font-black text-black opacity-5 leading-[1] tracking-[-0.02em] z-0 select-none">
-                                1</div>
+                        <ScrollReveal variant="card" delay={0.1}>
+                            <article className="relative pt-[60px]" data-step="1">
+                                <div
+                                    className="absolute top-0 right-0 text-[120px] lg:text-[204px] font-black text-black opacity-5 leading-[1] tracking-[-0.02em] z-0 select-none">
+                                    1</div>
 
-                            <div
-                                className="relative z-10 w-[44px] h-[44px] mb-[16px] rounded-[12px] bg-[#f4f1ff] flex items-center justify-center">
-                                <img src="/assets/svg/Strategy.svg" alt="Strategy" className="w-[24px] h-[24px]" />
-                            </div>
-                            <h3 className="relative z-10 text-[16px] font-bold text-[#2b2b2b] mb-[10px]">Discovery &
-                                Strategy</h3>
-                            <p className="relative z-10 text-[16px] font-medium leading-[24px] tracking-[-0.02em] text-[#757095]">
-                                We begin by understanding your objectives, target users, and business
-                                challenges. This phase lays the foundation for project clarity and
-                                aligns every stakeholder toward a unified vision.
-                            </p>
-                        </article>
+                                <div
+                                    className="relative z-10 w-[44px] h-[44px] mb-[16px] rounded-[12px] bg-[#f4f1ff] flex items-center justify-center">
+                                    <img src="/assets/svg/Strategy.svg" alt="Strategy" className="w-[24px] h-[24px]" />
+                                </div>
+                                <h3 className="relative z-10 text-[16px] font-bold text-[#2b2b2b] mb-[10px]">Discovery &
+                                    Strategy</h3>
+                                <p className="relative z-10 text-[16px] font-medium leading-[24px] tracking-[-0.02em] text-[#757095]">
+                                    We begin by understanding your objectives, target users, and business
+                                    challenges. This phase lays the foundation for project clarity and
+                                    aligns every stakeholder toward a unified vision.
+                                </p>
+                            </article>
+                        </ScrollReveal>
 
                         {/* Step 2 */}
-                        <article className="relative pt-[60px]" data-step="2" data-animate="fade-up">
-                            <div
-                                className="absolute top-0 right-0 text-[120px] lg:text-[204px] font-black text-black opacity-5 leading-[1] tracking-[-0.02em] z-0 select-none">
-                                2</div>
+                        <ScrollReveal variant="card" delay={0.2}>
+                            <article className="relative pt-[60px]" data-step="2">
+                                <div
+                                    className="absolute top-0 right-0 text-[120px] lg:text-[204px] font-black text-black opacity-5 leading-[1] tracking-[-0.02em] z-0 select-none">
+                                    2</div>
 
-                            <div
-                                className="relative z-10 w-[44px] h-[44px] mb-[16px] rounded-[12px] bg-[#f4f1ff] flex items-center justify-center">
-                                <img src="/assets/svg/Design.svg" alt="Design" className="w-[24px] h-[24px]" />
-                            </div>
-                            <h3 className="relative z-10 text-[16px] font-bold text-[#2b2b2b] mb-[10px]">Design and Planning
-                            </h3>
-                            <p className="relative z-10 text-[16px] font-medium leading-[24px] tracking-[-0.02em] text-[#757095]">
-                                Once the strategy is defined, we structure the architecture and visual
-                                experience. This includes designing intuitive interfaces and planning
-                                a development approach that ensures efficiency and scalability.
-                            </p>
-                        </article>
+                                <div
+                                    className="relative z-10 w-[44px] h-[44px] mb-[16px] rounded-[12px] bg-[#f4f1ff] flex items-center justify-center">
+                                    <img src="/assets/svg/Design.svg" alt="Design" className="w-[24px] h-[24px]" />
+                                </div>
+                                <h3 className="relative z-10 text-[16px] font-bold text-[#2b2b2b] mb-[10px]">Design and Planning
+                                </h3>
+                                <p className="relative z-10 text-[16px] font-medium leading-[24px] tracking-[-0.02em] text-[#757095]">
+                                    Once the strategy is defined, we structure the architecture and visual
+                                    experience. This includes designing intuitive interfaces and planning
+                                    a development approach that ensures efficiency and scalability.
+                                </p>
+                            </article>
+                        </ScrollReveal>
 
                         {/* Step 3 */}
-                        <article className="relative pt-[60px]" data-step="3" data-animate="fade-up">
-                            <div
-                                className="absolute top-0 right-0 text-[120px] lg:text-[204px] font-black text-black opacity-5 leading-[1] tracking-[-0.02em] z-0 select-none">
-                                3</div>
+                        <ScrollReveal variant="card" delay={0.3}>
+                            <article className="relative pt-[60px]" data-step="3">
+                                <div
+                                    className="absolute top-0 right-0 text-[120px] lg:text-[204px] font-black text-black opacity-5 leading-[1] tracking-[-0.02em] z-0 select-none">
+                                    3</div>
 
-                            <div
-                                className="relative z-10 w-[44px] h-[44px] mb-[16px] rounded-[12px] bg-[#f4f1ff] flex items-center justify-center">
-                                <img src="/assets/svg/Development.svg" alt="Development" className="w-[24px] h-[24px]" />
-                            </div>
-                            <h3 className="relative z-10 text-[16px] font-bold text-[#2b2b2b] mb-[10px]">Development and QA
-                            </h3>
-                            <p className="relative z-10 text-[16px] font-medium leading-[24px] tracking-[-0.02em] text-[#757095]">
-                                Our development process follows agile methodologies, ensuring rapid
-                                iteration and continuous feedback. Rigorous testing is performed to
-                                guarantee stability, security, and performance.
-                            </p>
-                        </article>
+                                <div
+                                    className="relative z-10 w-[44px] h-[44px] mb-[16px] rounded-[12px] bg-[#f4f1ff] flex items-center justify-center">
+                                    <img src="/assets/svg/Development.svg" alt="Development" className="w-[24px] h-[24px]" />
+                                </div>
+                                <h3 className="relative z-10 text-[16px] font-bold text-[#2b2b2b] mb-[10px]">Development and QA
+                                </h3>
+                                <p className="relative z-10 text-[16px] font-medium leading-[24px] tracking-[-0.02em] text-[#757095]">
+                                    Our development process follows agile methodologies, ensuring rapid
+                                    iteration and continuous feedback. Rigorous testing is performed to
+                                    guarantee stability, security, and performance.
+                                </p>
+                            </article>
+                        </ScrollReveal>
 
                         {/* Step 4 */}
-                        <article className="relative pt-[60px]" data-step="4" data-animate="fade-up">
-                            <div
-                                className="absolute top-0 right-0 text-[120px] lg:text-[204px] font-black text-black opacity-5 leading-[1] tracking-[-0.02em] z-0 select-none">
-                                4</div>
+                        <ScrollReveal variant="card" delay={0.4}>
+                            <article className="relative pt-[60px]" data-step="4">
+                                <div
+                                    className="absolute top-0 right-0 text-[120px] lg:text-[204px] font-black text-black opacity-5 leading-[1] tracking-[-0.02em] z-0 select-none">
+                                    4</div>
 
-                            <div
-                                className="relative z-10 w-[44px] h-[44px] mb-[16px] rounded-[12px] bg-[#f4f1ff] flex items-center justify-center">
-                                <img src="/assets/svg/Support.svg" alt="Support" className="w-[24px] h-[24px]" />
-                            </div>
-                            <h3 className="relative z-10 text-[16px] font-bold text-[#2b2b2b] mb-[10px]">Launch and Support
-                            </h3>
-                            <p className="relative z-10 text-[16px] font-medium leading-[24px] tracking-[-0.02em] text-[#757095]">
-                                We manage the deployment process across preferred platforms and provide
-                                continuous monitoring, improvements, and technical support to ensure
-                                uninterrupted performance.
-                            </p>
-                        </article>
+                                <div
+                                    className="relative z-10 w-[44px] h-[44px] mb-[16px] rounded-[12px] bg-[#f4f1ff] flex items-center justify-center">
+                                    <img src="/assets/svg/Support.svg" alt="Support" className="w-[24px] h-[24px]" />
+                                </div>
+                                <h3 className="relative z-10 text-[16px] font-bold text-[#2b2b2b] mb-[10px]">Launch and Support
+                                </h3>
+                                <p className="relative z-10 text-[16px] font-medium leading-[24px] tracking-[-0.02em] text-[#757095]">
+                                    We manage the deployment process across preferred platforms and provide
+                                    continuous monitoring, improvements, and technical support to ensure
+                                    uninterrupted performance.
+                                </p>
+                            </article>
+                        </ScrollReveal>
 
                     </div>
 
@@ -558,7 +534,7 @@ const Services = () => {
                 {/* Since the user asked to convert each page, I should include the contact section here too if it's inservices.html, which it is. */}
                 <div className="w-full max-w-[1200px] mx-auto px-5 relative z-10">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-                        <div data-animate="fade-right">
+                        <ScrollReveal variant="featureLeft">
                             <header className="mb-[40px]">
                                 <h2 id="contact-heading" className="text-[40px] lg:text-[48px] font-medium text-[#6C4CF0] mb-6 leading-tight">
                                     Contact Us</h2>
@@ -592,8 +568,8 @@ const Services = () => {
                                     </div>
                                 </li>
                             </ul>
-                        </div>
-                        <div className="relative mt-8 lg:mt-0 lg:h-[600px] flex items-center" data-animate="fade-left">
+                        </ScrollReveal>
+                        <ScrollReveal variant="featureRight" className="relative mt-8 lg:mt-0 lg:h-[600px] flex items-center">
                             <form action="#" method="post" className="space-y-5 w-full max-w-[480px] relative z-20">
                                 <div>
                                     <input type="text" placeholder="Name"
@@ -614,11 +590,13 @@ const Services = () => {
                                         className="w-full px-6 py-4 rounded-[8px] border border-[#D8D8D8] bg-transparent hover:border-[#6C4CF4] focus:border-[#6C4CF0] focus:ring-4 focus:ring-[#6C4CF0]/10 outline-none transition-all placeholder:text-gray-400 text-[#494949] resize-none text-[16px] mt-6"></textarea>
                                 </div>
                                 <div className="relative">
-                                    <button type="submit"
+                                    <StatefulButton
                                         className="w-full h-[64px] px-6 py-4 rounded-[6px] text-white font-medium text-[17.6px] mt-6 shadow-lg transition-all hover:opacity-90 flex items-center justify-center gap-3 relative overflow-hidden"
-                                        style={{ background: 'linear-gradient(90deg, #135AC6 0%, #6C4CF4 100%)' }}>
-                                        <span className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">Submit</span>
-                                    </button>
+                                        style={{ background: 'linear-gradient(90deg, #135AC6 0%, #6C4CF4 100%)' }}
+                                        onClick={(e) => { e.preventDefault(); return new Promise(resolve => setTimeout(resolve, 3000)); }}
+                                    >
+                                        Submit
+                                    </StatefulButton>
                                     <img src="/assets/svg/letter_send.svg" alt=""
                                         className="absolute left-1/2 -translate-x-1/2 top-[20px] w-[240px] h-[112px] object-contain pointer-events-none z-50 filter brightness-0 invert" />
                                 </div>
@@ -629,7 +607,7 @@ const Services = () => {
                                 <img src="/assets/images/Contact Us.png" alt="Contact Us 3D Illustration"
                                     className="w-full h-auto object-contain opacity-100" />
                             </div>
-                        </div>
+                        </ScrollReveal>
                     </div>
                 </div>
             </section>

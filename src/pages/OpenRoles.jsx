@@ -1,18 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Squares from '../components/Squares';
+import ScrollReveal from '../components/ui/ScrollReveal';
+import { StatefulButton } from '../components/ui/stateful-button';
 
 const OpenRoles = () => {
-    useEffect(() => {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('in-view');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
-    }, []);
+    // IntersectionObserver removed - animations handled by ScrollReveal
 
 
     const [visibleCount, setVisibleCount] = useState(6);
@@ -117,7 +109,6 @@ const OpenRoles = () => {
             <section
                 className="relative min-h-[80vh] lg:min-h-[90vh] flex items-center overflow-hidden bg-[linear-gradient(135deg,#eef6ff_0%,#f6f3ff_45%,#fff6f8_100%)]"
                 aria-label="Open roles hero"
-                data-animate="fade-up"
             >
                 {/* Background Gradients */}
                 <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -139,7 +130,7 @@ const OpenRoles = () => {
                 {/* ✅ Content wrapper (only content max width) */}
                 <div className="relative z-10 w-full">
                     <div className="mx-auto w-full max-w-[1200px] px-5 grid grid-cols-1 items-center">
-                        <div className="max-w-[720px] mx-auto lg:mx-0 text-center lg:text-left">
+                        <ScrollReveal variant="heading" className="max-w-[720px] mx-auto lg:mx-0 text-center lg:text-left">
                             <h1 className="text-[38px] md:text-[48px] lg:text-[56px] font-extrabold leading-[1.15] text-[#121212] mb-[24px]">
                                 Explore Opportunities at <br className="hidden md:block" /> Evolvex AI
                             </h1>
@@ -155,7 +146,7 @@ const OpenRoles = () => {
                             >
                                 View Current Openings
                             </a>
-                        </div>
+                        </ScrollReveal>
                     </div>
                 </div>
             </section>
@@ -262,11 +253,10 @@ const OpenRoles = () => {
                 </div>
             </section>
 
-            {/* Contact Section - extracted */}
             <section id="contact" className="py-[96px] bg-white relative overflow-hidden" aria-labelledby="contact-heading">
                 <div className="w-full max-w-[1200px] mx-auto px-5 relative z-10">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-                        <div data-animate="fade-right">
+                        <ScrollReveal variant="featureLeft">
                             <header className="mb-[40px]">
                                 <h2 id="contact-heading" className="text-[40px] lg:text-[48px] font-medium text-[#6C4CF0] mb-6 leading-tight">
                                     Contact Us</h2>
@@ -300,8 +290,8 @@ const OpenRoles = () => {
                                     </div>
                                 </li>
                             </ul>
-                        </div>
-                        <div className="relative mt-8 lg:mt-0 lg:h-[600px] flex items-center" data-animate="fade-left">
+                        </ScrollReveal>
+                        <ScrollReveal variant="featureRight" className="relative mt-8 lg:mt-0 lg:h-[600px] flex items-center">
                             <form action="#" method="post" className="space-y-5 w-full max-w-[480px] relative z-20">
                                 <div>
                                     <input type="text" placeholder="Name"
@@ -322,11 +312,13 @@ const OpenRoles = () => {
                                         className="w-full px-6 py-4 rounded-[8px] border border-[#D8D8D8] bg-transparent hover:border-[#6C4CF4] focus:border-[#6C4CF0] focus:ring-4 focus:ring-[#6C4CF0]/10 outline-none transition-all placeholder:text-gray-400 text-[#494949] resize-none text-[16px] mt-6"></textarea>
                                 </div>
                                 <div className="relative">
-                                    <button type="submit"
+                                    <StatefulButton
                                         className="w-full h-[64px] px-6 py-4 rounded-[6px] text-white font-medium text-[17.6px] mt-6 shadow-lg transition-all hover:opacity-90 flex items-center justify-center gap-3 relative overflow-hidden"
-                                        style={{ background: 'linear-gradient(90deg, #135AC6 0%, #6C4CF4 100%)' }}>
-                                        <span className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">Submit</span>
-                                    </button>
+                                        style={{ background: 'linear-gradient(90deg, #135AC6 0%, #6C4CF4 100%)' }}
+                                        onClick={(e) => { e.preventDefault(); return new Promise(resolve => setTimeout(resolve, 3000)); }}
+                                    >
+                                        Submit
+                                    </StatefulButton>
                                     <img src="/assets/svg/letter_send.svg" alt=""
                                         className="absolute left-1/2 -translate-x-1/2 top-[20px] w-[240px] h-[112px] object-contain pointer-events-none z-50 filter brightness-0 invert" />
                                 </div>
@@ -337,7 +329,7 @@ const OpenRoles = () => {
                                 <img src="/assets/images/Contact Us.png" alt="Contact Us 3D Illustration"
                                     className="w-full h-auto object-contain opacity-100" />
                             </div>
-                        </div>
+                        </ScrollReveal>
                     </div>
                 </div>
             </section>

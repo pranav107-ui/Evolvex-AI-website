@@ -94,10 +94,22 @@ export default {
                     from: { height: "var(--radix-accordion-content-height)" },
                     to: { height: 0 },
                 },
+                slowFloat: {
+                    "0%": { transform: "translateY(0px)" },
+                    "50%": { transform: "translateY(40px)" },
+                    "100%": { transform: "translateY(0px)" },
+                },
+                slowFloat2: {
+                    "0%": { transform: "translateY(0px)" },
+                    "50%": { transform: "translateY(-40px)" },
+                    "100%": { transform: "translateY(0px)" },
+                },
             },
             animation: {
                 "accordion-down": "accordion-down 0.2s ease-out",
                 "accordion-up": "accordion-up 0.2s ease-out",
+                slowFloat: "slowFloat 12s ease-in-out infinite",
+                slowFloat2: "slowFloat2 16s ease-in-out infinite",
             },
         },
     },

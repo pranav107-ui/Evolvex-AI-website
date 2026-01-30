@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
+import ScrollReveal from '../components/ui/ScrollReveal';
+import { StatefulButton } from '../components/ui/stateful-button';
 
 const JobDetails = () => {
     const location = useLocation();
@@ -21,17 +23,7 @@ const JobDetails = () => {
         }
     }, [roleParam]);
 
-    useEffect(() => {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('in-view');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
-    }, []);
+    // IntersectionObserver removed - animations handled by ScrollReveal
 
     return (
         <>
@@ -47,14 +39,14 @@ const JobDetails = () => {
             </section>
 
             {/* Hero Banner */}
-            <section className="bg-gradient-to-br from-[#b98af3] to-[#6b2bd9] py-[80px] text-center" data-animate="fade-up">
+            <ScrollReveal variant="heading" className="bg-gradient-to-br from-[#b98af3] to-[#6b2bd9] py-[80px] text-center">
                 <div className="w-full px-5">
                     <h1 className="text-[28px] md:text-[40px] font-bold text-white leading-[1.3]">
                         We Empower Ambitious Talent<br />
                         <span className="block font-normal opacity-95">To Build Intelligent Digital Solutions</span>
                     </h1>
                 </div>
-            </section>
+            </ScrollReveal>
 
             {/* Company Summary */}
             <section className="-mt-[50px] relative z-10 p-[0_24px] md:p-0">
@@ -274,8 +266,8 @@ const JobDetails = () => {
             </section>
 
             {/* Apply Position Form */}
-            <section className="py-[72px] pb-[96px] bg-white apply-position" id="apply-position" data-animate="fade-up">
-                <div className="w-full px-5">
+            <section className="py-[72px] pb-[96px] bg-white apply-position" id="apply-position">
+                <ScrollReveal variant="card" className="w-full px-5">
 
                     {/* Section Header */}
                     <header className="text-center mb-[56px]">
@@ -288,7 +280,7 @@ const JobDetails = () => {
                     {/* Application Form */}
                     <form
                         className="max-w-[820px] mx-auto grid grid-cols-1 md:grid-cols-[350px_350px] justify-center gap-x-[48px] gap-y-[28px]"
-                        action="#" method="post" encType="multipart/form-data" noValidate>
+                        action="#" method="post" encType="multipart/form-data">
 
                         {/* Full Name */}
                         <div>
@@ -381,15 +373,17 @@ const JobDetails = () => {
 
                         {/* Submit */}
                         <div className="col-span-1 md:col-span-2 mt-[12px] text-center">
-                            <button type="submit"
-                                className="w-[220px] h-[48px] rounded-[6px] bg-gradient-to-br from-[#6C4CF4] to-[#8B5CF6] text-white text-[15px] font-semibold border-none cursor-pointer transition-all duration-250 hover:-translate-y-[2px] hover:shadow-[0_12px_24px_rgba(108,76,244,0.35)]">
+                            <StatefulButton
+                                className="w-[220px] h-[48px] rounded-[6px] bg-gradient-to-br from-[#6C4CF4] to-[#8B5CF6] text-white text-[15px] font-semibold border-none cursor-pointer transition-all duration-250 hover:-translate-y-[2px] hover:shadow-[0_12px_24px_rgba(108,76,244,0.35)]"
+                                onClick={(e) => { e.preventDefault(); return new Promise(resolve => setTimeout(resolve, 3000)); }}
+                            >
                                 Submit Application
-                            </button>
+                            </StatefulButton>
                         </div>
 
                     </form>
 
-                </div>
+                </ScrollReveal>
             </section>
         </>
     );

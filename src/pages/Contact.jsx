@@ -1,25 +1,16 @@
 import React, { useEffect } from 'react';
 import TrustedBy from '../components/TrustedBy';
+import ScrollReveal from '../components/ui/ScrollReveal';
+import { StatefulButton } from '../components/ui/stateful-button';
 
 const Contact = () => {
-    useEffect(() => {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('in-view');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
-    }, []);
+    // IntersectionObserver removed - animations handled by ScrollReveal
 
     return (
         <>
             {/* Hero Section */}
-            <section
-                className="relative py-[80px] lg:py-[120px] pb-[200px] lg:pb-[280px] bg-[linear-gradient(120deg,#eef7ff_0%,#f6f9ff_40%,#fff2f7_100%)] overflow-hidden"
-                data-animate="fade-up">
+            <ScrollReveal variant="heading"
+                className="relative py-[80px] lg:py-[120px] pb-[200px] lg:pb-[280px] bg-[linear-gradient(120deg,#eef7ff_0%,#f6f9ff_40%,#fff2f7_100%)] overflow-hidden">
                 <div className="w-full px-5 grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] items-center gap-[60px] lg:gap-[80px]">
 
                     {/* Left Content */}
@@ -59,7 +50,7 @@ const Contact = () => {
                     </div>
 
                 </div>
-            </section>
+            </ScrollReveal>
 
             {/* Trusted By - To build trust before contact */}
             <TrustedBy />
@@ -147,30 +138,30 @@ const Contact = () => {
 
                             {/* Right Form */}
                             <div className="w-full relative z-10">
-                                <form className="w-full" noValidate>
+                                <form className="w-full">
 
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-x-[48px] gap-y-[28px] items-start mb-[12px]">
                                         <label className="block">
                                             <span className="block text-[14px] font-medium text-[#111827] mb-[6px]">First Name</span>
-                                            <input type="text" name="first_name"
+                                            <input type="text" name="first_name" required
                                                 className="w-full h-[44px] border-b border-[#e5e7eb] px-0 text-[14px] focus:outline-none focus:border-[#6c4cf4] transition-colors bg-transparent placeholder-gray-400" />
                                         </label>
 
                                         <label className="block">
                                             <span className="block text-[14px] font-medium text-[#111827] mb-[6px]">Last Name</span>
-                                            <input type="text" name="last_name"
+                                            <input type="text" name="last_name" required
                                                 className="w-full h-[44px] border-b border-[#e5e7eb] px-0 text-[14px] focus:outline-none focus:border-[#6c4cf4] transition-colors bg-transparent placeholder-gray-400" />
                                         </label>
 
                                         <label className="block">
                                             <span className="block text-[14px] font-medium text-[#111827] mb-[6px]">Email</span>
-                                            <input type="email" name="email"
+                                            <input type="email" name="email" required
                                                 className="w-full h-[44px] border-b border-[#e5e7eb] px-0 text-[14px] focus:outline-none focus:border-[#6c4cf4] transition-colors bg-transparent placeholder-gray-400" />
                                         </label>
 
                                         <label className="block">
                                             <span className="block text-[14px] font-medium text-[#111827] mb-[6px]">Phone Number</span>
-                                            <input type="tel" name="phone"
+                                            <input type="tel" name="phone" required
                                                 className="w-full h-[44px] border-b border-[#e5e7eb] px-0 text-[14px] focus:outline-none focus:border-[#6c4cf4] transition-colors bg-transparent placeholder-gray-400" />
                                         </label>
                                     </div>
@@ -199,16 +190,18 @@ const Contact = () => {
                                     {/* Message */}
                                     <label className="block mb-[28px]">
                                         <span className="block text-[14px] font-medium text-[#111827] mb-[6px]">Message</span>
-                                        <textarea rows="4" placeholder="Write your message.."
+                                        <textarea rows="4" placeholder="Write your message.." required
                                             className="w-full h-[64px] border-b border-[#e5e7eb] px-0 text-[14px] focus:outline-none focus:border-[#6c4cf4] transition-colors bg-transparent placeholder-gray-400 resize-none"></textarea>
                                     </label>
 
                                     {/* Submit */}
                                     <div className="flex justify-center mt-[28px]">
-                                        <button type="submit"
-                                            className="w-[251px] h-[48px] flex items-center justify-center rounded-[12px] text-[15px] font-semibold text-white bg-gradient-to-r from-[#8455F3] to-[#3937F3] shadow-[0_12px_28px_rgba(108,76,244,0.35)] transition-transform hover:-translate-y-[2px]">
+                                        <StatefulButton
+                                            className="w-[251px] h-[48px] flex items-center justify-center rounded-[12px] text-[15px] font-semibold text-white bg-gradient-to-r from-[#8455F3] to-[#3937F3] shadow-[0_12px_28px_rgba(108,76,244,0.35)] transition-transform hover:-translate-y-[2px]"
+                                            onClick={(e) => { e.preventDefault(); return new Promise(resolve => setTimeout(resolve, 3000)); }}
+                                        >
                                             Send Message
-                                        </button>
+                                        </StatefulButton>
                                     </div>
 
                                 </form>
@@ -220,8 +213,8 @@ const Contact = () => {
             </section>
 
             {/* Locate Us Section */}
-            <section className="py-[96px] lg:py-[120px] bg-white" data-animate="fade-up">
-                <div className="w-full px-5">
+            <section className="py-[96px] lg:py-[120px] bg-white">
+                <ScrollReveal variant="card" className="w-full px-5">
 
                     {/* Section Header */}
                     <div className="text-center mb-[48px]">
@@ -266,7 +259,7 @@ const Contact = () => {
                         </div>
 
                     </div>
-                </div>
+                </ScrollReveal>
             </section>
         </>
     );

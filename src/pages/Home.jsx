@@ -4,8 +4,11 @@ import { Link } from 'react-router-dom';
 import { runAntigravity } from '../scripts/antigravity.js';
 import WhyWorkWithUs from '../components/WhyWorkWithUs';
 import { StickyScroll } from '../components/ui/sticky-scroll-reveal';
+import ScrollReveal from '../components/ui/ScrollReveal';
 import Testimonials from '../components/Testimonials';
 import TrustedBy from '../components/TrustedBy';
+import ProductShowcase from '../components/ProductShowcase';
+import { StatefulButton } from '../components/ui/stateful-button';
 
 const servicesContent = [
     {
@@ -120,7 +123,8 @@ const Home = () => {
 
 
 
-        // General Scroll Animations
+        // General Scroll Animations - REMOVED (Replaced with ScrollReveal component)
+        /*
         const animateElements = document.querySelectorAll('[data-animate]');
         const animateObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -131,6 +135,7 @@ const Home = () => {
             });
         }, { threshold: 0.1 });
         animateElements.forEach(el => animateObserver.observe(el));
+        */
 
         // Service Scroll Animation
         // Service Scroll Animation - REMOVED (Replaced with StickyScroll)
@@ -229,45 +234,100 @@ const Home = () => {
                 {/* ===== PROFESSIONAL CENTERED LAYOUT ===== */}
                 <div className="relative z-10 max-w-[860px] px-6 w-full flex flex-col items-center justify-center">
 
-                    <div className="hero-content" data-animate="fade-up">
-                        <h1 className="text-[42px] md:text-[62px] lg:text-[72px] leading-[1.05] font-bold tracking-[-0.04em] text-[#111] mb-[26px]">
-                            <span className="block">Innovation. Intelligence.</span>
+                    <div className="hero-content">
+                        <ScrollReveal variant="heading">
+                            <h1 className="text-[42px] md:text-[62px] lg:text-[72px] leading-[1.05] font-bold tracking-[-0.04em] text-[#111] mb-[26px]">
+                                <span className="block">Innovation. Intelligence.</span>
 
-                            <span id="hero-title-anim" className="relative inline-block text-[#6C4CF4] px-[8px] mt-2 leading-none">
-                                <span className="relative z-10">Evolvex</span>
+                                <span id="hero-title-anim" className="relative inline-block text-[#6C4CF4] px-[8px] mt-2 leading-none">
+                                    <span className="relative z-10">Evolvex</span>
 
-                                <span className="anim-rect absolute top-0 left-0 border border-[#1a1a1a] pointer-events-none box-border z-0"></span>
+                                    <span className="anim-rect absolute top-0 left-0 border border-[#1a1a1a] pointer-events-none box-border z-0"></span>
 
-                                <span className="anim-pointer absolute top-0 left-0 z-20 text-blue-500 pointer-events-none opacity-0">
-                                    <svg stroke="#6C4CF4" fill="#6C4CF4" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"
-                                        viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"
-                                        className="w-5 h-5 -rotate-90">
-                                        <path d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103z"></path>
-                                    </svg>
+                                    <span className="anim-pointer absolute top-0 left-0 z-20 text-blue-500 pointer-events-none opacity-0">
+                                        <svg stroke="#6C4CF4" fill="#6C4CF4" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"
+                                            viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"
+                                            className="w-5 h-5 -rotate-90">
+                                            <path d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103z"></path>
+                                        </svg>
+                                    </span>
                                 </span>
-                            </span>
-                        </h1>
+                            </h1>
+                        </ScrollReveal>
 
-                        <p className="text-[18px] leading-[1.8] text-gray-600 max-w-[640px] mx-auto mb-[44px]">
-                            We design intelligent digital systems that help modern businesses scale faster, operate smarter, and lead with technology.
-                        </p>
+                        <ScrollReveal variant="text">
+                            <p className="text-[18px] leading-[1.8] text-gray-600 max-w-[640px] mx-auto mb-[44px]">
+                                We design intelligent digital systems that help modern businesses scale faster, operate smarter, and lead with technology.
+                            </p>
+                        </ScrollReveal>
 
-                        <div className="flex flex-wrap items-center justify-center gap-[20px]">
-                            <a href="#services"
-                                className="inline-flex min-w-[180px] h-[52px] px-[34px] items-center justify-center rounded-[12px] bg-gradient-to-r from-[#B455F3] to-[#393AF3] text-white font-semibold text-[15px] shadow-[0_8px_24px_rgba(108,76,244,0.35)] transition-transform duration-200 hover:scale-[1.04]">
-                                Get Started
-                            </a>
+                        <ScrollReveal variant="button">
+                            <div className="flex flex-wrap items-center justify-center gap-[20px]">
+                                <a href="#services"
+                                    className="inline-flex min-w-[180px] h-[52px] px-[34px] items-center justify-center rounded-[12px] bg-gradient-to-r from-[#B455F3] to-[#393AF3] text-white font-semibold text-[15px] shadow-[0_8px_24px_rgba(108,76,244,0.35)] transition-transform duration-200 hover:scale-[1.04]">
+                                    Get Started
+                                </a>
 
-                            <Link to="/services"
-                                className="inline-flex min-w-[190px] h-[52px] px-[34px] items-center justify-center rounded-[12px] bg-white border border-[#6C4CF4] text-[#6C4CF4] font-semibold text-[15px] shadow-sm transition-transform duration-200 hover:scale-[1.04] hover:bg-gray-50">
-                                Explore Services
-                            </Link>
-                        </div>
+                                <Link to="/services"
+                                    className="inline-flex min-w-[190px] h-[52px] px-[34px] items-center justify-center rounded-[12px] bg-white border border-[#6C4CF4] text-[#6C4CF4] font-semibold text-[15px] shadow-sm transition-transform duration-200 hover:scale-[1.04] hover:bg-gray-50">
+                                    Explore Services
+                                </Link>
+                            </div>
+                        </ScrollReveal>
                     </div>
                 </div>
             </section>
 
-            {/* Explore Expertise */}
+            {/* ===== PROFESSIONAL CENTERED LAYOUT ===== 
+                <div className="relative z-10 max-w-[860px] px-6 w-full flex flex-col items-center justify-center">
+
+                    <div className="hero-content" data-animate="fade-up">
+
+                       
+                        <div className="mb-6 flex justify-center">
+                            <span className="inline-block px-4 py-1.5 rounded-full bg-purple-100 text-[#6C4CF4] text-xs font-semibold tracking-wider uppercase border border-purple-200">
+                                Product Engineering • Custom Software • Mobile Apps • AI & Automation
+                            </span>
+                        </div>
+
+                        <h1 className="text-[42px] md:text-[62px] lg:text-[72px] leading-[1.1] font-bold tracking-tight text-[#0b1220] mb-[26px]">
+                            Engineering Intelligent <br className="hidden md:block" />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6C4CF4] to-[#B455F3]">
+                                Digital Platforms
+                            </span> for the Future
+                        </h1>
+
+                        <p className="text-[18px] leading-[1.8] text-gray-600 max-w-[780px] mx-auto mb-[44px]">
+                            We design, build, and scale high-performance software, mobile applications, and AI-powered systems that help organizations innovate faster, operate smarter, and grow sustainably.
+                        </p>
+
+                        <div className="flex flex-col items-center gap-8">
+                            <div className="flex flex-wrap items-center justify-center gap-[20px]">
+                                <a href="#services"
+                                    className="inline-flex min-w-[200px] h-[54px] px-[34px] items-center justify-center rounded-[12px] bg-gradient-to-r from-[#B455F3] to-[#393AF3] text-white font-semibold text-[16px] shadow-[0_8px_24px_rgba(108,76,244,0.35)] transition-all duration-200 hover:scale-[1.04] hover:shadow-[0_12px_32px_rgba(108,76,244,0.45)]">
+                                    Start Your Digital Transformation
+                                </a>
+
+                                <Link to="/services"
+                                    className="inline-flex min-w-[200px] h-[54px] px-[34px] items-center justify-center rounded-[12px] bg-white border border-[#e2e8f0] text-[#111] font-semibold text-[16px] shadow-sm transition-transform duration-200 hover:scale-[1.04] hover:bg-gray-50">
+                                    Explore Our Services
+                                </Link>
+                            </div>
+
+                            
+                            <p className="text-sm text-gray-500 font-medium">
+                                Trusted engineering partner for scalable products, enterprise systems, and intelligent automation.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section> */}
+
+            {/* Product Showcase Scroll Section */}
+            <ProductShowcase />
+
+            {/* Explore Expertise (Hidden) */}
+            {/*
             <section className="py-[48px] bg-gradient-to-b from-[#fafaff] to-[#f7f9ff]" id="services">
                 <div className="mx-auto max-w-[1440px] px-4 sm:px-6">
 
@@ -283,7 +343,8 @@ const Home = () => {
                         <StickyScroll content={servicesContent} />
                     </div>
                 </div>
-            </section>
+            </section> 
+            */}
             {/* Trusted By */}
             <TrustedBy />
 
@@ -450,92 +511,102 @@ const Home = () => {
             {/* Why Brands Choose Evolvex Section */}
             <section className="section flex flex-col items-center" id="why-brands" aria-labelledby="why-brands-title">
 
-                <div className="text-center mb-[56px]" data-animate="fade-up">
-                    <h2 id="why-brands-title"
-                        className="text-[35.2px] md:text-[41.6px] font-bold text-[#0b1220] mb-2 leading-tight">
-                        Why Brands Choose Evolvex
-                    </h2>
+                <div className="text-center mb-[56px]">
+                    <ScrollReveal variant="heading">
+                        <h2 id="why-brands-title"
+                            className="text-[35.2px] md:text-[41.6px] font-bold text-[#0b1220] mb-2 leading-tight">
+                            Why Brands Choose Evolvex
+                        </h2>
+                    </ScrollReveal>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[60px] justify-center mx-auto mb-[30px]">
 
-                    <article
-                        className="w-[320px] h-[400px] rounded-[16px] p-[32px] relative overflow-hidden group flex flex-col items-center text-center justify-start pt-[64px] hover:scale-105 transition-transform duration-300"
-                        style={{ backgroundColor: '#E6DEFF' }} data-animate="card-pop">
+                    <ScrollReveal variant="card" delay={0.1}>
+                        <article
+                            className="w-[320px] h-[400px] rounded-[16px] p-[32px] relative overflow-hidden group flex flex-col items-center text-center justify-start pt-[64px] hover:scale-105 transition-transform duration-300"
+                            style={{ backgroundColor: '#E6DEFF' }}>
 
-                        <div className="relative z-20 flex flex-col gap-4 items-center">
-                            <h3 className="font-semibold text-[22.4px] leading-[1.2] text-[#0b1220]">
-                                Engineering-Driven Execution
-                            </h3>
-                            <p className="m-0 text-[#0b1220] opacity-75 text-[15.2px] leading-[1.5]">
-                                Our processes are built on strong engineering foundations, ensuring every product is structured,
-                                optimized, and technically sound.
-                            </p>
-                        </div>
+                            <div className="relative z-20 flex flex-col gap-4 items-center">
+                                <h3 className="font-semibold text-[22.4px] leading-[1.2] text-[#0b1220]">
+                                    Engineering-Driven Execution
+                                </h3>
+                                <p className="m-0 text-[#0b1220] opacity-75 text-[15.2px] leading-[1.5]">
+                                    Our processes are built on strong engineering foundations, ensuring every product is structured,
+                                    optimized, and technically sound.
+                                </p>
+                            </div>
 
-                        <div className="absolute left-0 bottom-[-20px] w-[200px] h-[200px] pointer-events-none z-10">
-                            <img src="/assets/images/deco-purple-1.png" alt="" className="w-full h-full object-contain object-left-bottom" />
-                        </div>
-                    </article>
+                            <div className="absolute left-0 bottom-[-20px] w-[200px] h-[200px] pointer-events-none z-10">
+                                <img src="/assets/images/deco-purple-1.png" alt="" className="w-full h-full object-contain object-left-bottom" />
+                            </div>
+                        </article>
+                    </ScrollReveal>
 
-                    <article
-                        className="w-[320px] h-[400px] rounded-[16px] p-[32px] relative overflow-hidden group flex flex-col items-center text-center justify-start pt-[64px] hover:scale-105 transition-transform duration-300"
-                        style={{ backgroundColor: '#E6DEFF' }} data-animate="card-pop">
+                    <ScrollReveal variant="card" delay={0.2}>
+                        <article
+                            className="w-[320px] h-[400px] rounded-[16px] p-[32px] relative overflow-hidden group flex flex-col items-center text-center justify-start pt-[64px] hover:scale-105 transition-transform duration-300"
+                            style={{ backgroundColor: '#E6DEFF' }}>
 
-                        <div className="relative z-20 flex flex-col gap-4 items-center">
-                            <h3 className="font-semibold text-[22.4px] leading-[1.2] text-[#0b1220]">
-                                AI-Focused Development
-                            </h3>
-                            <p className="m-0 text-[#0b1220] opacity-75 text-[15.2px] leading-[1.5]">
-                                We integrate intelligence across the entire product lifecycle, from data-driven insights to automation
-                                and predictive capabilities.
-                            </p>
-                        </div>
+                            <div className="relative z-20 flex flex-col gap-4 items-center">
+                                <h3 className="font-semibold text-[22.4px] leading-[1.2] text-[#0b1220]">
+                                    AI-Focused Development
+                                </h3>
+                                <p className="m-0 text-[#0b1220] opacity-75 text-[15.2px] leading-[1.5]">
+                                    We integrate intelligence across the entire product lifecycle, from data-driven insights to automation
+                                    and predictive capabilities.
+                                </p>
+                            </div>
 
-                        <div className="absolute left-1/2 -translate-x-1/2 bottom-[-20px] w-[200px] h-[200px] pointer-events-none z-10">
-                            <img src="/assets/images/deco-purple-2.png" alt="" className="w-full h-full object-contain object-bottom" />
-                        </div>
-                    </article>
+                            <div className="absolute left-1/2 -translate-x-1/2 bottom-[-20px] w-[200px] h-[200px] pointer-events-none z-10">
+                                <img src="/assets/images/deco-purple-2.png" alt="" className="w-full h-full object-contain object-bottom" />
+                            </div>
+                        </article>
+                    </ScrollReveal>
 
-                    <article
-                        className="w-[320px] h-[400px] rounded-[16px] p-[32px] relative overflow-hidden group flex flex-col items-center text-center justify-start pt-[64px] hover:scale-105 transition-transform duration-300"
-                        style={{ backgroundColor: '#E6DEFF' }} data-animate="card-pop">
+                    <ScrollReveal variant="card" delay={0.3}>
+                        <article
+                            className="w-[320px] h-[400px] rounded-[16px] p-[32px] relative overflow-hidden group flex flex-col items-center text-center justify-start pt-[64px] hover:scale-105 transition-transform duration-300"
+                            style={{ backgroundColor: '#E6DEFF' }}>
 
-                        <div className="relative z-20 flex flex-col gap-4 items-center">
-                            <h3 className="font-semibold text-[22.4px] leading-[1.2] text-[#0b1220]">
-                                Transparent Collaboration
-                            </h3>
-                            <p className="m-0 text-[#0b1220] opacity-75 text-[15.2px] leading-[1.5]">
-                                We believe in clarity, open communication, and a smooth development workflow that keeps clients informed
-                                and empowered.
-                            </p>
-                        </div>
+                            <div className="relative z-20 flex flex-col gap-4 items-center">
+                                <h3 className="font-semibold text-[22.4px] leading-[1.2] text-[#0b1220]">
+                                    Transparent Collaboration
+                                </h3>
+                                <p className="m-0 text-[#0b1220] opacity-75 text-[15.2px] leading-[1.5]">
+                                    We believe in clarity, open communication, and a smooth development workflow that keeps clients informed
+                                    and empowered.
+                                </p>
+                            </div>
 
-                        <div className="absolute right-0 bottom-[-20px] w-[200px] h-[200px] pointer-events-none z-10">
-                            <img src="/assets/images/deco-purple-3.png" alt=""
-                                className="w-full h-full object-contain object-right-bottom" />
-                        </div>
-                    </article>
+                            <div className="absolute right-0 bottom-[-20px] w-[200px] h-[200px] pointer-events-none z-10">
+                                <img src="/assets/images/deco-purple-3.png" alt=""
+                                    className="w-full h-full object-contain object-right-bottom" />
+                            </div>
+                        </article>
+                    </ScrollReveal>
 
                 </div>
 
-                <div
-                    className="w-full max-w-[1100px] h-[220px] rounded-[20px] top-0 relative overflow-hidden flex items-center justify-center text-center mx-auto"
-                    style={{ background: 'linear-gradient(90deg, #E6DEFF 0%, #FFFFFF 50%, #E6DEFF 100%)' }} data-animate="fade-up">
+                <ScrollReveal variant="card" delay={0.4}>
+                    <div
+                        className="w-full max-w-[1100px] h-[220px] rounded-[20px] top-0 relative overflow-hidden flex items-center justify-center text-center mx-auto"
+                        style={{ background: 'linear-gradient(90deg, #E6DEFF 0%, #FFFFFF 50%, #E6DEFF 100%)' }}>
 
-                    <div className="absolute left-0 top-0 w-[180px] h-[180px] pointer-events-none z-0">
-                        <img src="/assets/images/deco-purple-4.png" alt="" className="w-full h-full object-contain object-left-top" />
-                    </div>
+                        <div className="absolute left-0 top-0 w-[180px] h-[180px] pointer-events-none z-0">
+                            <img src="/assets/images/deco-purple-4.png" alt="" className="w-full h-full object-contain object-left-top" />
+                        </div>
 
-                    <div className="relative z-10 flex flex-col items-center justify-center h-full px-6">
-                        <h3 className="text-[17.6px] font-bold text-[#0b1220] leading-tight mb-3">
-                            Let’s Build Something Meaningful Together
-                        </h3>
-                        <p className="m-0 text-[#0b1220] opacity-70 text-[17.6px]">
-                            Our team is ready to help you shape products that are innovative, scalable, and intelligently engineered.
-                        </p>
+                        <div className="relative z-10 flex flex-col items-center justify-center h-full px-6">
+                            <h3 className="text-[17.6px] font-bold text-[#0b1220] leading-tight mb-3">
+                                Let’s Build Something Meaningful Together
+                            </h3>
+                            <p className="m-0 text-[#0b1220] opacity-70 text-[17.6px]">
+                                Our team is ready to help you shape products that are innovative, scalable, and intelligently engineered.
+                            </p>
+                        </div>
                     </div>
-                </div>
+                </ScrollReveal>
             </section>
             {/* Testimonials */}
             <Testimonials />
@@ -608,15 +679,17 @@ const Home = () => {
                         CULTURE
                     </div>
 
-                    <div className="text-center relative z-10" data-animate="fade-up">
-                        <h2 id="life-heading" className="text-[38.4px] md:text-[48px] lg:text-[64px] font-extrabold text-[#1a1a1a] leading-[1.15] tracking-tight mb-12">
-                            Life at Our Company
-                        </h2>
+                    <div className="text-center relative z-10">
+                        <ScrollReveal variant="heading">
+                            <h2 id="life-heading" className="text-[38.4px] md:text-[48px] lg:text-[64px] font-extrabold text-[#1a1a1a] leading-[1.15] tracking-tight mb-12">
+                                Life at Our Company
+                            </h2>
+                        </ScrollReveal>
                     </div>
 
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-[48px] items-start mt-[110px]">
                         {/* Collage */}
-                        <div className="relative w-full h-[450px] flex items-center justify-center lg:justify-start mt-[80px]" data-animate="fade-up">
+                        <ScrollReveal variant="image" className="relative w-full h-[450px] flex items-center justify-center lg:justify-start mt-[80px]">
 
                             {/* Col 1: Lounge + Outdoor */}
                             <div className="absolute left-0 lg:-left-[60px] top-[100px] w-[150px] flex flex-col gap-4 z-10">
@@ -636,15 +709,15 @@ const Home = () => {
                                 <img src="/assets/images/life-office-2.png" alt="Office Life" className="w-full h-[160px] object-cover rounded-[20px] shadow-lg hover:scale-105 transition-transform duration-300" />
                             </div>
 
-                        </div>
+                        </ScrollReveal>
 
                         {/* Content */}
-                        <div className="space-y-4 mt-[200px] lg:pl-[60px]" data-animate="fade-left">
+                        <ScrollReveal variant="featureRight" className="space-y-4 mt-[200px] lg:pl-[60px]">
                             <h3 className="text-[25.6px] font-bold text-[#0b1220]">People and Environment</h3>
                             <p className="text-[19.2px] md:text-[20px] text-gray-600 top-12 max-w-[820px] leading-[1.70]">
                                 Our culture is built on collaboration, integrity, and mutual respect. We celebrate achievements, encourage open communication, and provide opportunities for personal and professional growth. With a balanced work environment and supportive teams, we ensure a fulfilling experience for everyone.
                             </p>
-                        </div>
+                        </ScrollReveal>
                     </div>
                 </div>
             </section>
@@ -716,7 +789,7 @@ const Home = () => {
                 {/* Since the user asked to convert each page, I should include the contact section here too if it's inservices.html, which it is. */}
                 <div className="w-full max-w-[1200px] mx-auto px-5 relative z-10">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-                        <div data-animate="fade-right">
+                        <ScrollReveal variant="featureLeft">
                             <header className="mb-[40px]">
                                 <h2 id="contact-heading" className="text-[40px] lg:text-[48px] font-medium text-[#6C4CF0] mb-6 leading-tight">
                                     Contact Us</h2>
@@ -750,8 +823,8 @@ const Home = () => {
                                     </div>
                                 </li>
                             </ul>
-                        </div>
-                        <div className="relative mt-8 lg:mt-0 lg:h-[600px] flex items-center" data-animate="fade-left">
+                        </ScrollReveal>
+                        <ScrollReveal variant="featureRight" className="relative mt-8 lg:mt-0 lg:h-[600px] flex items-center">
                             <form action="#" method="post" className="space-y-5 w-full max-w-[480px] relative z-20">
                                 <div>
                                     <input type="text" placeholder="Name"
@@ -772,11 +845,13 @@ const Home = () => {
                                         className="w-full px-6 py-4 rounded-[8px] border border-[#D8D8D8] bg-transparent hover:border-[#6C4CF4] focus:border-[#6C4CF0] focus:ring-4 focus:ring-[#6C4CF0]/10 outline-none transition-all placeholder:text-gray-400 text-[#494949] resize-none text-[16px] mt-6"></textarea>
                                 </div>
                                 <div className="relative">
-                                    <button type="submit"
+                                    <StatefulButton
                                         className="w-full h-[64px] px-6 py-4 rounded-[6px] text-white font-medium text-[17.6px] mt-6 shadow-lg transition-all hover:opacity-90 flex items-center justify-center gap-3 relative overflow-hidden"
-                                        style={{ background: 'linear-gradient(90deg, #135AC6 0%, #6C4CF4 100%)' }}>
-                                        <span className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">Submit</span>
-                                    </button>
+                                        style={{ background: 'linear-gradient(90deg, #135AC6 0%, #6C4CF4 100%)' }}
+                                        onClick={(e) => { e.preventDefault(); return new Promise(resolve => setTimeout(resolve, 3000)); }}
+                                    >
+                                        Submit
+                                    </StatefulButton>
                                     <img src="/assets/svg/letter_send.svg" alt=""
                                         className="absolute left-1/2 -translate-x-1/2 top-[20px] w-[240px] h-[112px] object-contain pointer-events-none z-50 filter brightness-0 invert" />
                                 </div>
@@ -787,7 +862,7 @@ const Home = () => {
                                 <img src="/assets/images/Contact Us.png" alt="Contact Us 3D Illustration"
                                     className="w-full h-auto object-contain opacity-100" />
                             </div>
-                        </div>
+                        </ScrollReveal>
                     </div>
                 </div>
             </section>
