@@ -6,7 +6,7 @@ export default function CareersCTA() {
 
     return (
         <section className="py-[100px] lg:py-[120px]" id="careers-cta">
-            <div className="w-full px-5">
+            <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12">
                 <motion.div
                     initial={reduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 26 }}
                     whileInView={{ opacity: 1, y: 0 }}

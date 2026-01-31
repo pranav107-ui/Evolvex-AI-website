@@ -34,7 +34,7 @@ const WhyWorkWithUs = () => {
 
     return (
         <section className="py-[80px]" id="why-work" aria-labelledby="why-work-title">
-            <div className="w-full px-5">
+            <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12">
 
                 <div className="flex flex-col md:flex-row gap-[28px] w-full max-w-[1200px] mx-auto md:h-[880px] p-4">
 

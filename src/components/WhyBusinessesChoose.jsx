@@ -36,7 +36,7 @@ const WhyWorkWithUs = () => {
 
     return (
         <section className="py-[80px]" id="why-work" aria-labelledby="why-work-title">
-            <div className="w-full px-5">
+            <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12">
                 <ScrollReveal variant="heading" className="text-center mb-[32px]">
                     <h2 id="why-work-title" className="text-[32px] font-extrabold text-[#0b1220] mb-2">Why Businesses Choose Evolvex AI</h2>
 

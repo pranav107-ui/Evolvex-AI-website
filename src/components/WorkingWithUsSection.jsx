@@ -153,7 +153,7 @@ export default function WorkingWithUsSection() {
                 aria-hidden="true"
             />
 
-            <div className="relative mx-auto w-full max-w-[1200px] px-5">
+            <div className="relative mx-auto w-full max-w-[1200px] px-4 sm:px-6 md:px-8 lg:px-12">
                 <div className="grid grid-cols-1 items-center gap-[44px] lg:grid-cols-2 lg:gap-[70px]">
                     {/* LEFT */}
                     <motion.div

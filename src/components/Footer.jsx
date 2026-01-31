@@ -19,7 +19,7 @@ const Footer = () => {
             <div className="border-t border-[#F2F4F7]"></div>
 
             {/* Main Footer Content */}
-            <div className="max-w-[1100px] mx-auto px-6 pt-20 pb-24">
+            <div className="max-w-[1100px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 pt-16 sm:pt-20 pb-20 sm:pb-24">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-14 gap-x-10 lg:gap-x-16">
 
                     {/* Contact */}

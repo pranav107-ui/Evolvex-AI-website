@@ -269,53 +269,63 @@ html {
 
 /* Base Badge */
 .hiring-badge {
-  background: linear-gradient(135deg, #6366f1, #4f46e5);
-  position: relative;
-  letter-spacing: 0.3px;
-  box-shadow: 0 3px 8px rgba(79, 70, 229, 0.25);
+    background: linear-gradient(135deg, #6366f1, #4f46e5);
+    position: relative;
+    letter-spacing: 0.3px;
+    box-shadow: 0 3px 8px rgba(79, 70, 229, 0.25);
 }
 
 /* Glass shine sweep */
 .hiring-badge::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -120%;
-  width: 120%;
-  height: 100%;
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(255, 255, 255, 0.6),
-    transparent
-  );
-  animation: shineSweep 3.5s linear infinite;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 120%;
+    height: 100%;
+    background: linear-gradient(120deg,
+            transparent,
+            rgba(255, 255, 255, 0.6),
+            transparent);
+    animation: shineSweep 3.5s linear infinite;
 }
 
 /* Narrower glow */
 .hiring-badge::after {
-  content: "";
-  position: absolute;
-  top: 25%;
-  left: 25%;
-  width: 50%;
-  height: 50%;
-  border-radius: inherit;
-  background: radial-gradient(circle, rgba(255,255,255,0.35), transparent 70%);
-  opacity: 0.3;
-  animation: glowPulse 3s ease-in-out infinite;
+    content: "";
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    border-radius: inherit;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.35), transparent 70%);
+    opacity: 0.3;
+    animation: glowPulse 3s ease-in-out infinite;
 }
 
 
 /* Animations */
 @keyframes shineSweep {
-  0% { left: -120%; }
-  100% { left: 120%; }
+    0% {
+        left: -120%;
+    }
+
+    100% {
+        left: 120%;
+    }
 }
 
 @keyframes glowPulse {
-  0%, 100% { opacity: 0.25; }
-  50% { opacity: 0.45; }
+
+    0%,
+    100% {
+        opacity: 0.25;
+    }
+
+    50% {
+        opacity: 0.45;
+    }
 }
 
 

@@ -14,6 +14,7 @@ export const LinkPreview = ({
     layout = "fixed",
     isStatic = false,
     imageSrc = "",
+    side = "bottom",
 }) => {
     let src;
     if (!isStatic) {
@@ -71,9 +72,9 @@ export const LinkPreview = ({
 
             <HoverCardPrimitive.Content
                 className="[transform-origin:var(--radix-hover-card-content-transform-origin)]"
-                side="top"
+                side={side}
                 align="center"
-                sideOffset={10}
+                sideOffset={12}
             >
                 <AnimatePresence>
                     {isOpen && (

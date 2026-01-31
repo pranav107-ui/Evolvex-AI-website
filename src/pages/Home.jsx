@@ -166,7 +166,7 @@ const Home = () => {
         <>
             {/* ================= HERO SECTION ================= */}
             <section
-                className="relative min-h-[calc(100vh-80px)] py-[120px] pb-[80px] overflow-hidden bg-gradient-to-br from-[#f8faff] via-white to-[#f9fbff] flex items-center justify-center text-center"
+                className="relative min-h-[calc(100vh-80px)] py-20 md:py-[120px] pb-16 md:pb-[80px] overflow-hidden bg-gradient-to-br from-[#f8faff] via-white to-[#f9fbff] flex items-center justify-center text-center"
                 aria-label="Hero">
 
                 <div id="hero-canvas-container" className="absolute inset-0 z-0"></div>
@@ -232,7 +232,7 @@ const Home = () => {
                  */}
 
                 {/* ===== PROFESSIONAL CENTERED LAYOUT ===== */}
-                <div className="relative z-10 max-w-[860px] px-6 w-full flex flex-col items-center justify-center">
+                <div className="relative z-10 max-w-[860px] px-4 sm:px-6 w-full flex flex-col items-center justify-center">
 
                     <div className="hero-content">
                         <ScrollReveal variant="heading">
@@ -409,7 +409,7 @@ const Home = () => {
                     </motion.div>
                 </div>
 
-                <div className="max-w-[1200px] mx-auto px-6 relative z-10">
+                <div className="max-w-[1200px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 relative z-10">
 
                     <div className="text-center mb-24 pt-20">
                         <h2 className="text-[52px] font-bold text-[#1A1A1A] leading-[60px] tracking-[0.1px]">
@@ -430,7 +430,7 @@ const Home = () => {
                     <div className="relative py-20">
 
                         <div className="relative inline-block">
-                            <span className="absolute -top-10 left-0 text-[96px] font-extrabold tracking-[0.12em]
+                            <span className="absolute -top-10 left-0 text-[64px] md:text-[96px] font-extrabold tracking-[0.12em]
                 bg-gradient-to-r from-[#B2EBF2] via-[#D1C4E9] to-[#F8BBD0]
                 bg-clip-text text-transparent opacity-60 pointer-events-none">
                                 COMPANY
@@ -440,7 +440,7 @@ const Home = () => {
                             </h2>
                         </div>
 
-                        <div className="relative z-10 grid lg:grid-cols-2 items-center -mt-[100px]">
+                        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 items-center lg:-mt-[100px] mt-12 gap-8 lg:gap-0">
                             <div className="w-full flex justify-center lg:justify-start">
                                 <div className="bg-[#D1C4E9]/20 rounded-[20px] p-8 w-fit shadow-sm">
                                     <p className="text-[16px] md:text-[17px] text-[#1a1a1a] leading-[1.6] font-normal">
@@ -524,7 +524,7 @@ const Home = () => {
 
                     <ScrollReveal variant="card" delay={0.1}>
                         <article
-                            className="w-[320px] h-[400px] rounded-[16px] p-[32px] relative overflow-hidden group flex flex-col items-center text-center justify-start pt-[64px] hover:scale-105 transition-transform duration-300"
+                            className="w-full max-w-[320px] h-auto min-h-[400px] rounded-[16px] p-[32px] relative overflow-hidden group flex flex-col items-center text-center justify-start pt-[64px] hover:scale-105 transition-transform duration-300"
                             style={{ backgroundColor: '#E6DEFF' }}>
 
                             <div className="relative z-20 flex flex-col gap-4 items-center">
@@ -545,7 +545,7 @@ const Home = () => {
 
                     <ScrollReveal variant="card" delay={0.2}>
                         <article
-                            className="w-[320px] h-[400px] rounded-[16px] p-[32px] relative overflow-hidden group flex flex-col items-center text-center justify-start pt-[64px] hover:scale-105 transition-transform duration-300"
+                            className="w-full max-w-[320px] h-auto min-h-[400px] rounded-[16px] p-[32px] relative overflow-hidden group flex flex-col items-center text-center justify-start pt-[64px] hover:scale-105 transition-transform duration-300"
                             style={{ backgroundColor: '#E6DEFF' }}>
 
                             <div className="relative z-20 flex flex-col gap-4 items-center">
@@ -566,7 +566,7 @@ const Home = () => {
 
                     <ScrollReveal variant="card" delay={0.3}>
                         <article
-                            className="w-[320px] h-[400px] rounded-[16px] p-[32px] relative overflow-hidden group flex flex-col items-center text-center justify-start pt-[64px] hover:scale-105 transition-transform duration-300"
+                            className="w-full max-w-[320px] h-auto min-h-[400px] rounded-[16px] p-[32px] relative overflow-hidden group flex flex-col items-center text-center justify-start pt-[64px] hover:scale-105 transition-transform duration-300"
                             style={{ backgroundColor: '#E6DEFF' }}>
 
                             <div className="relative z-20 flex flex-col gap-4 items-center">
@@ -612,7 +612,7 @@ const Home = () => {
             <Testimonials />
 
             {/* Careers Intro */}
-            <section className="relative w-screen ml-[calc(50%-50vw)] pt-[90px] pb-[250px] overflow-hidden bg-white">
+            <section className="relative w-full pt-[90px] pb-[250px] overflow-hidden bg-white">
 
                 <span className="absolute left-1/2 top-[48%] -translate-x-1/2 -translate-y-1/2
             font-black tracking-widest
@@ -673,7 +673,7 @@ const Home = () => {
 
             {/* Life at Our Company Section */}
             <section className="py-[96px] bg-white relative overflow-hidden" id="life" aria-labelledby="life-heading">
-                <div className="w-full max-w-[1200px] mx-auto px-5 relative z-10">
+                <div className="w-full max-w-[1200px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 relative z-10">
                     <div className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 font-black tracking-widest bg-gradient-to-r from-[#B2EBF2] via-[#D1C4E9] to-[#F8BBD0] bg-clip-text text-transparent opacity-50 whitespace-nowrap select-none pointer-events-none z-0"
                         style={{ fontSize: 'clamp(80px, 22vw, 260px)', lineHeight: 1 }}>
                         CULTURE
@@ -787,7 +787,7 @@ const Home = () => {
             <section id="contact" className="py-[96px] bg-white relative overflow-hidden" aria-labelledby="contact-heading">
                 {/* ... Reuse contact section code as it appears identical in both files ... */}
                 {/* Since the user asked to convert each page, I should include the contact section here too if it's inservices.html, which it is. */}
-                <div className="w-full max-w-[1200px] mx-auto px-5 relative z-10">
+                <div className="w-full max-w-[1200px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 relative z-10">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                         <ScrollReveal variant="featureLeft">
                             <header className="mb-[40px]">

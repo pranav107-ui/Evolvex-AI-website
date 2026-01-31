@@ -1,309 +1,412 @@
-import React from "react";
-import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
-import { Layers3, TrendingUp, Clock3, Star, X } from "lucide-react";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
+import { CheckCircle2, Zap, TrendingUp, Clock, Activity, Layout, GitMerge } from "lucide-react";
+import { AuroraText } from "@/components/ui/AuroraText";
 
-const fadeUp = {
-    hidden: { opacity: 0, y: 18 },
-    visible: { opacity: 1, y: 0 },
-};
-
-const list = {
-    hidden: {},
-    visible: { transition: { staggerChildren: 0.10, delayChildren: 0.12 } },
-};
-
-const card = {
-    hidden: { opacity: 0, y: 20, scale: 0.985 },
-    visible: {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
+// --- Data ---
+const FEATURES = [
+    {
+        id: "innovation",
+        label: (
+            <AuroraText speed={0.5} colors={["#38BDF8", "#3B82F6"]}>
+                INNOVATION
+            </AuroraText>
+        ),
+        title: (
+            <>
+                Innovative{" "}
+                <AuroraText speed={0.6} colors={["#38BDF8", "#3B82F6", "#6366F1"]}>
+                    Projects
+                </AuroraText>
+            </>
+        ),
+        desc: "At Evolvex, you do not work on theoretical exercises. You contribute to production systems used by real organizations. Every feature you build directly improves usability, system performance, and scalability in live environments. Your work reaches users, not just internal demos.",
+        bullets: [
+            "Production-grade architecture",
+            "Modern engineering stack",
+            "Real user impact",
+            "Performance-first systems",
+        ],
+        icon: Layout,
+        accent: "bg-blue-500",
+        gradient: "from-blue-500 to-indigo-600",
     },
-};
+    {
+        id: "growth",
+        label: (
+            <AuroraText speed={0.5} colors={["#EC4899", "#F472B6"]}>
+                GROWTH
+            </AuroraText>
+        ),
+        title: (
+            <>
+                Growth-Focused{" "}
+                <AuroraText speed={0.6} colors={["#A855F7", "#EC4899", "#F472B6"]}>
+                    Culture
+                </AuroraText>
+            </>
+        ),
+        desc: "Learning is integrated into the workflow, not treated as an extra task. Structured feedback, technical mentorship, and exposure to real challenges help your skills compound consistently over time.",
+        bullets: [
+            "Weekly technical reviews",
+            "Peer mentorship",
+            "Skill progression roadmap",
+            "Exposure to real challenges",
+        ],
+        icon: TrendingUp,
+        accent: "bg-purple-500",
+        gradient: "from-purple-500 to-pink-500",
+    },
+    {
+        id: "environment",
+        label: (
+            <AuroraText speed={0.5} colors={["#10B981", "#22D3EE"]}>
+                WORK DESIGN
+            </AuroraText>
+        ),
+        title: (
+            <>
+                Flexible & Supportive{" "}
+                <AuroraText speed={0.6} colors={["#14B8A6", "#10B981", "#22D3EE"]}>
+                    Environment
+                </AuroraText>
+            </>
+        ),
+        desc: "Sustainable performance produces the best outcomes. Clear planning, focused work time, and a trust-driven structure allow creativity to thrive without burnout. We value depth, clarity, and rhythm over constant urgency.",
+        bullets: [
+            "Flexible work structure",
+            "Clear planning cycles",
+            "Respect for deep work",
+            "Healthy collaboration rhythm",
+        ],
+        icon: Clock,
+        accent: "bg-teal-500",
+        gradient: "from-teal-500 to-emerald-500",
+    },
+    {
+        id: "leadership",
+        label: (
+            <AuroraText speed={0.5} colors={["#F59E0B", "#F97316"]}>
+                OWNERSHIP
+            </AuroraText>
+        ),
+        title: (
+            <>
+                Opportunities to{" "}
+                <AuroraText speed={0.6} colors={["#F59E0B", "#F97316", "#EF4444"]}>
+                    Lead
+                </AuroraText>
+            </>
+        ),
+        desc: "Leadership at Evolvex emerges from initiative. Engineers and designers influence architecture, system decisions, and product direction through ownership and responsibility, not hierarchy.",
+        bullets: [
+            "Ownership of features",
+            "Technical decision involvement",
+            "Initiative-driven leadership",
+            "System design participation",
+        ],
+        icon: GitMerge,
+        accent: "bg-orange-500",
+        gradient: "from-orange-500 to-red-500",
+    },
+];
 
-function FeatureCard({ item, index, onClick }) {
-    const Icon = item.icon;
+// --- Visual Components (Enhanced System UI Mocks) ---
 
-    return (
-        <motion.button
-            type="button"
-            variants={card}
-            onClick={onClick}
-            className="group relative w-full text-left overflow-hidden rounded-[24px] border border-black/5 bg-white/70 backdrop-blur-xl shadow-[0_20px_70px_rgba(0,0,0,0.08)] transition-all duration-300 hover:-translate-y-[4px] hover:shadow-[0_35px_100px_rgba(0,0,0,0.12)] focus:outline-none focus:ring-2 focus:ring-[#6C4CF4]/40"
-        >
-            {/* Accent strip */}
-            <div className={`absolute left-0 top-0 h-[3px] w-full ${item.accent}`} />
+const DashboardMock = () => (
+    <div className="w-full h-full p-6 flex flex-col gap-4 relative overflow-hidden">
+        {/* Glass Overlay Shine */}
+        <div className="absolute -top-20 -right-20 w-64 h-64 bg-blue-400/10 rounded-full blur-3xl pointer-events-none" />
 
-            {/* Hover glow */}
-            <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-                <div className={`absolute -top-14 -right-14 h-48 w-48 rounded-full ${item.glow} blur-3xl`} />
+        {/* Top Stat Cards */}
+        <div className="grid grid-cols-3 gap-3">
+            {[1, 2, 3].map((i) => (
+                <div key={i} className="h-24 rounded-2xl bg-white/50 border border-white/60 shadow-sm flex flex-col justify-center p-4 backdrop-blur-md">
+                    <div className={`w-8 h-8 rounded-full mb-2 ${i === 1 ? 'bg-blue-100' : i === 2 ? 'bg-indigo-100' : 'bg-cyan-100'}`} />
+                    <div className="w-16 h-2 bg-gray-200/80 rounded-full" />
+                </div>
+            ))}
+        </div>
+
+        {/* Main Chart Panel */}
+        <div className="flex-1 bg-white/60 rounded-2xl border border-white/80 shadow-sm p-5 relative overflow-hidden backdrop-blur-md flex flex-col justify-end">
+            <div className="absolute top-5 left-5 w-32 h-3 bg-gray-200/80 rounded-full" />
+
+            {/* Charts */}
+            <div className="flex items-end gap-3 h-40 w-full">
+                {[0.4, 0.6, 0.5, 0.8, 0.6, 0.9, 0.7, 0.5].map((h, i) => (
+                    <div key={i} className="flex-1 flex flex-col justify-end h-full group">
+                        <div style={{ height: `${h * 100}%` }} className="w-full bg-gradient-to-t from-blue-500/20 to-blue-400/5 rounded-t-lg relative border-t border-x border-white/40 group-hover:bg-blue-500/30 transition-all duration-500">
+                            <div className="absolute bottom-0 w-full h-[3px] bg-blue-400 shadow-[0_0_10px_rgba(59,130,246,0.5)]" />
+                        </div>
+                    </div>
+                ))}
             </div>
+        </div>
+    </div>
+);
 
-            <div className="relative z-10 p-[26px] lg:p-[34px]">
-                {/* icon + index */}
-                <div className="flex items-start justify-between gap-4">
-                    <div
-                        className={`grid h-[54px] w-[54px] place-items-center rounded-[16px] border border-black/5 shadow-[0_12px_26px_rgba(0,0,0,0.08)] ${item.iconBox}`}
-                    >
+const GrowthMock = () => (
+    <div className="w-full h-full p-8 flex flex-col justify-center items-center relative">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-purple-100/40 via-transparent to-transparent opacity-60" />
+
+        <div className="w-full max-w-[280px] space-y-5 relative z-10">
+            {/* Skill Modules */}
+            {[{ l: "System Design", p: 85 }, { l: "Cloud Architecture", p: 60 }, { l: "Team Leadership", p: 92 }].map((skill, i) => (
+                <div key={i} className="bg-white/50 border border-white/60 rounded-xl p-4 shadow-sm backdrop-blur-sm group hover:bg-white/70 transition-colors">
+                    <div className="flex justify-between text-[11px] items-center text-purple-900/70 font-bold tracking-wider mb-2">
+                        <span>{skill.l.toUpperCase()}</span>
+                        <span>{skill.p}%</span>
+                    </div>
+                    <div className="h-2 w-full bg-indigo-50 rounded-full overflow-hidden">
                         <motion.div
-                            initial={false}
-                            whileHover={{ rotate: index % 2 === 0 ? 7 : -7, scale: 1.05 }}
-                            transition={{ type: "spring", stiffness: 260, damping: 16 }}
+                            initial={{ width: 0 }}
+                            whileInView={{ width: `${skill.p}%` }}
+                            transition={{ duration: 1.5, delay: 0.2 + (i * 0.2) }}
+                            className="h-full bg-gradient-to-r from-purple-500 to-pink-500 shadow-[0_0_12px_rgba(168,85,247,0.4)] relative"
                         >
-                            <Icon className="h-[22px] w-[22px] text-[#111]" />
+                            <div className="absolute right-0 top-0 h-full w-[2px] bg-white/50" />
                         </motion.div>
                     </div>
+                </div>
+            ))}
+        </div>
 
-                    <div className="hidden sm:flex items-center rounded-full border border-black/5 bg-white/70 px-3 py-1 text-[12px] font-extrabold tracking-[0.16em] text-black/35">
-                        0{index + 1}
+        {/* Badge */}
+        <div className="absolute bottom-6 right-6">
+            <div className="px-4 py-2 bg-white/80 rounded-full shadow-sm border border-purple-100/50 text-[10px] font-bold text-purple-600 flex items-center gap-2 backdrop-blur-md">
+                <div className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-purple-500"></span>
+                </div>
+                Level 3 Engineer
+            </div>
+        </div>
+    </div>
+);
+
+const PlanningMock = () => (
+    <div className="w-full h-full p-6 flex gap-4 relative">
+        <div className="absolute inset-0 bg-teal-50/10" />
+
+        {/* Columns */}
+        {["To Do", "In Progress"].map((col, i) => (
+            <div key={i} className={`flex-1 h-full rounded-2xl border ${i === 0 ? 'bg-white/40 border-white/60' : 'bg-teal-50/30 border-teal-100/40'} flex flex-col p-3 gap-3 backdrop-blur-sm`}>
+                <div className="flex items-center gap-2 px-1 mb-1">
+                    <div className={`w-2 h-2 rounded-full ${i === 0 ? 'bg-slate-300' : 'bg-teal-400'}`} />
+                    <span className="text-[10px] uppercase font-bold text-slate-400">{col}</span>
+                </div>
+
+                {/* Cards */}
+                <div className="w-full bg-white/80 rounded-xl p-4 shadow-sm border border-white/50 space-y-3 group hover:-translate-y-1 transition-transform duration-300">
+                    <div className={`w-12 h-1 rounded-full ${i === 0 ? 'bg-orange-300' : 'bg-blue-300'}`} />
+                    <div className="w-4/5 h-2 bg-slate-100 rounded-full" />
+                    <div className="w-1/2 h-2 bg-slate-100 rounded-full" />
+                </div>
+
+                <div className="w-full bg-white/60 rounded-xl p-4 shadow-sm border border-white/50 space-y-3 opacity-70">
+                    <div className={`w-8 h-1 rounded-full ${i === 0 ? 'bg-slate-300' : 'bg-green-300'}`} />
+                    <div className="w-3/4 h-2 bg-slate-100 rounded-full" />
+                </div>
+            </div>
+        ))}
+    </div>
+);
+
+const ArchitectureMock = () => (
+    <div className="w-full h-full relative overflow-hidden flex items-center justify-center bg-orange-50/5">
+        {/* Background Circles */}
+        <div className="absolute inset-0 flex items-center justify-center opacity-20">
+            <div className="w-[120%] h-[120%] border border-orange-400/30 rounded-full animate-[spin_60s_linear_infinite]" />
+            <div className="absolute w-[80%] h-[80%] border border-orange-400/20 rounded-full dashed" />
+        </div>
+
+        {/* Nodes Layout */}
+        <div className="relative z-10 flex flex-col gap-8 items-center">
+            {/* Main Node */}
+            <div className="w-20 h-20 bg-white rounded-3xl shadow-xl shadow-orange-500/10 border border-orange-100 flex items-center justify-center relative">
+                <Activity className="text-orange-500" size={28} />
+                {/* Connection Points */}
+                <div className="absolute -bottom-2 w-1 h-4 bg-orange-200" />
+            </div>
+
+            {/* Child Nodes */}
+            <div className="flex gap-12 relative">
+                <svg className="absolute top-0 left-0 w-full -translate-y-full h-8 overflow-visible" viewBox="0 0 100 32" preserveAspectRatio="none">
+                    <path d="M 50 0 L 50 16 L 20 32" stroke="#fed7aa" fill="none" strokeWidth="2" vectorEffect="non-scaling-stroke" />
+                    <path d="M 50 0 L 50 16 L 80 32" stroke="#fed7aa" fill="none" strokeWidth="2" vectorEffect="non-scaling-stroke" />
+                </svg>
+
+                <div className="w-14 h-14 bg-white/80 rounded-2xl shadow-lg border border-orange-50 flex items-center justify-center backdrop-blur-md">
+                    <GitMerge className="text-orange-400" size={20} />
+                </div>
+                <div className="w-14 h-14 bg-white/80 rounded-2xl shadow-lg border border-orange-50 flex items-center justify-center backdrop-blur-md">
+                    <Layout className="text-orange-400" size={20} />
+                </div>
+            </div>
+        </div>
+    </div>
+);
+
+const Mocks = [DashboardMock, GrowthMock, PlanningMock, ArchitectureMock];
+
+// --- Card Component ---
+
+const StackedCard = ({ item, index, total, scrollYProgress, reduceMotion }) => {
+    // Precise scroll steps
+    const step = 1 / total;
+    const start = index * step;
+    const end = start + step;
+
+    // Transform Ranges
+    const inputRange = [start - 0.15, start, end, end + 0.15];
+
+    // Animations
+    const scale = useTransform(scrollYProgress, inputRange, [1, 1, 1, 0.90]);
+    const translateY = useTransform(scrollYProgress, inputRange, ["110%", "0%", "0%", "-10%"]);
+    const opacity = useTransform(scrollYProgress, inputRange, [0, 1, 1, 0]);
+
+    // Override for first card to prevent entry animation
+    const inputRangeFirst = [0, step, step + 0.15];
+    const scaleFirst = useTransform(scrollYProgress, inputRangeFirst, [1, 1, 0.90]);
+    const translateYFirst = useTransform(scrollYProgress, inputRangeFirst, ["0%", "0%", "-10%"]);
+    const opacityFirst = useTransform(scrollYProgress, inputRangeFirst, [1, 1, 0]);
+
+    const style = reduceMotion
+        ? { y: 0, opacity: 1, scale: 1 }
+        : {
+            y: index === 0 ? translateYFirst : translateY,
+            scale: index === 0 ? scaleFirst : scale,
+            opacity: index === 0 ? opacityFirst : opacity
+        };
+
+    const MockUI = Mocks[index] || DashboardMock;
+
+    return (
+        <motion.div
+            style={{ ...style, zIndex: index }}
+            className="absolute top-0 left-0 w-full h-full flex items-center justify-center p-4"
+        >
+            <div className={`
+                relative 
+                w-full max-w-[1200px]
+                h-[min(680px,85vh)]
+                bg-white/70 backdrop-blur-3xl
+                rounded-[32px] 
+                border border-white/60
+                shadow-[0_40px_100px_-15px_rgba(0,0,0,0.12)]
+                flex flex-col
+                overflow-hidden
+                group
+                transform-gpu
+            `}>
+                {/* Light Sweep Effect (Hover) */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-0">
+                    <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-in-out" />
+                </div>
+
+                {/* Top System Bar */}
+                <div className="h-11 w-full flex items-center px-6 border-b border-black/[0.04] bg-white/30 backdrop-blur-md relative z-20">
+                    <div className="flex gap-2 opacity-80">
+                        <div className="h-3 w-3 rounded-full bg-[#FF5F57] shadow-[inset_0_1px_2px_rgba(0,0,0,0.1)] border border-black/5" />
+                        <div className="h-3 w-3 rounded-full bg-[#FEBC2E] shadow-[inset_0_1px_2px_rgba(0,0,0,0.1)] border border-black/5" />
+                        <div className="h-3 w-3 rounded-full bg-[#28C840] shadow-[inset_0_1px_2px_rgba(0,0,0,0.1)] border border-black/5" />
                     </div>
                 </div>
 
-                {/* content */}
-                <h3 className="mt-6 text-[18px] lg:text-[20px] font-extrabold text-[#111]">
-                    {item.title}
-                </h3>
-                <p className="mt-2 text-[14px] lg:text-[15px] leading-[1.7] text-[#555] max-w-[520px]">
-                    {item.desc}
-                </p>
+                {/* Main Content Grid */}
+                <div className="flex-1 grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] relative z-10">
 
-                {/* divider */}
-                <div className="mt-6 h-px w-full bg-gradient-to-r from-black/0 via-black/10 to-black/0" />
+                    {/* Background Big Number */}
+                    <div className="absolute -top-6 right-6 text-[220px] font-bold text-black/[0.03] select-none pointer-events-none tracking-tighter mix-blend-multiply">
+                        0{index + 1}
+                    </div>
 
-                {/* ✅ clear interaction hint */}
-                <div className="mt-4 flex items-center justify-between">
-                    <span className="text-[12px] font-semibold text-black/45">
-                        Click to view details
-                    </span>
-                    <span className="text-[18px] text-black/25 transition group-hover:text-black/40">
-                        →
-                    </span>
+                    {/* Left: Text Content */}
+                    <div className="p-8 md:p-12 lg:p-14 flex flex-col justify-center h-full">
+                        <div className="relative">
+                            {/* Label */}
+                            <div className="flex items-center gap-3 mb-5">
+                                <span className="text-[11px] font-extrabold tracking-[0.25em] text-black/50 uppercase">
+                                    {item.label}
+                                </span>
+                            </div>
+
+                            {/* Title */}
+                            <h3 className="text-4xl md:text-5xl lg:text-[54px] font-bold text-[#0A0A0A] mb-6 leading-[1.05] tracking-tight">
+                                {item.title}
+                            </h3>
+
+                            {/* Description */}
+                            <p className="text-[17px] md:text-[18px] text-[#444] leading-[1.7] font-medium mb-10 max-w-[540px]">
+                                {item.desc}
+                            </p>
+
+                            {/* Bullets */}
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8">
+                                {item.bullets.map((bullet, idx) => (
+                                    <div key={idx} className="flex items-start gap-3">
+                                        <div className={`mt-1 w-4 h-4 rounded-full ${item.accent} bg-opacity-10 grid place-items-center`}>
+                                            <CheckCircle2 className={`w-3 h-3 ${item.accent.replace('bg-', 'text-')}`} />
+                                        </div>
+                                        <span className="text-[14px] font-bold text-black/70">
+                                            {bullet}
+                                        </span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Right: Visual Experience Panel */}
+                    <div className="hidden lg:flex p-10 lg:pr-14 items-center justify-center">
+                        <div className="w-full h-full max-h-[460px] bg-white/40 rounded-3xl border border-white/60 shadow-[0_20px_40px_-10px_rgba(0,0,0,0.05)] backdrop-blur-sm relative overflow-hidden group-hover:scale-[1.02] transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)]">
+                            <MockUI />
+                        </div>
+                    </div>
                 </div>
             </div>
-        </motion.button>
+        </motion.div>
     );
-}
-
-import { CardSpotlight } from "@/components/ui/card-spotlight";
-
-function Modal({ open, onClose, item }) {
-    React.useEffect(() => {
-        if (!open) return;
-        const onKey = (e) => e.key === "Escape" && onClose();
-        window.addEventListener("keydown", onKey);
-        return () => window.removeEventListener("keydown", onKey);
-    }, [open, onClose]);
-
-    return (
-        <AnimatePresence>
-            {open && (
-                <>
-                    {/* Backdrop */}
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        onClick={onClose}
-                        className="fixed inset-0 z-[60] bg-black/45 backdrop-blur-[2px]"
-                    />
-
-                    {/* Modal wrapper */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 18, scale: 0.985 }}
-                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, y: 12, scale: 0.985 }}
-                        transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                        className="fixed inset-0 z-[70] flex items-center justify-center px-4"
-                        role="dialog"
-                        aria-modal="true"
-                        onClick={onClose}
-                    >
-                        {/* Spotlight Card */}
-                        <CardSpotlight
-                            onClick={(e) => e.stopPropagation()}
-                            variant="light"
-                            radius={420}
-                            color="rgba(108, 76, 244, 0.16)" // subtle base light
-                            className="w-full max-w-[760px]"
-                        >
-                            {/* accent strip */}
-                            <div className={`h-[4px] w-full ${item?.accent || "bg-[#6C4CF4]"}`} />
-
-                            <div className="p-6 lg:p-8">
-                                {/* Header */}
-                                <div className="flex items-start justify-between gap-6">
-                                    <div className="min-w-0">
-                                        <p className="text-[12px] tracking-[0.22em] font-extrabold uppercase text-[#6C4CF4]">
-                                            Culture
-                                        </p>
-
-                                        <h3 className="mt-2 text-[22px] lg:text-[30px] leading-[1.15] font-extrabold text-[#111]">
-                                            {item?.title}
-                                        </h3>
-                                    </div>
-
-                                    <button
-                                        onClick={onClose}
-                                        className="shrink-0 grid h-10 w-10 place-items-center rounded-full border border-black/10 bg-white/80 hover:bg-white transition shadow-[0_10px_28px_rgba(0,0,0,0.10)]"
-                                        aria-label="Close"
-                                    >
-                                        <X className="h-5 w-5 text-black/65" />
-                                    </button>
-                                </div>
-
-                                {/* Body */}
-                                <p className="mt-4 text-[14px] lg:text-[16px] leading-[1.85] text-[#52525b]">
-                                    {item?.longDesc}
-                                </p>
-
-                                {/* Tags */}
-                                <div className="mt-6 flex flex-wrap gap-2">
-                                    {(item?.tags || []).map((t) => (
-                                        <span
-                                            key={t}
-                                            className="rounded-full border border-black/5 bg-white/75 px-3 py-2 text-[12px] font-semibold text-black/70 shadow-[0_10px_24px_rgba(0,0,0,0.06)]"
-                                        >
-                                            {t}
-                                        </span>
-                                    ))}
-                                </div>
-
-                                {/* Footer (optional premium hint) */}
-                                <div className="mt-7 flex items-center justify-between gap-4">
-                                    <span className="text-[12px] font-semibold text-black/40">
-                                        Tip: Click outside or press ESC to close
-                                    </span>
-
-                                    <span className="text-[12px] font-extrabold tracking-[0.20em] text-[#6C4CF4] uppercase">
-                                        Evolvex Culture
-                                    </span>
-                                </div>
-                            </div>
-                        </CardSpotlight>
-                    </motion.div>
-                </>
-            )}
-        </AnimatePresence>
-    );
-}
+};
 
 export default function LifeAtEvolvex() {
+    const containerRef = useRef(null);
     const reduceMotion = useReducedMotion();
-    const [active, setActive] = React.useState(null);
 
-    const features = [
-        {
-            title: "Innovative Projects",
-            desc: "Work on impactful real-world products powered by modern technology.",
-            longDesc:
-                "You will work on real products with measurable impact. We focus on quality engineering, clean design systems, and scalable delivery that helps businesses grow.",
-            tags: ["Product impact", "Modern stack", "Ship faster", "Quality mindset"],
-            icon: Layers3,
-            accent: "bg-gradient-to-r from-[#6C4CF4] via-[#B44CFF] to-[#FF4FD8]",
-            glow: "bg-[#6C4CF4]/20",
-            iconBox: "bg-gradient-to-br from-[#F5F2FF] to-white",
-        },
-        {
-            title: "Growth-Focused Culture",
-            desc: "Continuous learning, mentorship and upskilling opportunities.",
-            longDesc:
-                "We invest in learning through mentorship, structured feedback, and opportunities to work across domains. Growth is part of the workflow, not extra work.",
-            tags: ["Mentorship", "Upskilling", "Feedback loops", "Career growth"],
-            icon: TrendingUp,
-            accent: "bg-gradient-to-r from-[#FF4FD8] via-[#B44CFF] to-[#6C4CF4]",
-            glow: "bg-[#FF4FD8]/18",
-            iconBox: "bg-gradient-to-br from-[#FFF1FA] to-white",
-        },
-        {
-            title: "Flexible & Supportive Environment",
-            desc: "Balanced work culture that respects your time and creativity.",
-            longDesc:
-                "We believe sustainable pace builds the best products. Flexible work, clear communication, and respectful planning allow creativity to thrive without burnout.",
-            tags: ["Work-life balance", "Flexible culture", "High trust", "Support"],
-            icon: Clock3,
-            accent: "bg-gradient-to-r from-[#6C4CF4] to-[#7AE7FF]",
-            glow: "bg-[#7AE7FF]/18",
-            iconBox: "bg-gradient-to-br from-[#F1FCFF] to-white",
-        },
-        {
-            title: "Opportunities to Lead",
-            desc: "Ownership-driven environment where you can grow into leadership roles.",
-            longDesc:
-                "Leadership is earned through ownership and impact. We give space for engineers and designers to lead initiatives, mentor others, and influence product direction.",
-            tags: ["Ownership", "Leadership", "Initiatives", "Decision making"],
-            icon: Star,
-            accent: "bg-gradient-to-r from-[#FF4FD8] to-[#FFD1F0]",
-            glow: "bg-[#B44CFF]/16",
-            iconBox: "bg-gradient-to-br from-[#F9F2FF] to-white",
-        },
-    ];
+    // 440vh for deeper scroll feel
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start start", "end end"],
+    });
 
     return (
-        <>
-            <section
-                className="relative overflow-hidden py-[95px] lg:py-[130px]"
-                id="life-at-evolvex"
-            >
-                {/* background */}
-                <div className="absolute inset-0 bg-gradient-to-b from-white via-[#FBFAFF] to-white" />
+        <section
+            ref={containerRef}
+            id="life-at-evolvex"
+            className="relative w-full h-[400vh] bg-[#FAFAFA] overflow-visible"
+        >
+            {/* Background Aesthetics */}
+            <div className="absolute inset-0 pointer-events-none">
+                <div className="absolute top-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,_rgba(255,255,255,1),_rgba(248,250,252,1))]" />
+                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-white via-transparent to-transparent opacity-80" />
+            </div>
 
-                <div className="relative w-full max-w-[1200px] mx-auto px-5">
-                    {/* Header */}
-                    <motion.div
-                        initial={reduceMotion ? "visible" : "hidden"}
-                        whileInView="visible"
-                        viewport={{ once: true, amount: 0.35 }}
-                        variants={list}
-                        className="text-center mb-[44px] lg:mb-[62px]"
-                    >
-                        <motion.span
-                            variants={fadeUp}
-                            className="inline-flex items-center gap-2 text-[12px] tracking-[0.35em] text-[#6C4CF4] font-extrabold uppercase"
-                        >
-                            <span className="h-[6px] w-[6px] rounded-full bg-[#6C4CF4]" />
-                            CULTURE
-                        </motion.span>
-
-                        <motion.h2
-                            variants={fadeUp}
-                            className="mt-4 text-[30px] lg:text-[46px] font-extrabold text-[#111]"
-                        >
-                            Life at Evolvex
-                        </motion.h2>
-
-                        <motion.p
-                            variants={fadeUp}
-                            className="mt-3 text-[15px] lg:text-[16px] leading-[1.85] text-[#555] max-w-[720px] mx-auto"
-                        >
-                            A workplace built on growth, ownership, and creativity.
-                        </motion.p>
-
-
-                    </motion.div>
-
-                    {/* Grid */}
-                    <motion.div
-                        initial={reduceMotion ? "visible" : "hidden"}
-                        whileInView="visible"
-                        viewport={{ once: true, amount: 0.25 }}
-                        variants={list}
-                        className="grid grid-cols-1 md:grid-cols-2 gap-[22px] lg:gap-[28px]"
-                    >
-                        {features.map((it, idx) => (
-                            <FeatureCard
-                                key={it.title}
-                                item={it}
-                                index={idx}
-                                onClick={() => setActive(it)}
-                            />
-                        ))}
-                    </motion.div>
+            {/* Sticky Container */}
+            <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden px-4">
+                <div className="relative w-full h-full flex items-center justify-center">
+                    {FEATURES.map((feature, idx) => (
+                        <StackedCard
+                            key={feature.id}
+                            item={feature}
+                            index={idx}
+                            total={FEATURES.length}
+                            scrollYProgress={scrollYProgress}
+                            reduceMotion={reduceMotion}
+                        />
+                    ))}
                 </div>
-            </section>
-
-            {/* Modal */}
-            <Modal open={!!active} item={active || {}} onClose={() => setActive(null)} />
-        </>
+            </div>
+        </section>
     );
 }

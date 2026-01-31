@@ -66,7 +66,7 @@ const OurTeam = () => {
 
     return (
         <div className="bg-white py-24">
-            <div className="max-w-7xl mx-auto px-6">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
                 <div className="text-center max-w-3xl mx-auto mb-20">
                     <h2 className="text-[#6C4CF0] font-semibold tracking-wide uppercase text-sm mb-3">Our Team</h2>
                     <h1 className="text-4xl md:text-5xl font-bold text-[#0b1220] mb-6">Meet the Minds Behind Evolvex</h1>

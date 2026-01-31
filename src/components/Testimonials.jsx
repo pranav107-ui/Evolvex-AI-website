@@ -114,7 +114,7 @@ const Testimonials = () => {
                 <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-pink-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
             </div>
 
-            <div className="max-w-6xl mx-auto px-6 text-center mb-16 relative z-20">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 text-center mb-16 relative z-20">
 
 
                 <h2 className="text-[38px] md:text-[48px] font-bold text-[#1a1a1a] mb-4 tracking-tight">

@@ -14,9 +14,9 @@ const About = () => {
     return (
         <>
             {/* About Hero */}
-            <section className="py-[90px] lg:py-[120px] pb-[70px] lg:pb-[100px] bg-white left-8 mt-12">
+            <section className="py-20 lg:py-[120px] pb-16 lg:pb-[100px] bg-white mt-8 md:mt-12">
                 <div
-                    className="w-full px-5 grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-[60px] lg:gap-[80px] items-center text-center lg:text-left">
+                    className="w-full px-4 sm:px-6 md:px-8 lg:px-12 grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-[60px] lg:gap-[80px] items-center text-center lg:text-left">
 
                     {/* Left Content */}
                     <ScrollReveal variant="featureLeft" className="mx-auto">
@@ -157,7 +157,7 @@ text-[#7C5CFF] mb-8 uppercase">
                         </h2>
                     </ScrollReveal>
                 </div>
-                <div className="w-full px-5">
+                <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12">
                     <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-[60px] lg:gap-[90px] items-center">
 
 
@@ -467,7 +467,7 @@ text-[#7C5CFF] mb-8 uppercase">
             </section>
 
             <section id="contact" className="py-[96px] bg-white relative overflow-hidden" aria-labelledby="contact-heading">
-                <div className="w-full max-w-[1200px] mx-auto px-5 relative z-10">
+                <div className="w-full max-w-[1200px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 relative z-10">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                         <ScrollReveal variant="featureLeft">
                             <header className="mb-[40px]">

@@ -15,7 +15,7 @@ const Careers = () => {
         <>
             {/* Careers Hero Section */}
             {/* New Full Screen Hero Section */}
-            <section className="relative w-full min-h-screen flex items-center bg-gradient-to-b from-violet-100 to-[#FFE8E9] overflow-hidden">
+            <section className="relative w-full min-h-screen flex items-center bg-gradient-to-b from-violet-100 to-[#FFE8E9] overflow-hidden z-0">
                 <style>{`
     @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
     * { font-family: "Poppins", sans-serif; }
@@ -36,7 +36,7 @@ const Careers = () => {
                     </FollowerPointerCard>
                 </div>
 
-                <div className="w-full max-w-7xl mx-auto px-5 md:px-10 relative z-10 pointer-events-none">
+                <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 relative z-10 pointer-events-none">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 xl:gap-16 items-center h-full w-full">
 
                         {/* Left Column: Content */}
@@ -144,14 +144,50 @@ const Careers = () => {
             {/* About Working With Us */}
             <WorkingWithUsSection />
 
+            {/* Life At Evolvex Heading */}
+            <section className="relative pt-[120px] pb-[40px] bg-[#FAFAFA] overflow-hidden">
+                <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12">
+                    <div className="relative text-center max-w-[920px] mx-auto">
+
+                        {/* Background Text */}
+                        <span
+                            className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2
+        font-black tracking-widest
+        bg-gradient-to-r from-violet-500 via-fuchsia-500 to-pink-400
+        bg-clip-text text-transparent
+        opacity-[0.07] whitespace-nowrap select-none pointer-events-none z-0"
+                            style={{ fontSize: 'clamp(60px, 15vw, 180px)', lineHeight: 1 }}
+                        >
+                            EXPERIENCE
+                        </span>
+
+                        {/* Foreground Heading */}
+                        <div className="relative z-10">
+                            <h2 className="text-[38px] md:text-[48px] lg:text-[64px]
+          font-extrabold text-[#111] tracking-tight">
+                                The Evolvex Experience
+                            </h2>
+
+                            <p className="mt-6 text-[18px] text-[#555] max-w-[720px] mx-auto leading-[1.7]">
+                                Experience how innovation, growth, ownership, and balance come together
+                                to shape meaningful work and impactful careers.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
 
             {/* Life at Evolvex */}
             <LifeAtEvolvex />
 
+
+
             {/* Why Join Us */}
             <section className="pt-[100px] lg:pt-[140px] pb-[60px] lg:pb-[80px] bg-white relative overflow-hidden"
                 id="why-join-us">
-                <div className="w-full px-5">
+                <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12">
 
                     <div className="relative text-center max-w-[920px] mx-auto">
 
@@ -217,7 +253,7 @@ const Careers = () => {
 
             {/* Apply Now */}
             <section className="py-[120px] relative" id="apply-now">
-                <div className="w-full px-5">
+                <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12">
 
                     {/* Section Heading */}
                     <div className="relative text-center max-w-[920px] mx-auto">

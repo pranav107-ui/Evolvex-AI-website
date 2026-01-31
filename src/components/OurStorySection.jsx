@@ -45,9 +45,9 @@ text-[#7C5CFF] mb-8 uppercase">
                         {/* Story Text */}
                         <div className="text-gray-600 text-lg leading-relaxed space-y-6 mt-28">
                             <p>
-                               Evolvex began with a simple realization: organizations rarely struggle because they lack tools. 
-                               They struggle because their systems lack alignment. 
-                               As businesses grow, complexity increases, processes fragment, and clarity fades.
+                                Evolvex began with a simple realization: organizations rarely struggle because they lack tools.
+                                They struggle because their systems lack alignment.
+                                As businesses grow, complexity increases, processes fragment, and clarity fades.
                             </p>
                             <p>
                                 We design structured digital ecosystems that remain intuitive,

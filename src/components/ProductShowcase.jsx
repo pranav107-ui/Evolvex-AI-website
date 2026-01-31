@@ -312,7 +312,7 @@ const ProductShowcase = () => {
                     {/* --- FULL SCREEN CONTENT --- */}
                     <motion.div
                         style={{ opacity: panelContentOpacity, y: panelY }}
-                        className="w-full h-full max-w-7xl mx-auto px-6 relative z-10 flex items-center justify-center"
+                        className="w-full h-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 relative z-10 flex items-center justify-center"
                     >
 
                         {/* SLIDE 1: Infrastructure Canvas */}
@@ -327,7 +327,7 @@ const ProductShowcase = () => {
                         >
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
                                 <div className="space-y-6 lg:pl-10">
-                                    <h2 className="text-5xl font-bold text-white">Product Engineering</h2>
+                                    <h2 className="text-3xl lg:text-5xl font-bold text-white">Product Engineering</h2>
                                     <p className="text-gray-400 text-lg">
                                         We design and build scalable, resilient digital products from the ground up.
                                         From architecture planning to production deployment, our engineering teams
@@ -375,7 +375,7 @@ const ProductShowcase = () => {
                         >
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
                                 <div className="space-y-6 lg:pl-10">
-                                    <h2 className="text-5xl font-bold text-white">Custom Software Development</h2>
+                                    <h2 className="text-3xl lg:text-5xl font-bold text-white">Custom Software Development</h2>
                                     <p className="text-gray-400 text-lg">
                                         Every business has unique workflows. We craft tailored software solutions
                                         that solve operational challenges while ensuring flexibility and scalability.
@@ -419,7 +419,7 @@ const ProductShowcase = () => {
                         >
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
                                 <div className="space-y-6 lg:pl-10">
-                                    <h2 className="text-5xl font-bold text-white">Mobile App Development</h2>
+                                    <h2 className="text-3xl lg:text-5xl font-bold text-white">Mobile App Development</h2>
                                     <p className="text-gray-400 text-lg">
                                         We build secure, intuitive, and high-performance mobile applications
                                         for iOS, Android, and cross-platform environments.
@@ -462,7 +462,7 @@ const ProductShowcase = () => {
                         >
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
                                 <div className="space-y-6 lg:pl-10">
-                                    <h2 className="text-5xl font-bold text-white">Artificial Intelligence & Automation</h2>
+                                    <h2 className="text-3xl lg:text-5xl font-bold text-white">Artificial Intelligence & Automation</h2>
                                     <p className="text-gray-400 text-lg">
                                         Leverage intelligent systems to automate decisions, streamline operations,
                                         and unlock data-driven growth.

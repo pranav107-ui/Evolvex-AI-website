@@ -109,7 +109,7 @@ const Navbar = ({ onOpenOverlay }) => {
             animate={{ y: isVisible ? 0 : "-100%" }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
         >
-            <div className="w-full px-5 flex items-center justify-between py-[18px] relative">
+            <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12 flex items-center justify-between py-[18px] relative">
 
                 {/* Logo */}
                 <div className="flex items-center gap-2 z-50">

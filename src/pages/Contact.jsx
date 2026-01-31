@@ -3,6 +3,8 @@ import TrustedBy from '../components/TrustedBy';
 import ScrollReveal from '../components/ui/ScrollReveal';
 import { StatefulButton } from '../components/ui/stateful-button';
 
+import { LinkPreview } from '../components/ui/link-preview';
+
 const Contact = () => {
     // IntersectionObserver removed - animations handled by ScrollReveal
 
@@ -11,10 +13,10 @@ const Contact = () => {
             {/* Hero Section */}
             <ScrollReveal variant="heading"
                 className="relative py-[80px] lg:py-[120px] pb-[200px] lg:pb-[280px] bg-[linear-gradient(120deg,#eef7ff_0%,#f6f9ff_40%,#fff2f7_100%)] overflow-hidden">
-                <div className="w-full px-5 grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] items-center gap-[60px] lg:gap-[80px]">
+                <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12 grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] items-center gap-[60px] lg:gap-[80px]">
 
                     {/* Left Content */}
-                    <div className="max-w-[520px] text-center lg:text-left ml-[200px]">
+                    <div className="max-w-[520px] text-center lg:text-left mx-auto lg:mx-0">
                         <h1 className="text-[36px] lg:text-[48px] font-bold text-[#1f2937] mb-[18px]">Get in Touch</h1>
                         <p className="text-[16px] lg:text-[18px] leading-[1.7] text-[#4a4a4a]">
                             We are here to assist you with any enquiries related to our
@@ -57,7 +59,7 @@ const Contact = () => {
 
             {/* Contact Details & Form */}
             <section className="py-[80px] lg:py-[120px] bg-white">
-                <div className="w-full px-5">
+                <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12">
 
                     {/* Section Header */}
                     <header className="text-center mb-[60px]">
@@ -85,54 +87,89 @@ const Contact = () => {
                                 </h3>
 
                                 <ul className="space-y-[18px] mb-[40px]">
+
                                     <li className="flex items-center gap-[12px]">
-                                        {/* Email Icon */}
                                         <div className="w-[20px] h-[20px] flex items-center justify-center text-[#6c4cf4]">
                                             <img src="/assets/svg/Mail-.svg" alt="" />
                                         </div>
-                                        <a href="mailto:support@evolvex.ai"
-                                            className="text-[15px] text-[#4b5563] hover:text-[#6c4cf4] transition-colors">support@evolvex.ai</a>
+
+                                        <LinkPreview
+                                            url="https://mail.google.com"
+                                            side="right"
+                                            className="text-[15px] text-[#4b5563] hover:text-[#6c4cf4] transition-colors"
+                                        >
+                                            support@evolvex.ai
+                                        </LinkPreview>
                                     </li>
 
                                     <li className="flex items-center gap-[12px]">
-                                        {/* Phone Icon */}
                                         <div className="w-[18px] h-[18px] flex items-center justify-center text-[#6c4cf4]">
                                             <img src="/assets/svg/Call.svg" alt="" />
                                         </div>
-                                        <a href="tel:+919876543210"
-                                            className="text-[15px] text-[#4b5563] hover:text-[#6c4cf4] transition-colors">+91 9876543210</a>
+
+                                        <LinkPreview
+                                            url="https://truecaller.com"
+                                            side="right"
+                                            className="text-[15px] text-[#4b5563] hover:text-[#6c4cf4] transition-colors"
+                                        >
+                                            +91 9876543210
+                                        </LinkPreview>
                                     </li>
 
                                     <li className="flex items-start gap-[12px]">
-                                        {/* Location Icon */}
                                         <div className="w-[16px] h-[16px] flex items-center justify-center text-[#6c4cf4] mt-[2px]">
                                             <img src="/assets/svg/Location-.svg" alt="" />
                                         </div>
-                                        <span className="text-[15px] text-[#4b5563] leading-[1.6]">
-                                            Evolvex AI Solutions Pvt. Ltd,<br />
-                                            Pollachi – 642001
-                                        </span>
+
+                                        <LinkPreview
+                                            url="https://www.google.com/maps/place/Pollachi,+Tamil+Nadu"
+                                            side="right"
+                                            className="text-[15px] text-[#4b5563] leading-[1.6] hover:text-[#6c4cf4] transition-colors"
+                                        >
+                                            <span>
+                                                Evolvex AI Solutions Pvt. Ltd,<br />
+                                                Pollachi – 642001
+                                            </span>
+                                        </LinkPreview>
                                     </li>
+
                                 </ul>
 
                                 {/* Social Icons */}
                                 <div className="flex gap-[16px]">
-                                    <a href="#" aria-label="Instagram"
-                                        className="w-[36px] h-[36px] rounded-full flex items-center justify-center text-[#6b7280] hover:text-white transition-all">
+
+                                    <LinkPreview
+                                        url="https://instagram.com"
+                                        side="bottom"
+                                        className="w-[36px] h-[36px] rounded-full flex items-center justify-center text-[#6b7280] hover:text-white transition-all"
+                                    >
                                         <img src="/assets/svg/instagram-.svg" alt="" />
-                                    </a>
-                                    <a href="#" aria-label="LinkedIn"
-                                        className="w-[36px] h-[36px] rounded-full flex items-center justify-center text-[#6b7280] hover:text-white transition-all">
+                                    </LinkPreview>
+
+                                    <LinkPreview
+                                        url="https://linkedin.com"
+                                        side="bottom"
+                                        className="w-[36px] h-[36px] rounded-full flex items-center justify-center text-[#6b7280] hover:text-white transition-all"
+                                    >
                                         <img src="/assets/svg/Linked_in.svg" alt="" />
-                                    </a>
-                                    <a href="#" aria-label="Facebook"
-                                        className="w-[36px] h-[36px] rounded-full flex items-center justify-center text-[#6b7280] hover:text-white transition-all">
+                                    </LinkPreview>
+
+                                    <LinkPreview
+                                        url="https://facebook.com"
+                                        side="bottom"
+                                        className="w-[36px] h-[36px] rounded-full flex items-center justify-center text-[#6b7280] hover:text-white transition-all"
+                                    >
                                         <img src="/assets/svg/Facebook.svg" alt="" />
-                                    </a>
-                                    <a href="#" aria-label="Twitter"
-                                        className="w-[36px] h-[36px] rounded-full flex items-center justify-center text-[#6b7280] hover:text-white transition-all">
+                                    </LinkPreview>
+
+                                    <LinkPreview
+                                        url="https://twitter.com"
+                                        side="bottom"
+                                        className="w-[36px] h-[36px] rounded-full flex items-center justify-center text-[#6b7280] hover:text-white transition-all"
+                                    >
                                         <img src="/assets/svg/X-Twitter.svg" alt="" />
-                                    </a>
+                                    </LinkPreview>
+
                                 </div>
                             </div>
 
@@ -165,6 +202,7 @@ const Contact = () => {
                                                 className="w-full h-[44px] border-b border-[#e5e7eb] px-0 text-[14px] focus:outline-none focus:border-[#6c4cf4] transition-colors bg-transparent placeholder-gray-400" />
                                         </label>
                                     </div>
+
 
                                     {/* Subject Selection */}
                                     <fieldset className="mt-[24px] mb-[28px]">
@@ -214,7 +252,7 @@ const Contact = () => {
 
             {/* Locate Us Section */}
             <section className="py-[96px] lg:py-[120px] bg-white">
-                <ScrollReveal variant="card" className="w-full px-5">
+                <ScrollReveal variant="card" className="w-full px-4 sm:px-6 md:px-8 lg:px-12">
 
                     {/* Section Header */}
                     <div className="text-center mb-[48px]">

@@ -17,7 +17,8 @@ import {
 } from "lucide-react";
 
 
-// import Robot from "@/assets/svg/robot.svg?react";
+
+
 import { StatefulButton } from '../components/ui/stateful-button';
 
 const Services = () => {
@@ -36,6 +37,16 @@ const Services = () => {
 
     return (
         <>
+            <style>{`
+                @keyframes gradientMove {
+                    0% { background-position: 0% }
+                    100% { background-position: 200% }
+                }
+                .animate-gradient {
+                    background-size: 200% auto;
+                    animation: gradientMove 3s linear infinite;
+                }
+            `}</style>
             {/* SERVICES HERO */}
             <section className="relative min-h-[88vh] flex items-center bg-white overflow-hidden" aria-label="Services hero">
 
@@ -55,7 +66,7 @@ const Services = () => {
                 </div>
 
 
-                <div className="relative z-10 max-w-[1248px] mx-auto text-center">
+                <div className="relative z-10 max-w-[1248px] mx-auto px-4 sm:px-6 text-center">
 
                     <ScrollReveal variant="heading">
                         <h1 className="text-[42px] md:text-[52px] lg:text-[64px] leading-[1.1] font-bold text-[#1a1a1a] mb-[24px] tracking-tight">
@@ -64,12 +75,15 @@ const Services = () => {
                         </h1>
                     </ScrollReveal>
 
-                    <ScrollReveal variant="text">
-                        <p className="text-[16px] md:text-[18px] leading-[1.6] text-[#6F6C8F] max-w-[600px] mx-auto mb-[40px]">
-                            Discover our expertise across engineering, cloud, AI, and business
-                            modernization.
-                        </p>
-                    </ScrollReveal>
+                    <p className="text-[16px] md:text-[18px] leading-[1.6] text-gray-700 max-w-[620px] mx-auto mb-[40px] text-center">
+                        Discover our expertise across{" "}
+                        <span className="relative inline-block font-semibold text-transparent bg-clip-text bg-gradient-to-r from-violet-600 via-indigo-500 to-violet-600 animate-gradient">
+                            engineering, cloud, AI
+                        </span>{" "}
+                        and business modernization.
+                    </p>
+
+
 
                     <ScrollReveal variant="button">
                         <div className="flex flex-wrap gap-4 justify-center">
@@ -84,7 +98,7 @@ const Services = () => {
 
             {/* Explore Our Expertise */}
             <section className="py-[60px] md:py-[80px] bg-white" id="expertise">
-                <div className="w-full px-5 max-w-[1248px] mx-auto">
+                <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12 max-w-[1248px] mx-auto">
 
                     <ScrollReveal variant="heading">
                         <h2 className="text-center text-[25.6px] md:text-[32px] font-bold text-[#140a4f] mb-[36px] md:mb-[48px]">
@@ -179,11 +193,11 @@ const Services = () => {
 
             {/* How We Deliver Excellence */}
             <section className="py-[70px] md:py-[90px] bg-white" id="delivery-excellence">
-                <div className="w-full px-5 max-w-[1248px] mx-auto">
+                <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12 max-w-[1248px] mx-auto">
 
                     <div className="text-center mb-[70px]">
                         <ScrollReveal variant="heading">
-                           <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-[36px] md:mb-[48px]">
+                            <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-[36px] md:mb-[48px]">
                                 <div
                                     className="robot-wrap relative w-[120px] md:w-[150px] h-auto"
                                     onMouseMove={(e) => {
@@ -347,7 +361,7 @@ const Services = () => {
 
             {/* Our Delivery Process */}
             <section className="py-[70px] md:py-[90px] pb-[100px] bg-white" id="delivery-process">
-                <div className="w-full px-5 max-w-[1248px] mx-auto">
+                <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12 max-w-[1248px] mx-auto">
 
                     <header className="text-center max-w-[720px] mx-auto mb-[70px]">
                         <ScrollReveal variant="heading">
@@ -536,7 +550,7 @@ const Services = () => {
             <section id="contact" className="py-[96px] bg-white relative overflow-hidden" aria-labelledby="contact-heading">
                 {/* ... Reuse contact section code as it appears identical in both files ... */}
                 {/* Since the user asked to convert each page, I should include the contact section here too if it's inservices.html, which it is. */}
-                <div className="w-full max-w-[1200px] mx-auto px-5 relative z-10">
+                <div className="w-full max-w-[1200px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 relative z-10">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                         <ScrollReveal variant="featureLeft">
                             <header className="mb-[40px]">
