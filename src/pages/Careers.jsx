@@ -1,9 +1,9 @@
-import { FollowerPointerCard } from '@/components/ui/FollowingPointer';
+import { FollowerPointerCard } from '@/components/ui/following-pointer';
 import { PointerHighlight } from '@/components/ui/PointerHighlight';
-import WhyJoinUs from '@/components/WhyJoinUs';
-import WorkingWithUsSection from '@/components/WorkingWithUsSection';
-import LifeAtEvolvex from '@/components/LifeAtEvolvex';
-import CareersCTA from '@/components/CareersCTA';
+import WhyWorkWithUs from '@/components/sections/WhyWorkWithUs';
+import WorkingWithUsSection from '@/components/sections/WorkingWithUsSection';
+import LifeAtEvolvex from '@/components/sections/LifeAtEvolvex';
+import CareersCTA from '@/components/sections/CareersCTA';
 import React from 'react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { StatefulButton } from '@/components/ui/stateful-button';
@@ -239,8 +239,7 @@ const Careers = () => {
                     </div>
                 </div>
                 {/* Why Join Us – Feature Cards */}
-                <WhyJoinUs>
-                </WhyJoinUs>
+                <WhyWorkWithUs />
             </section>
 
 

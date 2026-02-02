@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { CheckCircle2, Zap, TrendingUp, Clock, Activity, Layout, GitMerge } from "lucide-react";
-import { AuroraText } from "@/components/ui/AuroraText";
+import { AuroraText } from "../ui/AuroraText";
 
 // --- Data ---
 const FEATURES = [
@@ -385,6 +385,7 @@ export default function LifeAtEvolvex() {
             ref={containerRef}
             id="life-at-evolvex"
             className="relative w-full h-[400vh] bg-[#FAFAFA] overflow-visible"
+            style={{ position: 'relative' }}
         >
             {/* Background Aesthetics */}
             <div className="absolute inset-0 pointer-events-none">

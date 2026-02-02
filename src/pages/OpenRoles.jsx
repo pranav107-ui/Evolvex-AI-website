@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Squares from '../components/Squares';
+import Squares from '../components/ui/Squares';
 import ScrollReveal from '../components/ui/ScrollReveal';
 import { StatefulButton } from '../components/ui/stateful-button';
 

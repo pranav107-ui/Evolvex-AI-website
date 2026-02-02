@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import ScrollReveal from './ui/ScrollReveal';
+import ScrollReveal from '../ui/ScrollReveal';
 
 const WhyWorkWithUs = () => {
     // State for hover effects. null means default state (both flex-1)
@@ -38,8 +38,13 @@ const WhyWorkWithUs = () => {
         <section className="py-[80px]" id="why-work" aria-labelledby="why-work-title">
             <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12">
                 <ScrollReveal variant="heading" className="text-center mb-[32px]">
-                    <h2 id="why-work-title" className="text-[32px] font-extrabold text-[#0b1220] mb-2">Why Businesses Choose Evolvex AI</h2>
-
+                    <h2 id="why-work-title" className="text-[32px] font-extrabold text-[#0b1220] mb-2">Why Work With Us</h2>
+                    <p className="text-gray-600 max-w-[820px] mx-auto mt-[14px] text-[19.2px] md:text-[20px]">
+                        Join a workplace that values innovation,
+                        collaboration, and continuous growth.<br />
+                        We provide a supportive environment where ideas are welcomed, talents are nurtured,<br />
+                        and every individual contributes to creating meaningful solutions.
+                    </p>
                 </ScrollReveal>
 
                 <div className="flex flex-col md:flex-row gap-[28px] w-full max-w-[1200px] mx-auto md:h-[880px] p-4">
@@ -54,14 +59,14 @@ const WhyWorkWithUs = () => {
                             <div className="w-full flex self-stretch flex-col items-start gap-[22px] flex-[0_0_auto] relative">
                                 <div className="w-full flex self-stretch flex-col items-start gap-3.5 flex-[0_0_auto] px-0 py-2 relative">
                                     <div className="font-sans self-stretch mt-[-1.00px] tracking-[0] text-2xl text-white relative h-[29px] font-bold leading-[normal]">
-                                        Strategic Technology Expertise
+                                        Growth Opportunities
                                     </div>
 
                                     {/* Text Container */}
                                     <div className="font-sans self-stretch tracking-[0] text-sm text-[#ffffffcc] relative font-medium leading-[normal] h-[60px] transition-all duration-500 group-[.expanded]:h-[207px]">
                                         {/* Short Text */}
                                         <p className="absolute inset-0 transition-opacity duration-500 opacity-100 group-[.expanded]:opacity-0 pointer-events-none group-[.expanded]:pointer-events-none">
-                                            We combine deep technical knowledge with business-focused thinking to deliver solutions that produce measurable results.
+                                            We foster continuous learning and professional growth through mentorship and real-world challenges.
                                         </p>
                                         {/* Long Text */}
                                         <div className="absolute inset-0 transition-opacity duration-500 opacity-0 group-[.expanded]:opacity-100 pointer-events-none group-[.expanded]:pointer-events-auto">
@@ -75,7 +80,7 @@ const WhyWorkWithUs = () => {
                                 {/* Image */}
                                 <img
                                     className="object-cover absolute transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] bottom-[-249px] w-[230px] right-[-46px] h-[230px] group-[.expanded]:bottom-[-264px] group-[.expanded]:w-80 group-[.expanded]:right-2 group-[.expanded]:h-[300px]"
-                                    alt="Growth Opportunities" src="/assets/images/Strategic-Technology.png" />
+                                    alt="Growth Opportunities" src="/assets/images/growth-opportunities.png" />
                             </div>
                         </div>
 
@@ -88,14 +93,14 @@ const WhyWorkWithUs = () => {
                             <div className="w-full flex self-stretch flex-col items-start gap-[22px] flex-[0_0_auto] relative">
                                 <div className="w-full flex self-stretch flex-col items-start gap-3.5 flex-[0_0_auto] px-0 py-2 relative">
                                     <div className="font-sans self-stretch mt-[-1.00px] tracking-[0] text-2xl text-white relative h-[29px] font-bold leading-[normal]">
-                                        Scalable and Future-Ready Solutions
+                                        Innovation-Driven
                                     </div>
 
                                     {/* Text Container */}
                                     <div className="font-sans self-stretch tracking-[0] text-sm text-[#ffffffcc] relative font-medium leading-[normal] h-[60px] transition-all duration-500 group-[.expanded]:h-[187px]">
                                         {/* Short Text */}
                                         <p className="absolute inset-0 transition-opacity duration-500 opacity-100 group-[.expanded]:opacity-0 pointer-events-none group-[.expanded]:pointer-events-none">
-                                            We build systems engineered for growth, adaptability, and long-term performance as your business evolves.
+                                            We empower individuals to experiment with bold ideas using modern tools to drive meaningful impact.
                                         </p>
                                         {/* Long Text */}
                                         <div className="absolute inset-0 transition-opacity duration-500 opacity-0 group-[.expanded]:opacity-100 pointer-events-none group-[.expanded]:pointer-events-auto">
@@ -109,7 +114,7 @@ const WhyWorkWithUs = () => {
                                 {/* Image */}
                                 <img
                                     className="object-cover absolute transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] bottom-[-255px] w-[228px] -right-12 h-[227px] group-[.expanded]:bottom-[-298px] group-[.expanded]:w-80 group-[.expanded]:right-0 group-[.expanded]:h-[300px]"
-                                    alt="Innovation Driven" src="/assets/images/Scalable.png" />
+                                    alt="Innovation Driven" src="/assets/images/innovation-environment2.png" />
                             </div>
                         </div>
                     </div>
@@ -124,14 +129,14 @@ const WhyWorkWithUs = () => {
                             <div className="w-full flex self-stretch flex-col items-start gap-[22px] flex-[0_0_auto] relative">
                                 <div className="w-full flex self-stretch flex-col items-start gap-3.5 flex-[0_0_auto] px-0 py-2 relative">
                                     <div className="font-sans self-stretch mt-[-1.00px] tracking-[0] text-2xl text-white relative h-[29px] font-bold leading-[normal]">
-                                        Transparent and Reliable Delivery
+                                        Collaborative Culture
                                     </div>
 
                                     {/* Text Container */}
                                     <div className="font-sans self-stretch tracking-[0] text-sm text-[#ffffffcc] relative font-medium leading-[normal] h-[60px] transition-all duration-500 group-[.expanded]:h-[207px]">
                                         {/* Short Text */}
                                         <p className="absolute inset-0 transition-opacity duration-500 opacity-100 group-[.expanded]:opacity-0 pointer-events-none group-[.expanded]:pointer-events-none">
-                                            Our development process ensures predictable timelines, clear communication, and consistent quality at every stage.
+                                            Work in an environment where teamwork, transparency, and open communication drive exceptional outcomes.
                                         </p>
                                         {/* Long Text */}
                                         <div className="absolute inset-0 transition-opacity duration-500 opacity-0 group-[.expanded]:opacity-100 pointer-events-none group-[.expanded]:pointer-events-auto">
@@ -145,7 +150,7 @@ const WhyWorkWithUs = () => {
                                 {/* Image */}
                                 <img
                                     className="object-cover absolute transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] bottom-[-249px] w-[230px] right-[-46px] h-[230px] group-[.expanded]:bottom-[-264px] group-[.expanded]:w-80 group-[.expanded]:right-2 group-[.expanded]:h-[300px]"
-                                    alt="People working open" src="/assets/images/Transparent-and-Reliable Delivery.png" />
+                                    alt="People working open" src="/assets/images/collaborative-culture.png" />
                             </div>
                         </div>
 
@@ -158,14 +163,14 @@ const WhyWorkWithUs = () => {
                             <div className="w-full flex self-stretch flex-col items-start gap-[22px] flex-[0_0_auto] relative">
                                 <div className="w-full flex self-stretch flex-col items-start gap-3.5 flex-[0_0_auto] px-0 py-2 relative">
                                     <div className="font-sans self-stretch mt-[-1.00px] tracking-[0] text-2xl text-white relative h-[29px] font-bold leading-[normal]">
-                                        Dedicated Partnership Approach
+                                        Work–Life Balance
                                     </div>
 
                                     {/* Text Container */}
                                     <div className="font-sans self-stretch tracking-[0] text-sm text-[#ffffffcc] relative font-medium leading-[normal] h-[60px] transition-all duration-500 group-[.expanded]:h-[187px]">
                                         {/* Short Text */}
                                         <p className="absolute inset-0 transition-opacity duration-500 opacity-100 group-[.expanded]:opacity-0 pointer-events-none group-[.expanded]:pointer-events-none">
-                                            We leverage modern tools, AI capabilities, and creative problem-solving to help organizations stay competitive and forward-thinking.
+                                            Our flexible work culture ensures a balanced lifestyle, supporting personal well-being and professional excellence.
                                         </p>
                                         {/* Long Text */}
                                         <div className="absolute inset-0 transition-opacity duration-500 opacity-0 group-[.expanded]:opacity-100 pointer-events-none group-[.expanded]:pointer-events-auto">
@@ -179,7 +184,7 @@ const WhyWorkWithUs = () => {
                                 {/* Image */}
                                 <img
                                     className="object-cover absolute transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] bottom-[-255px] w-[228px] -right-12 h-[227px] group-[.expanded]:bottom-[-298px] group-[.expanded]:w-80 group-[.expanded]:right-0 group-[.expanded]:h-[300px]"
-                                    alt="Element life style" src="/assets/images/Dedicated-Partnership-Approach.png" />
+                                    alt="Element life style" src="/assets/images/work-life-balance2.png" />
                             </div>
                         </div>
                     </div>

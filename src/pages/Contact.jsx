@@ -1,12 +1,68 @@
 import React, { useEffect } from 'react';
-import TrustedBy from '../components/TrustedBy';
+import TrustedBy from '../components/sections/TrustedBy';
 import ScrollReveal from '../components/ui/ScrollReveal';
 import { StatefulButton } from '../components/ui/stateful-button';
 
 import { LinkPreview } from '../components/ui/link-preview';
 
+import { useLocation } from 'react-router-dom';
+
 const Contact = () => {
-    // IntersectionObserver removed - animations handled by ScrollReveal
+    // Scroll to section handling
+    const location = useLocation();
+
+    // Use useLayoutEffect to ensure we scroll to top BEFORE the browser paints
+    React.useLayoutEffect(() => {
+        // Prevent browser from restoring scroll position automatically
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+
+        // Force scroll to top immediately
+        window.scrollTo(0, 0);
+
+        // Restore default behavior on cleanup
+        return () => {
+            if ('scrollRestoration' in history) {
+                history.scrollRestoration = 'auto';
+            }
+        };
+    }, []);
+
+    useEffect(() => {
+        if (location.state?.scrollToContact) {
+            // Small timeout to ensure DOM is fully ready and layout is stable
+            setTimeout(() => {
+                const element = document.getElementById('contact-section');
+                if (element) {
+                    const targetPosition = element.getBoundingClientRect().top + window.scrollY;
+                    const startPosition = window.scrollY;
+                    const distance = targetPosition - startPosition;
+                    const duration = 2000; // Slower scroll duration (2000ms)
+                    let startTime = null;
+
+                    const animation = (currentTime) => {
+                        if (startTime === null) startTime = currentTime;
+                        const timeElapsed = currentTime - startTime;
+
+                        // EaseInOutCubic function for smooth acceleration and deceleration
+                        const ease = (t) => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+
+                        const progress = Math.min(timeElapsed / duration, 1);
+                        const run = startPosition + (distance * ease(progress));
+
+                        window.scrollTo(0, run);
+
+                        if (timeElapsed < duration) {
+                            requestAnimationFrame(animation);
+                        }
+                    };
+
+                    requestAnimationFrame(animation);
+                }
+            }, 600); // Slight increase to ensure user sees the "top" state for a fraction of a second
+        }
+    }, [location]);
 
     return (
         <>
@@ -58,7 +114,7 @@ const Contact = () => {
             <TrustedBy />
 
             {/* Contact Details & Form */}
-            <section className="py-[80px] lg:py-[120px] bg-white">
+            <section id="contact-section" className="py-[80px] lg:py-[120px] bg-white">
                 <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12">
 
                     {/* Section Header */}

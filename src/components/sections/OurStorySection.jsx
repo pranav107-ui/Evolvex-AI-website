@@ -1,7 +1,7 @@
 "use client";
-import { motion } from "motion/react";
-import { HeroHighlight, Highlight } from "./ui/hero-highlight";
-import { FlipWords } from "./ui/flip-words";
+import { motion } from "framer-motion";
+import { HeroHighlight, Highlight } from "../ui/hero-highlight";
+import { FlipWords } from "../ui/flip-words";
 
 export default function OurStorySection() {
     const words = ["clarity", "confidence", "structure", "precision", "intelligence"];

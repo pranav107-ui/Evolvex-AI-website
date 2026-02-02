@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform, useSpring, useMotionValue } from "framer-motion";
 import { Link } from 'react-router-dom';
-import DotGrid from './DotGrid';
+import DotGrid from '../ui/DotGrid';
 
 const MacWindowControls = () => (
     <div className="absolute top-4 left-5 flex items-center gap-2 z-30">
@@ -86,7 +86,7 @@ const CodePanel = ({ title, status, lines }) => {
     );
 };
 
-const ProductShowcase = () => {
+const ProductShowcase = ({ id }) => {
     const containerRef = useRef(null);
     const panelRef = useRef(null);
 
@@ -192,11 +192,13 @@ const ProductShowcase = () => {
 
 
 
+
     return (
         <section
+            id={id}
             ref={containerRef}
             className="relative h-[500vh] bg-transparent mb-40" // Increased height to slow down scroll animation
-            style={{ zIndex: 50 }}
+            style={{ zIndex: 50, position: 'relative' }}
         >
             <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
 
@@ -472,8 +474,8 @@ const ProductShowcase = () => {
                                         <Badge text="Predictive analytics" />
                                         <Badge text="Intelligent process automation" />
                                     </div>
-                                    <div className="pt-6">
-                                        <Link to="/services" className="inline-flex px-6 py-3 rounded-lg bg-[#6C4CF4] hover:bg-[#5b3ddb] text-white font-medium transition-colors shadow-lg shadow-purple-900/30">
+                                    <div className="pt-6 relative z-50">
+                                        <Link to="/services" className="inline-flex px-6 py-3 rounded-lg bg-[#6C4CF4] hover:bg-[#5b3ddb] text-white font-medium transition-colors shadow-lg shadow-purple-900/30 cursor-pointer relative z-50 pointer-events-auto">
                                             Explore Services
                                         </Link>
                                     </div>

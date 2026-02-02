@@ -1,10 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import OurStorySection from '../components/OurStorySection';
-import WhyBusinessesChoose from '../components/WhyBusinessesChoose';
+import { Link } from 'react-router-dom';
+import OurStorySection from '../components/sections/OurStorySection';
+import WhyBusinessesChoose from '../components/sections/WhyBusinessesChoose';
 import { FollowerPointerCard } from '../components/ui/following-pointer';
 import { CardSpotlight } from '../components/ui/card-spotlight';
-import Testimonials from '../components/Testimonials';
+import Testimonials from '../components/sections/Testimonials';
 import ScrollReveal from '../components/ui/ScrollReveal';
 import { StatefulButton } from '../components/ui/stateful-button';
 
@@ -31,10 +32,10 @@ const About = () => {
                             businesses with<br></br> innovation, precision, and long-term value.
                         </p>
 
-                        <a href="/contact"
+                        <Link to="/contact" state={{ scrollToContact: true }}
                             className="inline-block px-[32px] py-[16px] text-[15px] font-semibold text-white rounded-[10px] bg-gradient-to-r from-[#B455F3] to-[#393AF3] shadow-[0_10px_28px_rgba(111,90,247,0.35)] transition-transform duration-200 hover:-translate-y-[2px] hover:shadow-[0_16px_36px_rgba(111,90,247,0.45)]">
                             Start Your Project
-                        </a>
+                        </Link>
                     </ScrollReveal>
 
                     {/* Right Visual */}
@@ -446,14 +447,14 @@ text-[#7C5CFF] mb-8 uppercase">
                     </h1>
 
                     <div className='flex flex-col sm:flex-row items-center gap-4'>
-                        <a href="/contact" className='bg-white text-gray-900 rounded-full px-6 py-3.5 text-sm flex items-center gap-2 hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl active:scale-95 cursor-pointer'>
+                        <Link to="/contact" state={{ scrollToContact: true }} className='bg-white text-gray-900 rounded-full px-6 py-3.5 text-sm flex items-center gap-2 hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl active:scale-95 cursor-pointer'>
                             Kickstart the build
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth='2' stroke="currentColor" className="w-4 h-4">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                             </svg>
-                        </a>
+                        </Link>
 
-                        <button className='bg-white rounded-full p-1.5 pr-8 flex items-center gap-3 hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl active:scale-95 cursor-pointer'>
+                        <Link to="/contact" state={{ scrollToContact: true }} className='bg-white rounded-full p-1.5 pr-8 flex items-center gap-3 hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl active:scale-95 cursor-pointer'>
                             <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200" alt="Avatar" className='size-9 rounded-full object-cover' />
                             <div className="text-left flex flex-col justify-center gap-0.5">
                                 <span className="text-xs text-gray-900 leading-tight">Quick 15-min call</span>
@@ -461,7 +462,7 @@ text-[#7C5CFF] mb-8 uppercase">
                                     We’re online<span className="w-1.5 h-1.5 bg-green-500 rounded-full inline-block"></span>
                                 </span>
                             </div>
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </section>

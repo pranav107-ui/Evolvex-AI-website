@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import FloatingLines from '../components/FloatingLines';
-import TiltedCard from '../components/TiltedCard';
+import FloatingLines from '../components/ui/FloatingLines';
+import TiltedCard from '../components/ui/TiltedCard';
 import ScrollReveal from '../components/ui/ScrollReveal';
-import Testimonials from '../components/Testimonials';
-import TrustedBy from '../components/TrustedBy';
-import ExpertiseCard from "../components/ExpertiseCard";
+import Testimonials from '../components/sections/Testimonials';
+import TrustedBy from '../components/sections/TrustedBy';
+import ExpertiseCard from "../components/ui/ExpertiseCard";
 import {
     Boxes,
     Code2,
@@ -87,10 +87,10 @@ const Services = () => {
 
                     <ScrollReveal variant="button">
                         <div className="flex flex-wrap gap-4 justify-center">
-                            <a href="/contact"
+                            <Link to="/contact" state={{ scrollToContact: true }}
                                 className="inline-flex px-[36px] py-[14px] rounded-[10px] bg-gradient-to-r from-[#B455F3] to-[#393AF3] text-white font-semibold text-[15.2px] shadow-[0_10px_30px_rgba(108,76,240,0.35)] transition-transform duration-200 hover:scale-[1.02]">
                                 Get a Consultation
-                            </a>
+                            </Link>
                         </div>
                     </ScrollReveal>
                 </div>
@@ -535,12 +535,13 @@ const Services = () => {
                             Our team is here to turn your vision into a scalable digital product.
                         </p>
 
-                        <a
-                            href="/contact"
+                        <Link
+                            to="/contact"
+                            state={{ scrollToContact: true }}
                             className="px-12 py-3 text-white bg-white/15 hover:bg-white/25 border border-white/20 transition-all rounded-full text-sm mt-8 backdrop-blur-md"
                         >
                             Get a Consultation
-                        </a>
+                        </Link>
                     </div>
                 </div>
 

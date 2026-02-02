@@ -2,12 +2,12 @@ import React, { useEffect, useRef, useState } from 'react';
 import { motion, useInView } from "framer-motion";
 import { Link } from 'react-router-dom';
 import { runAntigravity } from '../scripts/antigravity.js';
-import WhyWorkWithUs from '../components/WhyWorkWithUs';
+import WhyWorkWithUs from '../components/sections/WhyWorkWithUs';
 import { StickyScroll } from '../components/ui/sticky-scroll-reveal';
 import ScrollReveal from '../components/ui/ScrollReveal';
-import Testimonials from '../components/Testimonials';
-import TrustedBy from '../components/TrustedBy';
-import ProductShowcase from '../components/ProductShowcase';
+import Testimonials from '../components/sections/Testimonials';
+import TrustedBy from '../components/sections/TrustedBy';
+import ProductShowcase from '../components/sections/ProductShowcase';
 import { StatefulButton } from '../components/ui/stateful-button';
 
 const servicesContent = [
@@ -263,7 +263,7 @@ const Home = () => {
 
                         <ScrollReveal variant="button">
                             <div className="flex flex-wrap items-center justify-center gap-[20px]">
-                                <a href="#services"
+                                <a href="#ProductShowcase"
                                     className="inline-flex min-w-[180px] h-[52px] px-[34px] items-center justify-center rounded-[12px] bg-gradient-to-r from-[#B455F3] to-[#393AF3] text-white font-semibold text-[15px] shadow-[0_8px_24px_rgba(108,76,244,0.35)] transition-transform duration-200 hover:scale-[1.04]">
                                     Get Started
                                 </a>
@@ -324,7 +324,7 @@ const Home = () => {
             </section> */}
 
             {/* Product Showcase Scroll Section */}
-            <ProductShowcase />
+            <ProductShowcase id="ProductShowcase" />
 
             {/* Explore Expertise (Hidden) */}
             {/*

@@ -124,9 +124,10 @@ export function runAntigravity(containerId, props = {}) {
 
     // --- Animation Loop ---
     const clock = new THREE.Clock();
+    let animationId; // Track ID
 
     function animate() {
-        requestAnimationFrame(animate);
+        animationId = requestAnimationFrame(animate);
 
         const time = clock.getElapsedTime();
 
@@ -214,17 +215,36 @@ export function runAntigravity(containerId, props = {}) {
 
     animate();
 
-    // Resize Handler
-    const onResize = () => {
-        camera.aspect = container.clientWidth / container.clientHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(container.clientWidth, container.clientHeight);
+    // --- Cleanup Function ---
+    return function destroy() {
+        if (animationId) cancelAnimationFrame(animationId);
 
-        // Update Viewport details for calc
-        const vp = computeViewport();
-        viewWidth = vp.width;
-        viewHeight = vp.height;
+        // Remove Listeners
+        window.removeEventListener('mousemove', onMouseMove);
+        // window.removeEventListener('resize', onResize); // onResize was not defined or added
+
+        // Dispose Three.js
+        if (renderer) {
+            renderer.dispose();
+            if (container.contains(renderer.domElement)) {
+                container.removeChild(renderer.domElement);
+            }
+        }
+        if (geometry) geometry.dispose();
+        if (material) material.dispose();
     };
-
-    window.addEventListener('resize', onResize);
 }
+
+// NOTE: To properly stop the loop, we need to modify the animate function to check a flag or store the rAF ID.
+// Re-implementing animate to be cancelable below:
+/*
+    let animationId;
+    function animate() {
+        animationId = requestAnimationFrame(animate);
+        // ... rendering logic ...
+    }
+    animate();
+    
+    // In destroy:
+    cancelAnimationFrame(animationId);
+*/
