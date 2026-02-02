@@ -1,51 +1,94 @@
 # EvolveX Website - AI & Tech Corporate Platform
 
 ## Overview
-The **EvolveX Website** is a modern, high-performance corporate platform designed for EvolveX, an AI and technology solutions provider. This project implements a cutting-edge frontend architecture using React 19 and Vite, featuring immersive 3D/2D animations, a responsive design system, and a seamless user experience.
+The **EvolveX Website** is a state-of-the-art corporate platform designed for EvolveX, a leader in AI and technology solutions. This project showcases a cutting-edge frontend architecture built with **React 19** and **Vite**, heavily emphasizing immersive user experiences through advanced 3D/2D animations, a robust design system, and high-performance rendering.
 
-The website serves as the primary digital presence for EvolveX, showcasing:
-- **Services & Expertise**: Detailed insights into AI and tech offerings.
-- **Careers & Culture**: Open roles, team philosophy, and "Life at EvolveX".
-- **Product Showcase**: Interactive demonstrations of core platform capabilities.
-- **Corporate Info**: About Us, Legal, and Contact channels.
+The platform serves as the digital headquarters for EvolveX, effectively communicating its expertise in Artificial Intelligence, offering interactive product showcases, and providing a seamless portal for careers and corporate information.
 
-## Features
-- **Immersive Animations**: Integrated **Three.js (Fiber)**, **GSAP**, and **Framer Motion** for premium visual effects (Floating Lines, Dot Grids, Scroll Reveals).
-- **Performance Optimized**: Lazy loading for all major routes and component splitting to ensure fast initial load times.
-- **Responsive Design**: Mobile-first approach using **Tailwind CSS**.
-- **Interactive UI**: Custom components including a global **Enquiry Overlay**, **Product Showcases**, and dynamic **Job Details** views.
-- **Modern Routing**: Robust client-side routing with **React Router DOM v7**.
+## Key Features
+- **Immersive Visuals**: sophisticated use of **Three.js (@react-three/fiber)**, **GSAP**, and **Framer Motion** to create depth, motion, and interactivity (e.g., Floating Lines, Dot Grids, Aurora effects).
+- **Modern Design System**: A bespoke UI library located in `src/components/ui`, featuring glassmorphism, dynamic lighting, and responsive layouts built with **Tailwind CSS**.
+- **High Performance**: Optimized for speed with code splitting, lazy loading (via `React.lazy`), and efficient asset management.
+- **Interactive Components**: Custom-built interactive elements such as the `ProductShowcase`, `LifeAtEvolvex` sections, and a global `EnquiryOverlay` for seamless lead capture.
+- **Robust Routing**: Client-side routing managed by **React Router DOM v7**, ensuring smooth transitions and state connectivity.
 
 ## Tech Stack
-**Frontend:**
-- **Framework & Core:** React 19, Vite
-- **Styling:** Tailwind CSS, PostCSS, Custom CSS Variables
-- **Animations:** Framer Motion, GSAP, Three.js (@react-three/fiber), Motion
-- **Icons:** Lucide React
 
-**Tools & Utilities:**
-- **Build Tool:** Vite
-- **Routing:** React Router DOM
+### Frontend Core
+- **React 19**: The latest version of the library for web and native user interfaces.
+- **Vite**: Next-generation frontend tooling for ultra-fast development and bundling.
+- **Tailwind CSS**: Utility-first CSS framework for rapid UI development.
 
-## Folder Structure
+### Animation & Interaction
+- **Framer Motion**: Production-ready motion library for React.
+- **GSAP (GreenSock Animation Platform)**: Professional-grade JavaScript animation for complex sequences.
+- **@react-three/fiber & @react-three/drei**: React reconciler for Three.js, enabling 3D graphics.
+- **Lucide React**: Beautiful & consistent icon library.
+
+### Utilities
+- **clsx & tailwind-merge**: For conditional and conflict-free class name composition.
+- **react-router-dom**: Declarative routing for React web applications.
+
+## Project Structure
+
+The project follows a modular and scalable directory structure:
+
 ```text
 evolvex-website/
-├── public/              # Static assets (images, icons, etc.)
+├── public/                  # Static assets (images, icons, etc.)
 ├── src/
-│   ├── components/      # Reusable UI components
-│   │   ├── ui/          # Atomic design elements (buttons, inputs)
-│   │   ├── Layout.jsx   # Main layout wrapper (Navbar, Footer, Overlay)
-│   │   └── ...          # Feature-specific components (Navbar, Footer, etc.)
-│   ├── pages/           # Application route pages (Home, About, Services)
-│   ├── styles/          # Global styles and Tailwind configuration
-│   ├── App.jsx          # Main application routing logic
-│   └── main.jsx         # Application entry point
-├── package.json         # Dependencies and scripts
-├── vite.config.js       # Vite configuration
-└── tailwind.config.js   # Tailwind CSS configuration
+│   ├── assets/              # Imported static assets
+│   ├── components/          # Component Library
+│   │   ├── icons/           # SVG Icon components
+│   │   ├── layout/          # Structural components (Navbar, Footer, Layout, Overlay)
+│   │   ├── sections/        # Page-specific sections (Hero, Features, Testimonials)
+│   │   └── ui/              # Reusable atomic UI elements (Buttons, Cards, Effects)
+│   ├── constants/           # Global constants and configuration
+│   ├── data/                # Static data files (mock data, content arrays)
+│   ├── hooks/               # Custom React hooks
+│   ├── lib/                 # Third-party library configurations
+│   ├── pages/               # Application route views (Home, About, Services, etc.)
+│   ├── scripts/             # Utility scripts
+│   ├── services/            # API service layers
+│   ├── styles/              # Global CSS and Tailwind directives
+│   ├── utils/               # Helper functions
+│   ├── App.jsx              # Main Router configuration
+│   └── main.jsx             # Entry point
+├── .gitignore               # Git ignore rules
+├── components.json          # UI Component configuration
+├── index.html               # HTML entry point
+├── package.json             # Project dependencies and scripts
+├── postcss.config.js        # PostCSS configuration
+├── tailwind.config.js       # Tailwind CSS configuration
+└── vite.config.js           # Vite configuration
 ```
 
-## Installation
+## Component Architecture
+
+This project strictly separates concerns between layout, sections, and UI primitives:
+
+- **`src/components/ui/`**: Contains pure, stateless components often enhanced with animations. Examples include:
+  - `AuroraText.jsx`, `FloatingLines.jsx`, `DotGrid.jsx` (Visual Effects)
+  - `StatefulButton.jsx`, `Card.jsx` (Interactive Primitives)
+  - `ScrollReveal.jsx` (Animation Wrappers)
+
+- **`src/components/sections/`**: Composes UI primitives into business-logic-rich sections.
+  - `ProductShowcase.jsx`: Interactive demo area.
+  - `LifeAtEvolvex.jsx`: Cultural showcase.
+  - `CareersCTA.jsx`, `WhyBusinessesChoose.jsx`: Conversion-focused sections.
+
+- **`src/components/layout/`**: Manages global application state and structure.
+  - `Layout.jsx`: Wraps pages, handling the `EnquiryOverlay` and global navigation.
+  - `Navbar.jsx` / `Footer.jsx`: Standard navigation elements.
+
+## Getting Started
+
+### Prerequisites
+- Node.js (v18+ recommended)
+- npm or yarn
+
+### Installation
+
 1.  **Clone the repository**:
     ```bash
     git clone https://github.com/pranav107-ui/Evolvex-AI-website.git
@@ -57,33 +100,34 @@ evolvex-website/
     npm install
     ```
 
-## Running the Project
-- **Development Server**:
-    Starts the local development server with hot module replacement (HMR).
-    ```bash
-    npm run dev
-    ```
+### Development
 
-- **Build for Production**:
-    Builds the application for deployment to the `dist` folder.
-    ```bash
-    npm run build
-    ```
+Start the local development server with Hot Module Replacement (HMR):
+```bash
+npm run dev
+```
+Open `http://localhost:5173` to view it in the browser.
 
-- **Preview Production Build**:
-    Locally preview the production build.
-    ```bash
-    npm run preview
-    ```
+### Production Build
 
-## Environment Variables
-Currently, the project relies on static configuration. If API integration is added in the future:
-- Create a `.env` file in the root directory.
-- Use `VITE_` prefix for client-exposed variables.
+Build the application for production deployment (generates `dist/` folder):
+```bash
+npm run build
+```
 
-## Known Issues / Limitations
-- **Animation Performance**: Heavy use of Three.js and GSAP may impact performance on lower-end devices. Optimization is ongoing.
-- **Browser Compatibility**: Best viewed in modern browsers (Chrome, Edge, Firefox, Safari) due to modern CSS and JS features.
+Preview the production build locally:
+```bash
+npm run preview
+```
+
+## Contributing
+
+1.  Fork the repository.
+2.  Create your feature branch (`git checkout -b feature/AmazingFeature`).
+3.  Commit your changes (`git commit -m 'Add some AmazingFeature'`).
+4.  Push to the branch (`git push origin feature/AmazingFeature`).
+5.  Open a Pull Request.
 
 ## License
-ISC
+
+This project is licensed under the ISC License.
